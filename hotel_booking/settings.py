@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'storages',
 
 
+    'mainsite',
     'rooms',
     'bookings',
     'payments',
@@ -77,7 +78,7 @@ ROOT_URLCONF = 'hotel_booking.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -147,8 +148,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 if os.environ.get('USE_AWS') == "True":
-    print("✅ AWS in use!")
-
     DEFAULT_FILE_STORAGE = 'hotel_booking.custom_storages.MediaStorage'
 
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
