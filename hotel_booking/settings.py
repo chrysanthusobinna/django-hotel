@@ -33,6 +33,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Custom Site Info from env.py
+SITE_NAME = os.environ.get("SITE_NAME", "Santhus Hotel")
+SITE_EMAIL = os.environ.get("SITE_EMAIL", "info@santhushotel.com")
+SITE_PHONE = os.environ.get("SITE_PHONE", "+44 1234 567890")
+SITE_ADDRESS = os.environ.get("SITE_ADDRESS", "123 Main Street, Liverpool, UK")
+
 
 # Application definition
 
@@ -85,6 +91,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'hotel_booking.context_processors.site_info',
             ],
         },
     },

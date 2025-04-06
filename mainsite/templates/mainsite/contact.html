@@ -1,6 +1,49 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
-<!-- Page-specific content goes here -->
- contact
+<div class="container py-5 contact-page">
+    <!-- Contact Header -->
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6 mb-4 mb-md-0">
+            <img src="{% static 'images/contact.jpg' %}" alt="Contact Santhus Hotel" class="img-fluid rounded shadow-sm">
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-primary mb-4">Get in Touch</h2>
+            <p>
+                We're here to help! Whether you're looking to make a reservation, ask a question, or provide feedback,
+                our team at <strong>Santhus Hotel</strong> is just a message or call away.
+            </p>
+            <p>
+                Reach out anytime — we’d love to hear from you.
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Info Section -->
+    <div class="row text-center contact-info">
+        <div class="col-md-4 mb-4">
+            <div class="info-box p-4 rounded shadow-sm h-100">
+                <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
+                <h5 class="mb-2">Address</h5>
+                <p>{{ SITE_ADDRESS }}</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="info-box p-4 rounded shadow-sm h-100">
+                <i class="fas fa-phone fa-3x text-primary mb-3"></i>
+                <h5 class="mb-2">Phone</h5>
+                <p{{ SITE_PHONE }}</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="info-box p-4 rounded shadow-sm h-100">
+                <i class="fas fa-envelope fa-3x text-primary mb-3"></i>
+                <h5 class="mb-2">Email</h5>
+                <p>{{ SITE_EMAIL }}</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
