@@ -35,40 +35,45 @@
                 <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
                     <strong>{{ SITE_NAME|upper }}</strong>
                 </a>                
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
                     <span><i class="fas fa-bars text-white"></i></span>
                 </button>
-
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == home_url %}active{% endif %}" href="{{ home_url }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == about_url %}active{% endif %}" href="{{ about_url }}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white {% if request.path == room_list_url %}active{% endif %}" href="{{ room_list_url }}">Rooms</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'account_logout' %}">Logout</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link text-white {% if request.path == login_url %}active{% endif %}" href="{{ login_url }}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white {% if request.path == register_url %}active{% endif %}" href="{{ register_url }}">Register</a>
-                        </li>
-                    {% endif %}
-                </ul>
                 
+
+                <!-- Collapsible container -->
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white {% if request.path == home_url %}active{% endif %}" href="{{ home_url }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white {% if request.path == about_url %}active{% endif %}" href="{{ about_url }}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white {% if request.path == room_list_url %}active{% endif %}" href="{{ room_list_url }}">Rooms</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{% url 'account_logout' %}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link text-white {% if request.path == login_url %}active{% endif %}" href="{{ login_url }}">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {% if request.path == register_url %}active{% endif %}" href="{{ register_url }}">Register</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
+
 
 
 
