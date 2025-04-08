@@ -5,41 +5,22 @@
 <section class="container py-5">
     <h2 class="text-center mb-5">Our Room Categories</h2>
     <div class="row">
-        <!-- Deluxe Room -->
+        {% for room in rooms %}
         <div class="col-md-4 mb-4">
             <div class="card room-card shadow-sm">
-                <img src="{% static 'images/deluxe.jpg' %}" class="card-img-top" alt="Deluxe Room">
+                {% if room.image %}
+                    <img src="{{ room.image.url }}" class="card-img-top" alt="{{ room.name }}">
+                {% else %}
+                    <img src="{% static 'images/default-room.jpg' %}" class="card-img-top" alt="{{ room.name }}">
+                {% endif %}
                 <div class="card-body text-center">
-                    <h5 class="card-title">Deluxe Room</h5>
-                    <p class="card-text text-muted">£120.00 per night</p>
-                    <a href="{% url 'room_detail' %}" class="btn btn-outline-primary">View Details</a>
+                    <h5 class="card-title">{{ room.name }}</h5>
+                    <p class="card-text text-muted">£{{ room.price }} per night</p>
+                    <a href="{% url 'room_detail' room.pk %}" class="btn btn-outline-primary">View Details</a>
                 </div>
             </div>
         </div>
-
-        <!-- Executive Suite -->
-        <div class="col-md-4 mb-4">
-            <div class="card room-card shadow-sm">
-                <img src="{% static 'images/executive.jpg' %}" class="card-img-top" alt="Executive Suite">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Executive Suite</h5>
-                    <p class="card-text text-muted">£180.00 per night</p>
-                    <a href="{% url 'room_detail' %}" class="btn btn-outline-primary">View Details</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Family Room -->
-        <div class="col-md-4 mb-4">
-            <div class="card room-card shadow-sm">
-                <img src="{% static 'images/family.jpg' %}" class="card-img-top" alt="Family Room">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Family Room</h5>
-                    <p class="card-text text-muted">£150.00 per night</p>
-                    <a href="{% url 'room_detail' %}" class="btn btn-outline-primary">View Details</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
 {% endblock %}

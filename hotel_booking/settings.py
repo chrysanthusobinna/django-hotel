@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'storages',
 
+    'cloudinary',
+
     'profiles',
     'mainsite',
     'rooms',
@@ -67,7 +69,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 
 
 MIDDLEWARE = [
@@ -157,22 +159,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-if os.environ.get('USE_AWS') == "True":
-    DEFAULT_FILE_STORAGE = 'hotel_booking.custom_storages.MediaStorage'
-
-    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-    AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
-
-    AWS_S3_FILE_OVERWRITE = False
-    AWS_DEFAULT_ACL = None
-    AWS_QUERYSTRING_AUTH = False
-
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-
-    AWS_S3_OBJECT_PARAMETERS = {
-        'CacheControl': 'max-age=86400',
-    }
-    AWS_LOCATION = 'media'  # Should match the location in MediaStorage
+ 
