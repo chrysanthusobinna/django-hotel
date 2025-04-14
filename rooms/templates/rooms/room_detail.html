@@ -46,25 +46,28 @@
     <!-- Booking Form -->
     <div class="booking-form mt-5" id="booking-form">
         <h4 class="mb-3">Book This Room</h4>
-        <form>
+        <form method="POST" action="{% url 'bookings:booking_summary' %}">
+            {% csrf_token %}
+            <input type="hidden" name="room_id" value="{{ room.id }}">
+
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Check-In Date</label>
-                    <input type="date" class="form-control" required>
+                    <input type="date" class="form-control" name="check_in" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Check-Out Date</label>
-                    <input type="date" class="form-control" required>
+                    <input type="date" class="form-control" name="check_out" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Number of Adults</label>
-                    <input type="number" class="form-control" min="1" value="1" required>
+                    <input type="number" class="form-control" name="adults" min="1" value="1" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Number of Children</label>
-                    <input type="number" class="form-control" min="0" value="0">
+                    <input type="number" class="form-control" name="children" min="0" value="0">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary btn-block mt-3">Confirm Booking</button>

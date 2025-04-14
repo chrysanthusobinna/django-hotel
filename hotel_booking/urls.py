@@ -7,5 +7,6 @@ urlpatterns = [
     path('', include('mainsite.urls')),
     path('', include('rooms.urls')),
     path('', include('profiles.urls')),
+    path('booking/', include('bookings.urls')),
 
 ]
