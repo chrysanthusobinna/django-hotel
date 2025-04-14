@@ -170,3 +170,13 @@ main.container {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Darker and deeper shadow */
     border: 1px solid rgba(0, 0, 0, 0.1); /* Optional subtle border */
 }
+
+.payment-success-page i.fas.fa-check-circle {
+    font-size: 4rem;
+}
+
+.contact-box {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}

@@ -160,4 +160,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
- 
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
+STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
+
+STRIPE_SUCCESS_URL = 'http://127.0.0.1:8000/bookings/payment-success/'
+STRIPE_CANCEL_URL = 'http://127.0.0.1:8000/bookings/payment-cancelled/'

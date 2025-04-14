@@ -30,14 +30,18 @@
     <h2 class="mb-4 text-center">Booking Summary</h2>
 
     <div class="card p-4 booking-summary-card">
-        <h4 class="fw-bold mb-2">{{ room.name }}</h4>
-        <p class="text-muted">{{ room.description }}</p>
+        <h4 class="fw-bold mb-2">{{ room_category.name }}</h4>
+        <p class="text-muted">{{ room_category.description }}</p>
 
         <table class="table table-bordered booking-summary-table mt-3">
             <tbody>
                 <tr>
+                    <th scope="row">Guest Name:</th>
+                    <td>{{ user.first_name|title }} {{ user.last_name|title }}</td>
+                </tr>
+                <tr>
                     <th scope="row">Price per Night:</th>
-                    <td>£{{ room.price|floatformat:2 }}</td>
+                    <td>£{{ room_category.price|floatformat:2 }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Check-In Date:</th>
@@ -66,12 +70,13 @@
             </tbody>
         </table>
 
-        <form method="POST" action="#">
+        <form id="payment-form" method="POST" action="{% url 'bookings:create_checkout_session' %}">
             {% csrf_token %}
             <button type="submit" class="btn btn-success booking-summary-btn mt-3">
-                <i class="fas fa-credit-card"></i> Proceed to Payment
+                <i class="fas fa-credit-card"></i> Pay with Stripe
             </button>
         </form>
+        
     </div>
 </div>
 {% endblock %}
