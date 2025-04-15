@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'cloudinary',
 
     'profiles',
+    'customer',
     'mainsite',
     'rooms',
     'bookings',

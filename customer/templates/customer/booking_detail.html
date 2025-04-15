@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow border-info">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">Booking #{{ booking.booking_number }}</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <!-- Room Image -->
+                <div class="col-md-5 mb-3">
+                    {% if booking.room_category.image %}
+                        <img src="{{ booking.room_category.image.url }}" alt="Room Image" class="room-img">
+                    {% endif %}
+                </div>
+
+                <!-- Booking Details -->
+                <div class="col-md-7">
+                    <table class="table table-bordered table-striped mt-5" style="font-size: 1.1rem;">
+                        <tbody>
+                            <tr>
+                                <th class="py-3 px-4">Room Category</th>
+                                <td class="py-3 px-4">{{ booking.room_category.name }}</td>
+                            </tr>
+                            <tr>
+                                <th class="py-3 px-4">Room</th>
+                                <td class="py-3 px-4">
+                                        {% if booking.room %}
+                                            {{ booking.room.name }}
+                                        {% else %}
+                                            TBD
+                                        {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="py-3 px-4">Total Price</th>
+                                <td class="py-3 px-4">${{ booking.total_price }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+            <!-- Booking Summary Table -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <table class="table table-bordered booking-info-table">
+                        <tbody>
+                            <tr>
+                                <th>Check-In</th>
+                                <td>{{ booking.check_in }}</td>
+                            </tr>
+                            <tr>
+                                <th>Check-Out</th>
+                                <td>{{ booking.check_out }}</td>
+                            </tr>
+                            <tr>
+                                <th>Room Category</th>
+                                <td>{{ booking.room_category.name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Price</th>
+                                <td>${{ booking.total_price }}</td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>
+                                    {% if booking.is_paid %}
+                                        <span class="badge bg-success">Paid</span>
+                                    {% else %}
+                                        <span class="badge bg-danger">Unpaid</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <a href="{% url 'room_list' %}" class="btn btn-outline-primary">
+                <i class="fas fa-plus-circle me-2"></i> New Reservation
+            </a>
+        
+            <a href="{% url 'customer:customer_dashboard' %}" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-2"></i> Back to Dashboard
+            </a>
+        </div>
+        
+        
+    </div>
+</div>
+{% endblock %}

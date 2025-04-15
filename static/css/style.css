@@ -167,8 +167,8 @@ main.container {
     background: #f8f9fa;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Darker and deeper shadow */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Optional subtle border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);  
+    border: 1px solid rgba(0, 0, 0, 0.1);  
 }
 
 .payment-success-page i.fas.fa-check-circle {
@@ -179,4 +179,14 @@ main.container {
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 8px;
+}
+
+.room-img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+.booking-info-table th, .booking-info-table td {
+    vertical-align: middle;
 }
