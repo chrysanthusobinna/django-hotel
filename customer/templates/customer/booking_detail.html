@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container">
     <div class="card shadow border-info">
         <div class="card-header bg-info text-white">
             <h4 class="mb-0">Booking #{{ booking.booking_number }}</h4>
@@ -56,33 +56,26 @@
                                 <th>Planned Check-Out</th>
                                 <td>{{ booking.check_out }}</td>
                             </tr>
-                            
                             <tr>
                                 <th>Actual Check-In</th>
                                 <td>
-
                                     {% if booking.actual_check_in %}
-                                    {{ booking.actual_check_in|date:"D d M Y H:i" }}
-                                {% else %}
-                                    <span class="text-muted">Not checked in yet</span>
-                                {% endif %}
-                                
+                                        {{ booking.actual_check_in|date:"D d M Y H:i" }}
+                                    {% else %}
+                                        <span class="text-muted">Not checked in yet</span>
+                                    {% endif %}
                                 </td>
                             </tr>
                             <tr>
                                 <th>Actual Check-Out</th>
                                 <td>
-
                                     {% if booking.actual_check_out %}
-                                    {{ booking.actual_check_out|date:"D d M Y H:i" }}
-                                {% else %}
-                                    <span class="text-muted">Not checked out yet</span>
-                                {% endif %}
-
+                                        {{ booking.actual_check_out|date:"D d M Y H:i" }}
+                                    {% else %}
+                                        <span class="text-muted">Not checked out yet</span>
+                                    {% endif %}
                                 </td>
                             </tr>
-                            
-                            
                             <tr>
                                 <th>Room Category</th>
                                 <td>{{ booking.room_category.name }}</td>
@@ -101,7 +94,7 @@
                                     {% endif %}
                                 </td>
                             </tr>
-                        </tbody>
+                        </tbody>                        
                     </table>
                 </div>
             </div>
