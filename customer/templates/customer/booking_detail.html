@@ -49,13 +49,40 @@
                     <table class="table table-bordered booking-info-table">
                         <tbody>
                             <tr>
-                                <th>Check-In</th>
+                                <th>Planned Check-In</th>
                                 <td>{{ booking.check_in }}</td>
                             </tr>
                             <tr>
-                                <th>Check-Out</th>
+                                <th>Planned Check-Out</th>
                                 <td>{{ booking.check_out }}</td>
                             </tr>
+                            
+                            <tr>
+                                <th>Actual Check-In</th>
+                                <td>
+
+                                    {% if booking.actual_check_in %}
+                                    {{ booking.actual_check_in|date:"D d M Y H:i" }}
+                                {% else %}
+                                    <span class="text-muted">Not checked in yet</span>
+                                {% endif %}
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Actual Check-Out</th>
+                                <td>
+
+                                    {% if booking.actual_check_out %}
+                                    {{ booking.actual_check_out|date:"D d M Y H:i" }}
+                                {% else %}
+                                    <span class="text-muted">Not checked out yet</span>
+                                {% endif %}
+
+                                </td>
+                            </tr>
+                            
+                            
                             <tr>
                                 <th>Room Category</th>
                                 <td>{{ booking.room_category.name }}</td>

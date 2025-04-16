@@ -13,6 +13,8 @@ class Booking(models.Model):
     room_category = models.ForeignKey(RoomCategory, on_delete=models.CASCADE)
     check_in = models.DateField()
     check_out = models.DateField()
+    actual_check_in = models.DateTimeField(null=True, blank=True)
+    actual_check_out = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     is_paid = models.BooleanField(default=False)
     booking_number = models.CharField(max_length=6, unique=True, editable=False, blank=True)
