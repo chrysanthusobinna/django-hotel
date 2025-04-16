@@ -166,3 +166,12 @@ STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
 
 STRIPE_SUCCESS_URL = 'http://127.0.0.1:8000/bookings/payment-success/'
 STRIPE_CANCEL_URL = 'http://127.0.0.1:8000/bookings/payment-cancelled/'
+
+#SMTP
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS') == 'True'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')

@@ -1,5 +1,6 @@
 
 import stripe
+from django.core.mail import send_mail
 from django.conf import settings
 from django.http import HttpResponseRedirect, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -9,6 +10,7 @@ from .models import Booking
 from datetime import datetime
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -117,13 +119,32 @@ def payment_success(request):
     if not booking_data:
         return redirect('mainsite:home')
 
-    # Fetch the booking
     booking = get_object_or_404(Booking, id=booking_data['booking_id'], user=request.user)
 
-    # Mark as paid if not already
     if not booking.is_paid:
         booking.is_paid = True
         booking.save()
+
+        # Send confirmation email
+        subject = f"Booking Confirmation - #{booking.booking_number}"
+        message = (
+            f"Hi {request.user.first_name},\n\n"
+            f"Thank you for your booking!\n\n"
+            f"Booking Details:\n"
+            f"Booking Number: {booking.booking_number}\n"
+            f"Room Category: {booking.room_category.name}\n"
+            f"Check-in: {booking.check_in}\n"
+            f"Check-out: {booking.check_out}\n"
+            f"Total Paid: ${booking.total_price}\n\n"
+            f"We look forward to your stay!"
+        )
+        send_mail(
+            subject,
+            message,
+            settings.DEFAULT_FROM_EMAIL,
+            [request.user.email],
+            fail_silently=False
+        )
 
     room_category = get_object_or_404(RoomCategory, id=booking_data['room_category_id'])
 
