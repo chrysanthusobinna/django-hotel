@@ -7,12 +7,72 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect, get_object_or_404
 from rooms.models import RoomCategory
 from .models import Booking
-from datetime import datetime
+from datetime import datetime, date
+from django.contrib import messages
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from .helpers import check_room_availability
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
+
+# @login_required
+# def booking_summary(request):
+    # if request.method == 'POST':
+    #     room_category_id = request.POST.get('room_category_id')
+    #     check_in_str = request.POST.get('check_in')
+    #     check_out_str = request.POST.get('check_out')
+    #     adults = request.POST.get('adults')
+    #     children = request.POST.get('children')
+
+    #     # Convert to date objects
+    #     check_in = datetime.strptime(check_in_str, "%Y-%m-%d").date()
+    #     check_out = datetime.strptime(check_out_str, "%Y-%m-%d").date()
+    #     nights = (check_out - check_in).days
+
+    #     room_category = get_object_or_404(RoomCategory, id=room_category_id)
+    #     total_price = nights * room_category.price
+
+    #     # Create a Booking record
+    #     booking = Booking.objects.create(
+    #         user=request.user,
+    #         room_category=room_category,
+    #         check_in=check_in,
+    #         check_out=check_out,
+    #         is_paid=False,
+    #         total_price=total_price
+    #     )
+
+    #     # Save in session
+    #     request.session['booking'] = {
+    #         'booking_id': booking.id,
+    #         'booking_number': booking.booking_number,
+    #         'room_category_id': room_category_id,
+    #         'check_in': check_in_str,
+    #         'check_out': check_out_str,
+    #         'adults': adults,
+    #         'children': children,
+    #         'nights': nights,
+    #         'total_price': float(total_price),
+    #     }
+
+    #     return redirect('bookings:booking_summary')
+
+    # # GET method - render booking summary
+    # booking = request.session.get('booking')
+    # if not booking:
+    #     return redirect('mainsite:home')
+
+    # room_category = get_object_or_404(RoomCategory, id=booking['room_category_id'])
+
+    # # Convert check_in/out back to date object for formatting in template
+    # booking['check_in'] = datetime.strptime(booking['check_in'], "%Y-%m-%d").date()
+    # booking['check_out'] = datetime.strptime(booking['check_out'], "%Y-%m-%d").date()
+
+    # return render(request, 'bookings/booking_summary.html', {
+    #     'room_category': room_category,
+    #     'booking': booking,
+    # })
 
 @login_required
 def booking_summary(request):
@@ -23,47 +83,61 @@ def booking_summary(request):
         adults = request.POST.get('adults')
         children = request.POST.get('children')
 
-        # Convert to date objects
-        check_in = datetime.strptime(check_in_str, "%Y-%m-%d").date()
-        check_out = datetime.strptime(check_out_str, "%Y-%m-%d").date()
-        nights = (check_out - check_in).days
+        # Convert string to date objects
+        try:
+            check_in = datetime.strptime(check_in_str, "%Y-%m-%d").date()
+            check_out = datetime.strptime(check_out_str, "%Y-%m-%d").date()
+        except (ValueError, TypeError):
+            messages.error(request, "Invalid check-in or check-out date.")
+            return redirect('rooms:room_detail', pk=room_category_id)
 
+        if check_in >= check_out:
+            messages.error(request, "Check-out date must be after check-in.")
+            return redirect('rooms:room_detail', pk=room_category_id)
+
+        if check_in == check_out:
+            messages.error(request, "Check-in and check-out cannot be on the same day.")
+            return redirect('rooms:room_detail', pk=room_category_id)
+
+        if check_in < date.today():
+            messages.error(request, "Check-in date cannot be in the past.")
+            return redirect('rooms:room_detail', pk=room_category_id)
+
+
+        nights = (check_out - check_in).days
         room_category = get_object_or_404(RoomCategory, id=room_category_id)
         total_price = nights * room_category.price
 
-        # Create a Booking record
-        booking = Booking.objects.create(
-            user=request.user,
-            room_category=room_category,
-            check_in=check_in,
-            check_out=check_out,
-            is_paid=False,
-            total_price=total_price
-        )
+        # Check room availability
+        is_available = check_room_availability(room_category_id, check_in, check_out)
 
-        # Save in session
-        request.session['booking'] = {
-            'booking_id': booking.id,
-            'booking_number': booking.booking_number,
-            'room_category_id': room_category_id,
-            'check_in': check_in_str,
-            'check_out': check_out_str,
-            'adults': adults,
-            'children': children,
-            'nights': nights,
-            'total_price': float(total_price),
-        }
+        if is_available:
+            # Save booking data in session
+            request.session['booking'] = {
+                'room_category_id': room_category_id,
+                'check_in': check_in_str,
+                'check_out': check_out_str,
+                'adults': adults,
+                'children': children,
+                'nights': nights,
+                'total_price': float(total_price),
+            }
 
-        return redirect('bookings:booking_summary')
+            return redirect('bookings:booking_summary')
 
-    # GET method - render booking summary
+        else:
+            messages.error(request, "No available rooms in this category for the selected date range.")
+            return redirect('rooms:room_detail', pk=room_category_id)
+
+
+    # GET request – render booking summary
     booking = request.session.get('booking')
     if not booking:
         return redirect('mainsite:home')
 
     room_category = get_object_or_404(RoomCategory, id=booking['room_category_id'])
 
-    # Convert check_in/out back to date object for formatting in template
+    # Convert date strings to date objects for display
     booking['check_in'] = datetime.strptime(booking['check_in'], "%Y-%m-%d").date()
     booking['check_out'] = datetime.strptime(booking['check_out'], "%Y-%m-%d").date()
 
@@ -72,24 +146,37 @@ def booking_summary(request):
         'booking': booking,
     })
 
+
 @login_required
 def create_checkout_session(request):
-    booking = request.session.get('booking')
-    if not booking:
+    booking_data = request.session.get('booking')
+    if not booking_data:
         return redirect('mainsite:home')
 
-    room_category_id = booking['room_category_id']
-    total_price = booking['total_price']
+    # Fetch data
+    room_category_id = booking_data['room_category_id']
+    total_price = booking_data['total_price']
+    check_in = booking_data['check_in']
+    check_out = booking_data['check_out']
 
-    # Get the room category object
     room_category = get_object_or_404(RoomCategory, id=room_category_id)
 
-    # Get logged-in user details
-    user = request.user
-    first_name = user.first_name
-    last_name = user.last_name
-    email = user.email
-    
+    # Create Booking
+    booking = Booking.objects.create(
+        user=request.user,
+        room_category=room_category,
+        check_in=check_in,
+        check_out=check_out,
+        is_paid=False,
+        total_price=total_price,
+    )
+
+    # Save booking ID and number to session for use after payment
+    booking_data['booking_id'] = booking.id
+    booking_data['booking_number'] = booking.booking_number
+    request.session['booking'] = booking_data
+
+    # Stripe payment session
     try:
         session = stripe.checkout.Session.create(
             payment_method_types=['card', 'paypal', 'revolut_pay'],
@@ -99,12 +186,12 @@ def create_checkout_session(request):
                     'product_data': {
                         'name': f"Room Booking - {room_category.name}",
                     },
-                    'unit_amount': int(float(total_price) * 100),  # Stripe accepts amount in pence
+                    'unit_amount': int(float(total_price) * 100),  # in pence
                 },
                 'quantity': 1,
             }],
             mode='payment',
-            customer_email=email,
+            customer_email=request.user.email,
             success_url=request.build_absolute_uri(reverse('bookings:payment_success')),
             cancel_url=request.build_absolute_uri(reverse('bookings:payment_cancelled')),
         )

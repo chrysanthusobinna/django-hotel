@@ -12,7 +12,7 @@ def view_profile(request, user_id):
     # Only allow access if user is viewing their own profile or is staff
     if not request.user.is_authenticated or (request.user != profile_user and not request.user.is_staff):
         messages.warning(request, "You are not authorized to view this profile.")
-        return redirect('home')
+        return redirect('mainsite:home')
 
     # Try to get user profile; if it doesn't exist, pass None
     user_profile = UserProfile.objects.filter(user=profile_user).first()

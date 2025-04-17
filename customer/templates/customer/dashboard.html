@@ -20,6 +20,7 @@
                     <table id="bookingsTable" class="table table-bordered table-striped mb-0">
                         <thead class="table-light">
                             <tr>
+                                <th style="display: none;">ID</th>
                                 <th>Booking Number</th>
                                 <th>Check-In</th>
                                 <th>Check-Out</th>
@@ -30,6 +31,7 @@
                         <tbody>
                             {% for booking in bookings %}
                             <tr>
+                                <td style="display: none;">{{ booking.id }}</td>
                                 <td>{{ booking.booking_number }}</td>
                                 <td>{{ booking.check_in }}</td>
                                 <td>{{ booking.check_out }}</td>
@@ -67,7 +69,8 @@
 <script>
     $(document).ready(function () {
         $('#bookingsTable').DataTable({
-            "pageLength": 5
+            "pageLength": 5,
+            "order": [[0, 'desc']],
         });
     });
 </script>
