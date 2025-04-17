@@ -48,6 +48,4 @@ Here’s the updated list of cases, including the scenario where the **new booki
     - **New booking request:** Check-in on April 21, 2025, and check-out on April 25, 2025.  
     - **Outcome:** Room is **unavailable** as the new booking perfectly overlaps with the existing booking (same dates).
 
----
-
-This addition completes the list by accounting for identical booking ranges. Let me know if further clarification is needed!
+--- 
