@@ -2,7 +2,7 @@ from .models import Booking, Room, RoomCategory
 
 def check_room_availability(category_id, check_in, check_out):
     category = RoomCategory.objects.get(id=category_id)
-    total_rooms = Room.objects.filter(category=category).count()
+    total_rooms = Room.objects.filter(category=category, is_available=True).count()
     bookings = Booking.objects.filter(room_category=category, is_paid=True)
 
     no_unavailable = 0  # Tracks how many overlapping bookings exist

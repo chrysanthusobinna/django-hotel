@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}{{ SITE_NAME }} - Our Room Categories {% endblock %}
+{% block meta_description %}Explore {{ room.name }} with top amenities and comfort. Book now at {{ SITE_NAME }}.{% endblock %}
+{% block meta_keywords %}hotel room, accommodation, book now{% endblock %}
+
+
 {% block content %}
 <section class="container py-5">
     <h2 class="text-center mb-5">Our Room Categories</h2>

@@ -27,11 +27,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-*0yzd*td&ky@t#!ptvzp3
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = os.environ.get("DEBUG") == "True"
+DEBUG = os.environ.get("DEBUG") == "True"
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Custom Site Info from env.py
 SITE_NAME = os.environ.get("SITE_NAME", "Santhus Hotel")

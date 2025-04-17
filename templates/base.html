@@ -23,9 +23,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %} {{ SITE_NAME }} {% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
+
+    <!-- SEO Meta Defaults -->
+    <meta name="description" content="{% block meta_description %}Welcome to {{ SITE_NAME }}, your trusted hotel booking solution.{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}hotel, booking, rooms, accommodation{% endblock %}">
+    <meta name="author" content="{% block meta_author %}{{ SITE_NAME }}{% endblock %}">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="{% block og_title %}{{ SITE_NAME }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Book your perfect stay with us.{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{% static 'images/santhus-hotel.png' %}{% endblock %}">
+    
+    <!-- Favicon and Styles -->
+    <link rel="icon" href="{% static 'favicon/favicon.ico' %}">
+    
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
@@ -133,7 +149,7 @@
             {% endfor %}
         </section>
         {% endif %}
-        
+
         {% block content %}
         {% endblock %}
     </main>
@@ -141,12 +157,28 @@
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3 mt-auto">
         <div class="container">
+
+            <!-- Social Icons -->
+            <div class="mb-2">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook" class="btn btn-outline-light rounded-circle me-2">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram" class="btn btn-outline-light rounded-circle me-2">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/{{ SITE_PHONE }}" target="_blank" rel="noopener noreferrer nofollow" aria-label="WhatsApp" class="btn btn-outline-light rounded-circle">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+
             <p class="mb-0">&copy; {{ year|default:"2025" }} {{ SITE_NAME }}. All rights reserved.</p>
         </div>
     </footer>
 
 
-    
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
