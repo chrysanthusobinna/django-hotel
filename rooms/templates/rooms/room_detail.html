@@ -1,6 +1,41 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_styles %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+{% endblock %}
+
+ 
+{% block extra_scripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+    $(document).ready(function () {
+        // Get today's date in YYYY-MM-DD format
+        const today = new Date().toISOString().split('T')[0];
+
+        // Set min date on page load
+        $('#check_in').attr('min', today);
+        $('#check_out').attr('min', today);
+
+        // When user selects a check-in date
+        $('#check_in').on('change', function () {
+            const checkInDate = $(this).val();
+
+            // Set checkout min to the next day
+            const minCheckout = new Date(checkInDate);
+            minCheckout.setDate(minCheckout.getDate() + 1);
+            const formattedMinCheckout = minCheckout.toISOString().split('T')[0];
+
+            $('#check_out').val('');  // Reset checkout
+            $('#check_out').attr('min', formattedMinCheckout);
+        });
+    });
+</script>
+{% endblock %}
+
+
 {% block content %}
 <div class="container my-5 room-detail">
     <div class="row">
@@ -49,6 +84,7 @@
                     <p class="mb-3">You need to login or register to book a room.</p>
                     <a href="{% url 'account_login' %}" class="btn btn-outline-primary me-2">Login</a>
                     <a href="{% url 'account_signup' %}" class="btn btn-outline-success">Register</a>
+                    
                 </div>
                 {% endif %}
             
@@ -66,13 +102,14 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Check-In Date</label>
-                    <input type="date" class="form-control" name="check_in" required>
+                    <input type="date" class="form-control" name="check_in" id="check_in" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Check-Out Date</label>
-                    <input type="date" class="form-control" name="check_out" required>
+                    <input type="date" class="form-control" name="check_out" id="check_out" required>
                 </div>
             </div>
+            
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Number of Adults</label>
