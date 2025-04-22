@@ -193,4 +193,7 @@ def payment_success(request):
 
 
 def payment_cancelled(request):
-    return render(request, 'bookings/payment_cancelled.html')
+    messages.warning(request, 'Payment was cancelled. You can try again.')
+    return render(request, 'bookings/payment_cancelled.html', {
+        'message': 'Payment was cancelled. You can try again.'
+    })
