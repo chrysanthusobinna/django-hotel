@@ -77,26 +77,30 @@
                 <p class="text-muted">{{ room_category.description }}</p>
                 <h4 class="text-primary">£{{ room_category.price }}/night</h4>
 
-                {% if can_book %}
-                <a href="tel:+441234567890" class="btn btn-outline-primary btn-block mt-3">
+                {% if can_book and not incomplete_profile %}
+                <a href="tel:{{ SITE_PHONE }}" class="btn btn-outline-primary btn-block mt-3">
                     <i class="fas fa-phone-alt"></i> Call us now to make Reservation
                 </a>
                 {% endif %}
 
                 {% if not user.is_authenticated %}
-
                 <div class="alert alert-warning mt-4">
                     <p class="mb-3">You need to login or register to book a room.</p>
                     <a href="{% url 'account_login' %}" class="btn btn-outline-primary me-2">Login</a>
                     <a href="{% url 'account_signup' %}" class="btn btn-outline-success">Register</a>
-                    
                 </div>
                 {% endif %}
-            
+
+                {% if incomplete_profile %}
+                <div class="alert alert-warning mt-4">
+                    <p class="mb-3">Please complete your profile information to book a room.</p>
+                    <a href="{% url 'edit_profile' %}" class="btn btn-outline-primary">Complete Your Profile</a>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
-    {% if can_book %}
+    {% if can_book and not incomplete_profile %}
     <!-- Booking Form -->
     <div class="booking-form mt-5" id="booking-form">
         <h4 class="mb-3">Book This Room</h4>
@@ -129,6 +133,5 @@
         </form>
     </div>
     {% endif %}
-
 </div>
 {% endblock %}

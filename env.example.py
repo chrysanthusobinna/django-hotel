@@ -4,6 +4,11 @@ import os
 os.environ["SECRET_KEY"] = "your-django-secret-key"
 os.environ["DEBUG"] = "False"
 
+# POSTGRESQL URL
+os.environ.setdefault(
+    "DATABASE_URL", "<put DATABASE_URL here>"
+)
+
 # STRIPE SETTINGS
 os.environ["STRIPE_SECRET_KEY"] = "your-stripe-secret-key"
 os.environ["STRIPE_PUBLIC_KEY"] = "your-stripe-public-key"

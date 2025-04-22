@@ -5,8 +5,8 @@
       "fields": {
         "name": "Standard Room",
         "description": "Our Standard Room offers a cozy and peaceful environment, ideal for solo travelers or short business stays. Equipped with a comfortable bed, writing desk, and complimentary Wi-Fi, it provides all the essentials for a relaxing stay without compromising on quality.",
-        "price": "60.00",
-        "image": null
+        "price": 60.00,
+        "image": "image/upload/v1744152675/xwfc4ly1g58kxwgvqf6v.jpg"
       }
     },
     {
@@ -15,8 +15,8 @@
       "fields": {
         "name": "Luxury Room",
         "description": "Experience elegance and comfort in our Luxury Room. This spacious accommodation features high-end furnishings, a deluxe king-sized bed, stylish decor, and a scenic city view. Enjoy premium amenities including a rainfall shower, smart TV, and a fully stocked minibar.",
-        "price": "150.00",
-        "image": null
+        "price": 150.00,
+        "image": "image/upload/v1744152656/h3yakkomsvb3rrjfpwbj.jpg"
       }
     },
     {
@@ -25,8 +25,8 @@
       "fields": {
         "name": "Family Suite",
         "description": "Perfect for families or groups, our Family Suite offers two interconnected rooms with ample space for everyone to unwind. Featuring multiple beds, a private lounge area, child-friendly facilities, and modern conveniences, it ensures a comfortable and enjoyable stay for all members.",
-        "price": "200.00",
-        "image": null
+        "price": 200.00,
+        "image": "image/upload/v1744152638/bfkyzg1lz0nldvhwt9nr.jpg"
       }
     }
   ]

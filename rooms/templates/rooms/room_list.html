@@ -9,23 +9,35 @@
 {% block content %}
 <section class="container py-5">
     <h2 class="text-center mb-5">Our Room Categories</h2>
-    <div class="row">
-        {% for room_category in room_categories %}
-        <div class="col-md-4 mb-4">
-            <div class="card room-card shadow-sm">
-                {% if room_category.image %}
-                    <img src="{{ room_category.image.url }}" class="card-img-top" alt="{{ room_category.name }}">
-                {% else %}
-                    <img src="{% static 'images/default-room_category.jpg' %}" class="card-img-top" alt="{{ room_category.name }}">
-                {% endif %}
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{ room_category.name }}</h5>
-                    <p class="card-text text-muted">£{{ room_category.price }} per night</p>
-                    <a href="{% url 'rooms:room_detail' room_category.pk %}" class="btn btn-outline-primary">View Details</a>
+    
+    {% if room_categories %}
+        <div class="row">
+            {% for room_category in room_categories %}
+            <div class="col-md-4 mb-4">
+                <div class="card room-card shadow-sm">
+                    {% if room_category.image %}
+                        <img src="{{ room_category.image.url }}" class="card-img-top" alt="{{ room_category.name }}">
+                    {% else %}
+                        <img src="{% static 'images/default-room_category.jpg' %}" class="card-img-top" alt="{{ room_category.name }}">
+                    {% endif %}
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ room_category.name }}</h5>
+                        <p class="card-text text-muted">£{{ room_category.price }} per night</p>
+                        <a href="{% url 'rooms:room_detail' room_category.pk %}" class="btn btn-outline-primary">View Details</a>
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
+    {% else %}
+        <div class="alert alert-info text-center" role="alert">
+            <div class="d-flex flex-column align-items-center">
+                <i class="fas fa-info-circle fa-3x mb-3"></i>
+                <h4 class="alert-heading">No Room Categories Available</h4>
+                <p>Unfortunately, there are no room categories available at the moment. Please try again later.</p>
+                <a href="{% url 'mainsite:home' %}" class="btn btn-outline-primary mt-3">Return to Home</a>
+            </div>
+        </div>
+    {% endif %}
 </section>
 {% endblock %}

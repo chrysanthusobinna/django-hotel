@@ -80,9 +80,11 @@
                             <a class="nav-link text-white {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white {% if request.path == room_list_url %}active{% endif %}" href="{{ room_list_url }}">Rooms</a>
+                            <a class="nav-link text-white {% if request.resolver_match.namespace == 'rooms' or  request.resolver_match.namespace == 'bookings' %}active{% endif %}" href="{{ room_list_url }}">
+                                Rooms
+                            </a>
                         </li>
-                        
+                                                
                         {% if user.is_authenticated %}
 
 

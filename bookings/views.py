@@ -1,4 +1,3 @@
-
 import stripe
 from django.core.mail import send_mail
 from django.conf import settings
@@ -16,63 +15,6 @@ from .helpers import check_room_availability
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
-# @login_required
-# def booking_summary(request):
-    # if request.method == 'POST':
-    #     room_category_id = request.POST.get('room_category_id')
-    #     check_in_str = request.POST.get('check_in')
-    #     check_out_str = request.POST.get('check_out')
-    #     adults = request.POST.get('adults')
-    #     children = request.POST.get('children')
-
-    #     # Convert to date objects
-    #     check_in = datetime.strptime(check_in_str, "%Y-%m-%d").date()
-    #     check_out = datetime.strptime(check_out_str, "%Y-%m-%d").date()
-    #     nights = (check_out - check_in).days
-
-    #     room_category = get_object_or_404(RoomCategory, id=room_category_id)
-    #     total_price = nights * room_category.price
-
-    #     # Create a Booking record
-    #     booking = Booking.objects.create(
-    #         user=request.user,
-    #         room_category=room_category,
-    #         check_in=check_in,
-    #         check_out=check_out,
-    #         is_paid=False,
-    #         total_price=total_price
-    #     )
-
-    #     # Save in session
-    #     request.session['booking'] = {
-    #         'booking_id': booking.id,
-    #         'booking_number': booking.booking_number,
-    #         'room_category_id': room_category_id,
-    #         'check_in': check_in_str,
-    #         'check_out': check_out_str,
-    #         'adults': adults,
-    #         'children': children,
-    #         'nights': nights,
-    #         'total_price': float(total_price),
-    #     }
-
-    #     return redirect('bookings:booking_summary')
-
-    # # GET method - render booking summary
-    # booking = request.session.get('booking')
-    # if not booking:
-    #     return redirect('mainsite:home')
-
-    # room_category = get_object_or_404(RoomCategory, id=booking['room_category_id'])
-
-    # # Convert check_in/out back to date object for formatting in template
-    # booking['check_in'] = datetime.strptime(booking['check_in'], "%Y-%m-%d").date()
-    # booking['check_out'] = datetime.strptime(booking['check_out'], "%Y-%m-%d").date()
-
-    # return render(request, 'bookings/booking_summary.html', {
-    #     'room_category': room_category,
-    #     'booking': booking,
-    # })
 
 @login_required
 def booking_summary(request):
@@ -83,7 +25,17 @@ def booking_summary(request):
         adults = request.POST.get('adults')
         children = request.POST.get('children')
 
-        # Convert string to date objects
+        # Check if room category exists and has available rooms
+        try:
+            room_category = RoomCategory.objects.get(id=room_category_id)
+            available_rooms = room_category.rooms.filter(is_available=True)
+            if not available_rooms.exists():
+                messages.error(request, "No rooms available in this category.")
+                return redirect('rooms:room_detail', pk=room_category_id)
+        except RoomCategory.DoesNotExist:
+            messages.error(request, "Invalid room category selected.")
+            return redirect('rooms:room_list')
+
         try:
             check_in = datetime.strptime(check_in_str, "%Y-%m-%d").date()
             check_out = datetime.strptime(check_out_str, "%Y-%m-%d").date()
@@ -105,7 +57,6 @@ def booking_summary(request):
 
 
         nights = (check_out - check_in).days
-        room_category = get_object_or_404(RoomCategory, id=room_category_id)
         total_price = nights * room_category.price
 
         # Check room availability
