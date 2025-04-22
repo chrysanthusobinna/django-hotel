@@ -62,7 +62,7 @@
                 <!-- Card Footer -->
                 {% if is_owner %}
                 <div class="card-footer d-flex justify-content-between">
-                    <a href="{% url 'edit_profile' %}" class="btn btn-outline-primary btn-sm">
+                    <a href="{% url 'profiles:edit_profile' %}" class="btn btn-outline-primary btn-sm">
                         <i class="fas fa-user-edit"></i> Edit Profile
                     </a>
                     <a href="{% url 'account_change_password' %}" class="btn btn-outline-info btn-sm">

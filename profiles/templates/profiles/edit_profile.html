@@ -10,50 +10,86 @@
                 <form method="POST">
                     {% csrf_token %}
                     <div class="card-body">
+
                         <!-- User Info -->
                         <fieldset>
                             <legend class="h5 mb-3">User Details</legend>
                             <div class="mb-3">
                                 <label for="id_first_name" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="id_first_name" name="first_name"
-                                       value="{{ user.first_name|default:'' }}">
+                                <input type="text" class="form-control {% if user_form.first_name.errors %}is-invalid{% endif %}" id="id_first_name" name="first_name"
+                                       value="{{ user_form.first_name.value|default:user.first_name }}">
+                                {% if user_form.first_name.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ user_form.first_name.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="mb-3">
                                 <label for="id_last_name" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="id_last_name" name="last_name"
-                                       value="{{ user.last_name|default:'' }}">
+                                <input type="text" class="form-control {% if user_form.last_name.errors %}is-invalid{% endif %}" id="id_last_name" name="last_name"
+                                       value="{{ user_form.last_name.value|default:user.last_name }}">
+                                {% if user_form.last_name.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ user_form.last_name.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="mb-3">
                                 <label for="id_email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="id_email" name="email"
-                                       value="{{ user.email|default:'' }}">
+                                <input type="email" class="form-control {% if user_form.email.errors %}is-invalid{% endif %}" id="id_email" name="email"
+                                       value="{{ user_form.email.value|default:user.email }}">
+                                {% if user_form.email.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ user_form.email.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
                         </fieldset>
 
-                        {% if not is_admin %}
+                        {% if not is_admin and profile_form %}
                         <hr>
                         <!-- Profile Info -->
                         <fieldset>
                             <legend class="h5 mb-3">Profile Information</legend>
                             <div class="mb-3">
                                 <label for="id_address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="id_address" name="address"
-                                       value="{{ user_profile.address|default:'' }}">
+                                <input type="text" class="form-control {% if profile_form.address.errors %}is-invalid{% endif %}" id="id_address" name="address"
+                                       value="{{ profile_form.address.value|default:user_profile.address }}">
+                                {% if profile_form.address.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ profile_form.address.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="mb-3">
                                 <label for="id_city" class="form-label">City</label>
-                                <input type="text" class="form-control" id="id_city" name="city"
-                                       value="{{ user_profile.city|default:'' }}">
+                                <input type="text" class="form-control {% if profile_form.city.errors %}is-invalid{% endif %}" id="id_city" name="city"
+                                       value="{{ profile_form.city.value|default:user_profile.city }}">
+                                {% if profile_form.city.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ profile_form.city.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="mb-3">
                                 <label for="id_post_code" class="form-label">Post Code</label>
-                                <input type="text" class="form-control" id="id_post_code" name="post_code"
-                                       value="{{ user_profile.post_code|default:'' }}">
+                                <input type="text" class="form-control {% if profile_form.post_code.errors %}is-invalid{% endif %}" id="id_post_code" name="post_code"
+                                       value="{{ profile_form.post_code.value|default:user_profile.post_code }}">
+                                {% if profile_form.post_code.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ profile_form.post_code.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="mb-3">
                                 <label for="id_country" class="form-label">Country</label>
-                                <input type="text" class="form-control" id="id_country" name="country"
-                                       value="{{ user_profile.country|default:'' }}">
+                                <input type="text" class="form-control {% if profile_form.country.errors %}is-invalid{% endif %}" id="id_country" name="country"
+                                       value="{{ profile_form.country.value|default:user_profile.country }}">
+                                {% if profile_form.country.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ profile_form.country.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
                         </fieldset>
                         {% endif %}
@@ -61,7 +97,7 @@
 
                     <!-- Footer Buttons -->
                     <div class="card-footer d-flex justify-content-between">
-                        <a href="{% url 'view_profile' user.id %}" class="btn btn-outline-secondary btn-sm">
+                        <a href="{% url 'profiles:view_profile' user.id %}" class="btn btn-outline-secondary btn-sm">
                             <i class="fas fa-arrow-left"></i> Back to Profile
                         </a>
                         <button type="submit" class="btn btn-success btn-sm">

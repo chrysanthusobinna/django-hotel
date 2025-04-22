@@ -40,7 +40,7 @@ def edit_profile(request):
             user_form.save()
             if profile_form:
                 profile_form.save()
-            return redirect('view_profile', user_id=user.id)
+            return redirect('profiles:view_profile', user_id=user.id)
 
     else:
         user_form = UserForm(instance=user)
