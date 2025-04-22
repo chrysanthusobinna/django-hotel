@@ -35,7 +35,7 @@
                             </tr>
                             <tr>
                                 <th class="py-3 px-4">Total Price</th>
-                                <td class="py-3 px-4">${{ booking.total_price }}</td>
+                                <td class="py-3 px-4">£{{ booking.total_price|floatformat:2 }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -87,10 +87,12 @@
                             <tr>
                                 <th>Status</th>
                                 <td>
-                                    {% if booking.is_paid %}
+                                    {% if booking.is_cancelled %}
+                                        <span class="badge bg-danger">Cancelled</span>
+                                    {% elif booking.is_paid %}
                                         <span class="badge bg-success">Paid</span>
                                     {% else %}
-                                        <span class="badge bg-danger">Unpaid</span>
+                                        <span class="badge bg-warning">Pending</span>
                                     {% endif %}
                                 </td>
                             </tr>
@@ -98,6 +100,12 @@
                     </table>
                 </div>
             </div>
+
+            {% if not booking.is_cancelled and booking.check_in > today %}
+            <div class="alert alert-info mt-4">
+                <i class="fas fa-info-circle"></i> To cancel this booking, please contact our support team.
+            </div>
+            {% endif %}
 
         </div>
         <div class="card-footer d-flex justify-content-between">

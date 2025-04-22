@@ -17,6 +17,7 @@ class Booking(models.Model):
     actual_check_out = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     is_paid = models.BooleanField(default=False)
+    is_cancelled = models.BooleanField(default=False)
     booking_number = models.CharField(max_length=6, unique=True, editable=False, blank=True)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
