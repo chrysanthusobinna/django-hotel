@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'rooms',
     'bookings',
     'payments',
+    'custom_admin',
 ]
 
 SITE_ID = 1

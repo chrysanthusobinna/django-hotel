@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-primary text-white d-flex">
+                    <span>Add New Room Category</span>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle" style="width: 30%">
+                                            <label for="name" class="form-label fw-bold">Category Name</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" id="name" name="name" required>
+                                            {% if form.name.errors %}
+                                                <div class="text-danger mt-1">{{ form.name.errors }}</div>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="align-middle">
+                                            <label for="description" class="form-label fw-bold">Description</label>
+                                        </td>
+                                        <td>
+                                            <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+                                            {% if form.description.errors %}
+                                                <div class="text-danger mt-1">{{ form.description.errors }}</div>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="align-middle">
+                                            <label for="price" class="form-label fw-bold">Price</label>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <span class="input-group-text">$</span>
+                                                <input type="number" class="form-control" id="price" name="price" step="0.01" min="0" required>
+                                            </div>
+                                            {% if form.price.errors %}
+                                                <div class="text-danger mt-1">{{ form.price.errors }}</div>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="align-middle">
+                                            <label for="image" class="form-label fw-bold">Main Image</label>
+                                        </td>
+                                        <td>
+                                            <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                                            {% if form.image.errors %}
+                                                <div class="text-danger mt-1">{{ form.image.errors }}</div>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg-white d-flex justify-content-between">
+
+                    <a href="{% url 'custom_admin:room_categories' %}" class="btn btn-outline-secondary">
+                        <i class="fas fa-times"></i> Back to Categories
+                    </a>
+                    <button type="submit" class="btn btn-outline-primary">
+                        <i class="fas fa-save"></i> Create Category
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

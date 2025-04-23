@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Delete Category Modal -->
+<div class="modal fade" id="deleteCategoryModal" tabindex="-1" aria-labelledby="deleteCategoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteCategoryModalLabel">Delete Category</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete the category "<strong><span id="categoryName"></span></strong>"?</p>
+                <p class="text-danger mb-1">⚠️ This action cannot be undone.</p>
+                <p class="text-danger">All rooms under this category will also be permanently deleted.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form id="deleteCategoryForm" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+
+            <!-- Category Details Card -->
+            <div class="card category-details-card mb-4">
+                <div class="card-header">
+                    <h2 class="mb-0">{{ category.name }}</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            {% if category.image %}
+                            <div class="main-image-container">
+                                <img src="{{ category.image.url }}" alt="{{ category.name }}" class="img-fluid rounded">
+                            </div>
+                            {% else %}
+                            <p class="text-muted">No image set</p>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <p class="lead">{{ category.description }}</p>
+                            <p class="category-price"><strong>Price:</strong> ${{ category.price }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a href="{% url 'custom_admin:edit_room_category' category.id %}" class="btn btn-warning me-2">Edit Category</a>
+                    <button type="button" class="btn btn-danger"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteCategoryModal"
+                        data-category-id="{{ category.id }}"
+                        data-category-name="{{ category.name }}"
+                        data-action="{% url 'custom_admin:delete_roomcategory' category.id %}">
+                        Delete Category
+                    </button>
+                </div>
+            </div> 
+
+            <!-- Additional Images Card -->
+            <div class="card additional-images-card mb-4">
+                <div class="card-header">
+                    <h3 class="mb-0">Additional Images</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        {% for image in category.images.all %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="{{ image.image.url }}" class="card-img-top" alt="{{ image.caption|default:'Room image' }}">
+                                <div class="card-body">
+                                    {% if image.caption %}
+                                        <p class="card-text">{{ image.caption }}</p>
+                                    {% else %}
+                                        <p class="text-muted fst-italic">No caption provided.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <div class="col-12">
+                            <p class="text-muted">No additional images</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rooms in Category Card -->
+            <div class="card rooms-list-card">
+                <div class="card-header">
+                    <h3 class="mb-0">Rooms in this Category ({{ rooms.count }})</h3>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Room Name</th>
+                                    <th>Availability</th>
+                                    <th style="text-align: right;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for room in rooms %}
+                                <tr>
+                                    <td>{{ room.name }}</td>
+                                    <td>
+                                        {% if room.is_available %}
+                                        <span class="badge bg-success">Available</span>
+                                        {% else %}
+                                        <span class="badge bg-danger">Occupied</span>
+                                        {% endif %}
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="3" class="text-center">No rooms found in this category.</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="{% url 'custom_admin:room_categories' %}" class="btn btn-secondary">Back to Categories</a>
+                </div>
+            </div>
+
+        </div> <!-- col-md-8 -->
+    </div> <!-- row -->
+</div> <!-- container -->
+
+<style>
+    .category-details-card {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .additional-images-card, .rooms-list-card {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .main-image-container {
+        max-height: 300px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-image-container img {
+        max-height: 100%;
+        width: auto;
+    }
+
+    .category-price {
+        font-size: 1.2rem;
+        color: #333;
+    }
+</style>
+
+{% block extra_scripts %}
+<script>
+    $(document).ready(function() {
+        $('#deleteCategoryModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var categoryName = button.data('category-name');
+            var deleteUrl = button.data('action');
+
+            var modal = $(this);
+            modal.find('#categoryName').text(categoryName);
+            modal.find('#deleteCategoryForm').attr('action', deleteUrl);
+        });
+    });
+</script>
+{% endblock %}
+
+{% endblock %}

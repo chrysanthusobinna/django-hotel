@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_styles %}
+<style>
+    .category-card {
+        margin-bottom: 2rem;
+    }
+    
+    .image-card {
+        height: 100%;
+    }
+    
+    .image-card img {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .upload-container {
+        background-color: rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.25rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+        .image-card img {
+            height: 150px;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Edit Category Card -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="card category-card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Edit Room Category</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control {% if form.name.errors %}is-invalid{% endif %}" 
+                                   id="name" name="name" value="{{ form.name.value|default:'' }}" required>
+                            {% if form.name.errors %}
+                                <div class="invalid-feedback">
+                                    {{ form.name.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control {% if form.description.errors %}is-invalid{% endif %}" 
+                                      id="description" name="description" rows="4" required>{{ form.description.value|default:'' }}</textarea>
+                            {% if form.description.errors %}
+                                <div class="invalid-feedback">
+                                    {{ form.description.errors.0 }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Price</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control {% if form.price.errors %}is-invalid{% endif %}" 
+                                       id="price" name="price" value="{{ form.price.value|default:'' }}" step="0.01" required>
+                                {% if form.price.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ form.price.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Main Image</label>
+                            <input type="file" class="form-control {% if form.image.errors %}is-invalid{% endif %}" 
+                                   id="image" name="image" accept="image/*">
+                            {% if form.image.errors %}
+                                <div class="invalid-feedback">
+                                    {{ form.image.errors.0 }}
+                                </div>
+                            {% endif %}
+                            {% if category.image %}
+                                <div class="mt-2">
+                                    <img src="{{ category.image.url }}" alt="{{ category.name }}" class="img-thumbnail" style="max-height: 200px;">
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-outline-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Additional Images Card -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card category-card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Additional Images</h4>
+                </div>
+                <div class="card-body">
+                    <div class="upload-container">
+                        <form method="post" action="{% url 'custom_admin:add_additional_image' category.id %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input type="file" name="image" class="form-control" accept="image/*" required>
+                                <button type="submit" class="btn btn-outline-primary">
+                                    <i class="fas fa-upload"></i> Upload Image
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="row">
+                        {% for image in additional_images %}
+                        <div class="col-md-6 mb-3">
+                            <div class="card image-card">
+                                <img src="{{ image.image.url }}" class="card-img-top" alt="Additional image">
+                                <div class="card-body p-0">
+                                    <button type="button"
+                                            class="btn btn-danger w-100 rounded-0 delete-image-btn"
+                                            data-image-id="{{ image.id }}"
+                                            data-action="{% url 'custom_admin:delete_additional_image' category.id image.id %}"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteImageModal">
+                                        Delete Image
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="col-12 text-center">
+                            <p class="text-muted">No additional images added yet.</p>
+                        </div>
+                    {% endfor %}
+                    
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="text-end">
+                        <a href="{% url 'custom_admin:room_category_detail' category.id %}" class="btn btn-block btn-outline-secondary">Go Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Image Modal -->
+<div class="modal fade" id="deleteImageModal" tabindex="-1" aria-labelledby="deleteImageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteImageModalLabel">Delete Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this image? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form id="deleteImageForm" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    $(document).ready(function() {
+        $('.delete-image-btn').click(function() {
+            var deleteUrl = $(this).data('action');
+            $('#deleteImageForm').attr('action', deleteUrl);
+        });
+    });
+</script>
+
+{% endblock %} 
