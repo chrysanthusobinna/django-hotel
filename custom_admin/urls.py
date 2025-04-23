@@ -19,7 +19,6 @@ urlpatterns = [
     path('room/<int:room_id>/edit/', views.edit_room, name='edit_room'),
     path('room/<int:room_id>/delete/', views.delete_room, name='delete_room'),
 
-    # Booking management URLs
     path('bookings/', views.booking_list, name='booking_list'),
     path('bookings/<int:booking_id>/', views.booking_detail, name='booking_detail'),
     path('update-checkin/', views.update_checkin, name='update_checkin'),

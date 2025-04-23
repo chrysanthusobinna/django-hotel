@@ -94,7 +94,7 @@
                 {% if incomplete_profile %}
                 <div class="alert alert-warning mt-4">
                     <p class="mb-3">Please complete your profile information to book a room.</p>
-                    <a href="{% url 'edit_profile' %}" class="btn btn-outline-primary">Complete Your Profile</a>
+                    <a href="{% url 'profiles:edit_profile' %}" class="btn btn-outline-primary">Complete Your Profile</a>
                 </div>
                 {% endif %}
             </div>

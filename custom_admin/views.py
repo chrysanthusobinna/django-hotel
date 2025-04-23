@@ -10,18 +10,24 @@ from bookings.models import Booking
 from datetime import datetime
 from django.db.models import Q
 
+def is_admin(user):
+    return user.is_staff
+
 # Create your views here.
 
 @login_required
+@user_passes_test(is_admin, login_url='mainsite:home')
 def dashboard(request):
     return render(request, 'custom_admin/dashboard.html')
 
 @login_required
+@user_passes_test(is_admin, login_url='mainsite:home')
 def room_categories(request):
     categories = RoomCategory.objects.all()
     return render(request, 'custom_admin/room_categories.html', {'categories': categories})
 
 @login_required
+@user_passes_test(is_admin, login_url='mainsite:home')
 def room_category_detail(request, category_id):
     category = get_object_or_404(RoomCategory, id=category_id)
     rooms = category.rooms.all()
@@ -31,6 +37,7 @@ def room_category_detail(request, category_id):
     })
 
 @login_required
+@user_passes_test(is_admin, login_url='mainsite:home')
 def edit_room_category(request, category_id):
     category = get_object_or_404(RoomCategory, id=category_id)
     
@@ -52,8 +59,8 @@ def edit_room_category(request, category_id):
         'additional_images': additional_images
     })
 
-
 @login_required
+@user_passes_test(is_admin, login_url='mainsite:home')
 def delete_room_category(request, category_id):
     if request.method == 'POST':
         category = get_object_or_404(RoomCategory, id=category_id)
@@ -61,10 +68,8 @@ def delete_room_category(request, category_id):
         messages.success(request, 'Room category deleted successfully!')
     return redirect('custom_admin:room_categories')
 
-
-
- 
 @login_required
+@user_passes_test(is_admin, login_url='mainsite:home')
 def add_additional_image(request, category_id):
     category = get_object_or_404(RoomCategory, id=category_id)
     
@@ -83,6 +88,7 @@ def add_additional_image(request, category_id):
     return redirect('custom_admin:edit_room_category', category_id=category.id)
 
 @login_required
+@user_passes_test(is_admin, login_url='mainsite:home')
 def delete_additional_image(request, category_id, image_id):
     category = get_object_or_404(RoomCategory, id=category_id)
     image = get_object_or_404(RoomCategoryImage, id=image_id, room_category=category)
@@ -95,6 +101,7 @@ def delete_additional_image(request, category_id, image_id):
     return redirect('custom_admin:edit_room_category', category_id=category.id)
 
 @login_required
+@user_passes_test(is_admin, login_url='mainsite:home')
 def add_room_category(request):
     if request.method == 'POST':
         form = RoomCategoryForm(request.POST, request.FILES)
@@ -110,6 +117,7 @@ def add_room_category(request):
     })
 
 @login_required
+@user_passes_test(is_admin, login_url='mainsite:home')
 def add_room(request):
     if request.method == 'POST':
         category_id = request.POST.get('category')
@@ -135,6 +143,7 @@ def add_room(request):
     return redirect('custom_admin:room_categories')
 
 @login_required
+@user_passes_test(is_admin, login_url='mainsite:home')
 def edit_room(request, room_id):
     room = get_object_or_404(Room, id=room_id)
     
@@ -155,6 +164,7 @@ def edit_room(request, room_id):
     return redirect('custom_admin:room_category_detail', category_id=room.category.id)
 
 @login_required
+@user_passes_test(is_admin, login_url='mainsite:home')
 def delete_room(request, room_id):
     if request.method == 'POST':
         room = get_object_or_404(Room, id=room_id)
@@ -168,17 +178,14 @@ def delete_room(request, room_id):
     
     return redirect('custom_admin:room_categories')
 
-def is_admin(user):
-    return user.is_staff
-
 @login_required
-@user_passes_test(is_admin)
+@user_passes_test(is_admin, login_url='mainsite:home')
 def booking_list(request):
     bookings = Booking.objects.all().order_by('-created_at')
     return render(request, 'custom_admin/booking_list.html', {'bookings': bookings})
 
 @login_required
-@user_passes_test(is_admin)
+@user_passes_test(is_admin, login_url='mainsite:home')
 def booking_detail(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     
@@ -188,10 +195,10 @@ def booking_detail(request, booking_id):
         is_available=True
     ).exclude(
         id__in=Booking.objects.filter(
-            ~Q(id=booking_id),  # Exclude current booking
-            ~Q(is_cancelled=True),  # Exclude cancelled bookings
-            room__isnull=False,  # Only consider bookings with assigned rooms
-            check_in__lte=booking.check_out,  # Check for overlapping dates
+            ~Q(id=booking_id), 
+            ~Q(is_cancelled=True),
+            room__isnull=False,  
+            check_in__lte=booking.check_out, 
             check_out__gte=booking.check_in
         ).values_list('room_id', flat=True)
     )
@@ -202,7 +209,7 @@ def booking_detail(request, booking_id):
     })
 
 @login_required
-@user_passes_test(is_admin)
+@user_passes_test(is_admin, login_url='mainsite:home')
 def update_checkin(request):
     if request.method == 'POST':
         try:
@@ -210,7 +217,8 @@ def update_checkin(request):
             check_in_datetime = request.POST.get('check_in_datetime')
             
             booking = get_object_or_404(Booking, id=booking_id)
-            booking.actual_check_in = datetime.strptime(check_in_datetime, '%Y-%m-%dT%H:%M')
+            naive_datetime = datetime.strptime(check_in_datetime, '%Y-%m-%dT%H:%M')
+            booking.actual_check_in = timezone.make_aware(naive_datetime)
             booking.save()
             
             messages.success(request, 'Check-in time updated successfully')
@@ -222,7 +230,7 @@ def update_checkin(request):
     return redirect('custom_admin:booking_list')
 
 @login_required
-@user_passes_test(is_admin)
+@user_passes_test(is_admin, login_url='mainsite:home')
 def update_checkout(request):
     if request.method == 'POST':
         try:
@@ -230,7 +238,8 @@ def update_checkout(request):
             check_out_datetime = request.POST.get('check_out_datetime')
             
             booking = get_object_or_404(Booking, id=booking_id)
-            booking.actual_check_out = datetime.strptime(check_out_datetime, '%Y-%m-%dT%H:%M')
+            naive_datetime = datetime.strptime(check_out_datetime, '%Y-%m-%dT%H:%M')
+            booking.actual_check_out = timezone.make_aware(naive_datetime)
             booking.save()
             
             messages.success(request, 'Check-out time updated successfully')
@@ -242,7 +251,7 @@ def update_checkout(request):
     return redirect('custom_admin:booking_list')
 
 @login_required
-@user_passes_test(is_admin)
+@user_passes_test(is_admin, login_url='mainsite:home')
 def cancel_booking(request):
     if request.method == 'POST':
         try:
@@ -260,7 +269,7 @@ def cancel_booking(request):
     return redirect('custom_admin:booking_list')
 
 @login_required
-@user_passes_test(is_admin)
+@user_passes_test(is_admin, login_url='mainsite:home')
 def delete_booking(request):
     if request.method == 'POST':
         try:
@@ -277,7 +286,7 @@ def delete_booking(request):
     return redirect('custom_admin:booking_list')
 
 @login_required
-@user_passes_test(is_admin)
+@user_passes_test(is_admin, login_url='mainsite:home')
 def assign_room(request):
     if request.method == 'POST':
         try:
