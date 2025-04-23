@@ -65,12 +65,12 @@
                     <strong>{{ SITE_NAME|upper }}</strong>
                 </a>                
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
-                    <span><i class="fas fa-bars text-white"></i></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 
                 <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link text-white {% if request.path == home_url %}active{% endif %}" href="{{ home_url }}">Home</a>
                         </li>
@@ -87,8 +87,6 @@
                         </li>
                                                 
                         {% if user.is_authenticated %}
-
-
                             {% if not user.is_superuser %}
                                 <li class="nav-item">
                                     <a class="nav-link text-white {% if request.path == customer_dashboard_url %}active{% endif %}" href="{{ customer_dashboard_url }}">My Dashboard</a>
@@ -119,11 +117,8 @@
                                 <a class="nav-link text-white {% if request.path == signup_url %}active{% endif %}" href="{{ signup_url }}">Register</a>
                             </li>
                         {% endif %}
-
                     </ul>
                 </div>
-                
-
             </div>
         </nav>
     </header>

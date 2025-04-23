@@ -1,9 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
 from rooms.models import RoomCategory, RoomCategoryImage, Room
 from .forms import RoomCategoryForm, RoomCategoryImageForm
 from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.utils import timezone
+from bookings.models import Booking
+from datetime import datetime
+from django.db.models import Q
 
 # Create your views here.
 
@@ -162,3 +167,153 @@ def delete_room(request, room_id):
         return redirect('custom_admin:room_category_detail', category_id=category_id)
     
     return redirect('custom_admin:room_categories')
+
+def is_admin(user):
+    return user.is_staff
+
+@login_required
+@user_passes_test(is_admin)
+def booking_list(request):
+    bookings = Booking.objects.all().order_by('-created_at')
+    return render(request, 'custom_admin/booking_list.html', {'bookings': bookings})
+
+@login_required
+@user_passes_test(is_admin)
+def booking_detail(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    
+    # Get available rooms for the booking's category
+    available_rooms = Room.objects.filter(
+        category=booking.room_category,
+        is_available=True
+    ).exclude(
+        id__in=Booking.objects.filter(
+            ~Q(id=booking_id),  # Exclude current booking
+            ~Q(is_cancelled=True),  # Exclude cancelled bookings
+            room__isnull=False,  # Only consider bookings with assigned rooms
+            check_in__lte=booking.check_out,  # Check for overlapping dates
+            check_out__gte=booking.check_in
+        ).values_list('room_id', flat=True)
+    )
+    
+    return render(request, 'custom_admin/booking_detail.html', {
+        'booking': booking,
+        'available_rooms': available_rooms
+    })
+
+@login_required
+@user_passes_test(is_admin)
+def update_checkin(request):
+    if request.method == 'POST':
+        try:
+            booking_id = request.POST.get('booking_id')
+            check_in_datetime = request.POST.get('check_in_datetime')
+            
+            booking = get_object_or_404(Booking, id=booking_id)
+            booking.actual_check_in = datetime.strptime(check_in_datetime, '%Y-%m-%dT%H:%M')
+            booking.save()
+            
+            messages.success(request, 'Check-in time updated successfully')
+            return redirect('custom_admin:booking_detail', booking_id=booking_id)
+        except Exception as e:
+            messages.error(request, f'Error updating check-in time: {str(e)}')
+            return redirect('custom_admin:booking_detail', booking_id=booking_id)
+    
+    return redirect('custom_admin:booking_list')
+
+@login_required
+@user_passes_test(is_admin)
+def update_checkout(request):
+    if request.method == 'POST':
+        try:
+            booking_id = request.POST.get('booking_id')
+            check_out_datetime = request.POST.get('check_out_datetime')
+            
+            booking = get_object_or_404(Booking, id=booking_id)
+            booking.actual_check_out = datetime.strptime(check_out_datetime, '%Y-%m-%dT%H:%M')
+            booking.save()
+            
+            messages.success(request, 'Check-out time updated successfully')
+            return redirect('custom_admin:booking_detail', booking_id=booking_id)
+        except Exception as e:
+            messages.error(request, f'Error updating check-out time: {str(e)}')
+            return redirect('custom_admin:booking_detail', booking_id=booking_id)
+    
+    return redirect('custom_admin:booking_list')
+
+@login_required
+@user_passes_test(is_admin)
+def cancel_booking(request):
+    if request.method == 'POST':
+        try:
+            booking_id = request.POST.get('booking_id')
+            booking = get_object_or_404(Booking, id=booking_id)
+            booking.is_cancelled = True
+            booking.save()
+            
+            messages.success(request, 'Booking cancelled successfully')
+            return redirect('custom_admin:booking_detail', booking_id=booking_id)
+        except Exception as e:
+            messages.error(request, f'Error cancelling booking: {str(e)}')
+            return redirect('custom_admin:booking_detail', booking_id=booking_id)
+    
+    return redirect('custom_admin:booking_list')
+
+@login_required
+@user_passes_test(is_admin)
+def delete_booking(request):
+    if request.method == 'POST':
+        try:
+            booking_id = request.POST.get('booking_id')
+            booking = get_object_or_404(Booking, id=booking_id)
+            booking.delete()
+            
+            messages.success(request, 'Booking deleted successfully')
+            return redirect('custom_admin:booking_list')
+        except Exception as e:
+            messages.error(request, f'Error deleting booking: {str(e)}')
+            return redirect('custom_admin:booking_detail', booking_id=booking_id)
+    
+    return redirect('custom_admin:booking_list')
+
+@login_required
+@user_passes_test(is_admin)
+def assign_room(request):
+    if request.method == 'POST':
+        try:
+            booking_id = request.POST.get('booking_id')
+            room_id = request.POST.get('room_id')
+            
+            booking = get_object_or_404(Booking, id=booking_id)
+            room = get_object_or_404(Room, id=room_id)
+            
+            # Verify room is in the same category as the booking
+            if room.category != booking.room_category:
+                messages.error(request, 'Selected room is not in the same category as the booking')
+                return redirect('custom_admin:booking_detail', booking_id=booking_id)
+            
+            # Check if room is available for the booking dates
+            conflicting_booking = Booking.objects.filter(
+                ~Q(id=booking_id),  # Exclude current booking
+                ~Q(is_cancelled=True),  # Exclude cancelled bookings
+                room=room,
+                check_in__lte=booking.check_out,
+                check_out__gte=booking.check_in
+            ).first()
+            
+            if conflicting_booking:
+                messages.error(request, 'Room is already booked for these dates')
+                return redirect('custom_admin:booking_detail', booking_id=booking_id)
+            
+            # Assign the room
+            booking.room = room
+            booking.save()
+            
+            messages.success(request, 'Room assigned successfully')
+            return redirect('custom_admin:booking_detail', booking_id=booking_id)
+            
+        except Exception as e:
+            messages.error(request, f'Error assigning room: {str(e)}')
+            return redirect('custom_admin:booking_detail', booking_id=booking_id)
+    
+    return redirect('custom_admin:booking_list')
