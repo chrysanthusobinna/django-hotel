@@ -54,15 +54,14 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'storages',
-    'cloudinary',
-    'profiles',
-    'customer',
     'mainsite',
     'rooms',
     'bookings',
+    'profiles',
+    'customer',
     'payments',
     'custom_admin',
+    'newsletter',
 ]
 
 SITE_ID = 1
