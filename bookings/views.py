@@ -157,7 +157,10 @@ def payment_success(request):
     if not booking_data:
         return redirect('mainsite:home')
 
-    booking = get_object_or_404(Booking, id=booking_data['booking_id'], user=request.user)
+    try:
+        booking = Booking.objects.get(id=booking_data['booking_id'], user=request.user)
+    except Booking.DoesNotExist:
+        return redirect('mainsite:home')
 
     if not booking.is_paid:
         booking.is_paid = True
@@ -184,7 +187,10 @@ def payment_success(request):
             fail_silently=False
         )
 
-    room_category = get_object_or_404(RoomCategory, id=booking_data['room_category_id'])
+    try:
+        room_category = RoomCategory.objects.get(id=booking_data['room_category_id'])
+    except RoomCategory.DoesNotExist:
+        return redirect('mainsite:home')
 
     return render(request, 'bookings/payment_success.html', {
         'booking': booking,

@@ -5,6 +5,7 @@ from django.core import mail
 from rooms.models import RoomCategory, Room
 from bookings.models import Booking
 from datetime import date, timedelta
+from django.conf import settings
 
 class PaymentSuccessViewTest(TestCase):
     def setUp(self):
@@ -106,7 +107,7 @@ class PaymentSuccessViewTest(TestCase):
         email = mail.outbox[0]
         self.assertEqual(email.subject, f"Booking Confirmation - #{self.booking.booking_number}")
         self.assertEqual(email.to, [self.user.email])
-        self.assertEqual(email.from_email, 'noreply@example.com')
+        self.assertEqual(email.from_email, settings.DEFAULT_FROM_EMAIL)
 
     def test_payment_success_email_content(self):
         """Test that payment success email contains correct information"""
