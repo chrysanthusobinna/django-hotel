@@ -15,8 +15,8 @@
 {% if user.is_authenticated %}
 
     {% url 'customer:customer_dashboard' as customer_dashboard_url %}
-    {% url 'view_profile' user.id as profile_url %}
-    {% url 'edit_profile' as edit_profile_url %}
+    {% url 'profiles:view_profile' user.id as profile_url %}
+    {% url 'profiles:edit_profile' as edit_profile_url %}
     {% url 'account_change_password' as change_password_url %}
 {% endif %}
 
@@ -95,7 +95,7 @@
                                 </li>
                             {% else %}
                                 <li class="nav-item">
-                                    <a class="nav-link text-white {% if request.path == admin_dashboard_url %}active{% endif %}" href="{{ admin_dashboard_url }}">Admin Dashboard</a>
+                                    <a class="nav-link text-white {% if request.resolver_match.namespace == 'custom_admin' %}active{% endif %}" href="{{ admin_dashboard_url }}">Admin Dashboard</a>
                                 </li>
                             {% endif %}
 

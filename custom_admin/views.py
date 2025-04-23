@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from rooms.models import RoomCategory, RoomCategoryImage
+from rooms.models import RoomCategory, RoomCategoryImage, Room
 from .forms import RoomCategoryForm, RoomCategoryImageForm
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -102,3 +103,62 @@ def add_room_category(request):
     return render(request, 'custom_admin/add_room_category.html', {
         'form': form
     })
+
+@login_required
+def add_room(request):
+    if request.method == 'POST':
+        category_id = request.POST.get('category')
+        name = request.POST.get('name')
+        is_available = request.POST.get('is_available') == 'on'
+        
+        try:
+            category = RoomCategory.objects.get(id=category_id)
+            room = Room.objects.create(
+                category=category,
+                name=name,
+                is_available=is_available
+            )
+            messages.success(request, 'Room added successfully!')
+            return redirect('custom_admin:room_category_detail', category_id=category_id)
+        except RoomCategory.DoesNotExist:
+            messages.error(request, 'Invalid room category.')
+            return redirect('custom_admin:room_categories')
+        except Exception as e:
+            messages.error(request, f'Error adding room: {str(e)}')
+            return redirect('custom_admin:room_category_detail', category_id=category_id)
+    
+    return redirect('custom_admin:room_categories')
+
+@login_required
+def edit_room(request, room_id):
+    room = get_object_or_404(Room, id=room_id)
+    
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        is_available = request.POST.get('is_available') == 'on'
+        
+        try:
+            room.name = name
+            room.is_available = is_available
+            room.save()
+            messages.success(request, 'Room updated successfully!')
+            return redirect('custom_admin:room_category_detail', category_id=room.category.id)
+        except Exception as e:
+            messages.error(request, f'Error updating room: {str(e)}')
+            return redirect('custom_admin:room_category_detail', category_id=room.category.id)
+    
+    return redirect('custom_admin:room_category_detail', category_id=room.category.id)
+
+@login_required
+def delete_room(request, room_id):
+    if request.method == 'POST':
+        room = get_object_or_404(Room, id=room_id)
+        category_id = room.category.id
+        try:
+            room.delete()
+            messages.success(request, 'Room deleted successfully!')
+        except Exception as e:
+            messages.error(request, f'Error deleting room: {str(e)}')
+        return redirect('custom_admin:room_category_detail', category_id=category_id)
+    
+    return redirect('custom_admin:room_categories')

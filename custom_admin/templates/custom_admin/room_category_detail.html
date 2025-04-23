@@ -27,6 +27,97 @@
     </div>
 </div>
 
+<!-- Add Room Modal -->
+<div class="modal fade" id="addRoomModal" tabindex="-1" aria-labelledby="addRoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addRoomModalLabel">Add New Room</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="addRoomForm" method="post" action="{% url 'custom_admin:add_room' %}">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <input type="hidden" name="category" value="{{ category.id }}">
+                    <div class="mb-3">
+                        <label for="roomName" class="form-label">Room Name</label>
+                        <input type="text" class="form-control" id="roomName" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="isAvailable" name="is_available" checked>
+                            <label class="form-check-label" for="isAvailable">
+                                Room is Available
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Room</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Room Modal -->
+<div class="modal fade" id="editRoomModal" tabindex="-1" aria-labelledby="editRoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editRoomModalLabel">Edit Room</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="editRoomForm" method="post">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <input type="hidden" name="room_id" id="editRoomId">
+                    <div class="mb-3">
+                        <label for="editRoomName" class="form-label">Room Name</label>
+                        <input type="text" class="form-control" id="editRoomName" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="editIsAvailable" name="is_available">
+                            <label class="form-check-label" for="editIsAvailable">
+                                Room is Available
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Room Modal -->
+<div class="modal fade" id="deleteRoomModal" tabindex="-1" aria-labelledby="deleteRoomModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteRoomModalLabel">Delete Room</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete the room "<strong><span id="roomName"></span></strong>"?</p>
+                <p class="text-danger">⚠️ This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form id="deleteRoomForm" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-8 mx-auto">
@@ -97,8 +188,11 @@
 
             <!-- Rooms in Category Card -->
             <div class="card rooms-list-card">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-between align-items-center">
                     <h3 class="mb-0">Rooms in this Category ({{ rooms.count }})</h3>
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addRoomModal">
+                        Add Room
+                    </button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -122,8 +216,23 @@
                                         {% endif %}
                                     </td>
                                     <td style="text-align: right;">
-                                        <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                        <button type="button" class="btn btn-warning btn-sm edit-room-btn"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#editRoomModal"
+                                            data-room-id="{{ room.id }}"
+                                            data-room-name="{{ room.name }}"
+                                            data-room-available="{{ room.is_available }}"
+                                            data-action="{% url 'custom_admin:edit_room' room.id %}">
+                                            Edit
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-sm delete-room-btn"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteRoomModal"
+                                            data-room-id="{{ room.id }}"
+                                            data-room-name="{{ room.name }}"
+                                            data-action="{% url 'custom_admin:delete_room' room.id %}">
+                                            Delete
+                                        </button>
                                     </td>
                                 </tr>
                                 {% empty %}
@@ -175,6 +284,7 @@
 {% block extra_scripts %}
 <script>
     $(document).ready(function() {
+        // Delete Category Modal
         $('#deleteCategoryModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
             var categoryName = button.data('category-name');
@@ -183,6 +293,32 @@
             var modal = $(this);
             modal.find('#categoryName').text(categoryName);
             modal.find('#deleteCategoryForm').attr('action', deleteUrl);
+        });
+
+        // Edit Room Modal
+        $('#editRoomModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var roomId = button.data('room-id');
+            var roomName = button.data('room-name');
+            var roomAvailable = button.data('room-available');
+            var editUrl = button.data('action');
+
+            var modal = $(this);
+            modal.find('#editRoomId').val(roomId);
+            modal.find('#editRoomName').val(roomName);
+            modal.find('#editIsAvailable').prop('checked', roomAvailable);
+            modal.find('#editRoomForm').attr('action', editUrl);
+        });
+
+        // Delete Room Modal
+        $('#deleteRoomModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var roomName = button.data('room-name');
+            var deleteUrl = button.data('action');
+
+            var modal = $(this);
+            modal.find('#roomName').text(roomName);
+            modal.find('#deleteRoomForm').attr('action', deleteUrl);
         });
     });
 </script>

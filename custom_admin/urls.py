@@ -14,4 +14,8 @@ urlpatterns = [
     
     path('room-category/<int:category_id>/add-additional-image/', views.add_additional_image, name='add_additional_image'),
     path('room-category/<int:category_id>/delete-additional-image/<int:image_id>/', views.delete_additional_image, name='delete_additional_image'),
+
+    path('room/add/', views.add_room, name='add_room'),
+    path('room/<int:room_id>/edit/', views.edit_room, name='edit_room'),
+    path('room/<int:room_id>/delete/', views.delete_room, name='delete_room'),
 ] 
