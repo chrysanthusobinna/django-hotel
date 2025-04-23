@@ -74,7 +74,7 @@
             <div class="col-md-8 text-center">
                 <h2 class="mb-4">Stay Updated with Our Latest Offers</h2>
                 <p class="lead mb-4">Subscribe to our newsletter and be the first to know about exclusive deals, special events, and seasonal promotions.</p>
-                <form method="post" action="{% url 'subscribe_newsletter' %}" class="newsletter-form">
+                <form method="post" action="{% url 'newsletter:subscribe_newsletter' %}" class="newsletter-form">
                     {% csrf_token %}
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Enter your email address" required>
