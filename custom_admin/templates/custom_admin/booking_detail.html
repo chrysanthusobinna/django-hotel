@@ -59,9 +59,6 @@
                 <!-- Room Image and Guest Info -->
                 <div class="col-md-5">
                     <div class="card booking-detail-card h-100">
-                        <div class="card-header bg-light">
-                            <h5 class="mb-0">Room Image</h5>
-                        </div>
                         <div class="card-body d-flex align-items-center justify-content-center">
                             {% if booking.room_category.image %}
                                 <img src="{{ booking.room_category.image.url }}" alt="Room Image" class="img-fluid booking-image">
@@ -80,13 +77,25 @@
                         <div class="card-body">
                             <table class="table table-bordered">
                                 <tr>
-                                    <th>Guest Name</th>
-                                    <td>{{ booking.user.get_full_name|default:booking.user.username }}</td>
+                                    <th>Full Name</th>
+                                    <td>{{ booking.user.first_name }} {{ booking.user.last_name }}</td>
                                 </tr>
                                 <tr>
                                     <th>Email</th>
                                     <td>{{ booking.user.email }}</td>
                                 </tr>
+                                {% if booking.user.profile %}
+                                <tr>
+                                    <th>Phone Number</th>
+                                    <td>{{ booking.user.profile.phone_number|default:"Not provided" }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Address</th>
+                                    <td>
+                                        {{ booking.user.profile.address }}, {{ booking.user.profile.city }}, {{ booking.user.profile.post_code }}, {{ booking.user.profile.country }}
+                                    </td>
+                                </tr>
+                                {% endif %}
                                 <tr>
                                     <th>Booking Date</th>
                                     <td>{{ booking.created_at|date:"D d M Y H:i" }}</td>

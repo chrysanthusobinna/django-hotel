@@ -35,6 +35,10 @@
                             {% endif %}
                             {% if user_profile %}
                                 <tr>
+                                    <th>Phone Number</th>
+                                    <td>{{ user_profile.phone_number }}</td>
+                                </tr>
+                                <tr>
                                     <th>Address</th>
                                     <td>{{ user_profile.address }}</td>
                                 </tr>
