@@ -15,4 +15,6 @@ def subscribe_newsletter(request):
                 messages.success(request, 'Thank you for subscribing to our newsletter!')
             except:
                 messages.info(request, 'You are already subscribed to our newsletter!')
+        else:
+            messages.error(request, 'Invalid email address.')
     return redirect('mainsite:home')

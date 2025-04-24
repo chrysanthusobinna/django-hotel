@@ -41,7 +41,7 @@
                 </tr>
                 <tr>
                     <th scope="row">Price per Night:</th>
-                    <td>£{{ room_category.price|floatformat:2 }}</td>
+                    <td>{{ CURRENCY_SYMBOL }}{{ room_category.price|floatformat:2 }}</td>
                 </tr>
                 <tr>
                     <th scope="row">Check-In Date:</th>
@@ -65,7 +65,7 @@
                 </tr>
                 <tr class="table-primary fw-bold">
                     <th scope="row">Total Price:</th>
-                    <td>£{{ booking.total_price|floatformat:2 }}</td>
+                    <td>{{ CURRENCY_SYMBOL }}{{ booking.total_price|floatformat:2 }}</td>
                 </tr>
             </tbody>
         </table>

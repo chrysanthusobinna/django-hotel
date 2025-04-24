@@ -133,7 +133,7 @@ def create_checkout_session(request):
             payment_method_types=['card', 'paypal', 'revolut_pay'],
             line_items=[{
                 'price_data': {
-                    'currency': 'gbp',
+                    'currency': settings.CURRENCY_CODE.lower(),
                     'product_data': {
                         'name': f"Room Booking - {room_category.name}",
                     },
@@ -176,7 +176,7 @@ def payment_success(request):
             f"Room Category: {booking.room_category.name}\n"
             f"Check-in: {booking.check_in}\n"
             f"Check-out: {booking.check_out}\n"
-            f"Total Paid: ${booking.total_price}\n\n"
+            f"Total Paid: {settings.CURRENCY_SYMBOL}{booking.total_price}\n\n"
             f"We look forward to your stay!"
         )
         send_mail(

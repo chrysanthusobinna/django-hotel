@@ -75,7 +75,7 @@
             <div class="room-info mb-4">
                 <h2 class="fw-bold">{{ room_category.name }}</h2>
                 <p class="text-muted">{{ room_category.description }}</p>
-                <h4 class="text-primary">£{{ room_category.price }}/night</h4>
+                <h4 class="text-primary">{{ CURRENCY_SYMBOL }}{{ room_category.price }}/night</h4>
 
                 {% if can_book and not incomplete_profile %}
                 <a href="tel:{{ SITE_PHONE }}" class="btn btn-outline-primary btn-block mt-3">

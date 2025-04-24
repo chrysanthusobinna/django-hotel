@@ -26,7 +26,7 @@
                     <li class="list-group-item"><strong>Room Category:</strong> {{ room_category.name }}</li>
                     <li class="list-group-item"><strong>Check-in:</strong> {{ booking.check_in|date:"l, jS F Y" }}</li>
                     <li class="list-group-item"><strong>Check-out:</strong> {{ booking.check_out|date:"l, jS F Y" }}</li>
-                    <li class="list-group-item"><strong>Total Price:</strong> £{{ booking.total_price|floatformat:2 }}</li>
+                    <li class="list-group-item"><strong>Total Price:</strong> {{ CURRENCY_SYMBOL }}{{ booking.total_price|floatformat:2 }}</li>
                 </ul>
             </div>
         </div>

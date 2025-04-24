@@ -33,7 +33,7 @@
                             <td>{{ booking.room_category.name }}</td>
                             <td>{{ booking.check_in }}</td>
                             <td>{{ booking.check_out }}</td>
-                            <td>£{{ booking.total_price|floatformat:2 }}</td>
+                            <td>{{ CURRENCY_SYMBOL }}{{ booking.total_price|floatformat:2 }}</td>
                             <td>
                                 {% if booking.is_cancelled %}
                                     <span class="badge bg-danger">Cancelled</span>

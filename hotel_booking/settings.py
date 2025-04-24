@@ -39,6 +39,10 @@ SITE_EMAIL = os.environ.get("SITE_EMAIL", "info@santhushotel.com")
 SITE_PHONE = os.environ.get("SITE_PHONE", "+44 1234 567890")
 SITE_ADDRESS = os.environ.get("SITE_ADDRESS", "123 Main Street, Liverpool, UK")
 
+# Currency Configuration
+CURRENCY_SYMBOL = os.environ.get("CURRENCY_SYMBOL", "£")
+CURRENCY_CODE = os.environ.get("CURRENCY_CODE", "GBP")
+
 
 # Application definition
 

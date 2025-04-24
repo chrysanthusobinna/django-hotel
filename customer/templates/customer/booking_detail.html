@@ -35,7 +35,7 @@
                             </tr>
                             <tr>
                                 <th class="py-3 px-4">Total Price</th>
-                                <td class="py-3 px-4">£{{ booking.total_price|floatformat:2 }}</td>
+                                <td class="py-3 px-4">{{ CURRENCY_SYMBOL }}{{ booking.total_price|floatformat:2 }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -82,7 +82,7 @@
                             </tr>
                             <tr>
                                 <th>Price</th>
-                                <td>${{ booking.total_price }}</td>
+                                <td>{{ CURRENCY_SYMBOL }}{{ booking.total_price }}</td>
                             </tr>
                             <tr>
                                 <th>Status</th>

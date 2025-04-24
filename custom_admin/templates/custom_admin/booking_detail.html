@@ -141,7 +141,7 @@
                                 </tr>
                                 <tr>
                                     <th>Price</th>
-                                    <td>£{{ booking.total_price|floatformat:2 }}</td>
+                                    <td>{{ CURRENCY_SYMBOL }}{{ booking.total_price|floatformat:2 }}</td>
                                 </tr>
                             </table>
                         </div>
