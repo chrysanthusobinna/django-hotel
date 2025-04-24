@@ -38,8 +38,6 @@ class CreateCheckoutSessionViewTest(TestCase):
             'room_category_id': self.room_category.id,
             'check_in': self.check_in.strftime('%Y-%m-%d'),
             'check_out': self.check_out.strftime('%Y-%m-%d'),
-            'adults': '2',
-            'children': '1',
             'nights': 2,
             'total_price': 200.00
         }

@@ -45,9 +45,7 @@ class BookingSummaryViewTest(TestCase):
         response = self.client.post(reverse('bookings:booking_summary'), {
             'room_category_id': self.room_category.id,
             'check_in': check_in.strftime('%Y-%m-%d'),
-            'check_out': check_out.strftime('%Y-%m-%d'),
-            'adults': '2',
-            'children': '1'
+            'check_out': check_out.strftime('%Y-%m-%d')
         })
         
         self.assertEqual(response.status_code, 302)  # Should redirect
@@ -76,9 +74,7 @@ class BookingSummaryViewTest(TestCase):
         response = self.client.post(reverse('bookings:booking_summary'), {
             'room_category_id': self.room_category.id,
             'check_in': check_in.strftime('%Y-%m-%d'),
-            'check_out': check_in.strftime('%Y-%m-%d'),
-            'adults': '2',
-            'children': '1'
+            'check_out': check_in.strftime('%Y-%m-%d')
         })
         
         self.assertEqual(response.status_code, 302)  # Should redirect with error
@@ -93,9 +89,7 @@ class BookingSummaryViewTest(TestCase):
         response = self.client.post(reverse('bookings:booking_summary'), {
             'room_category_id': self.room_category.id,
             'check_in': check_in.strftime('%Y-%m-%d'),
-            'check_out': check_out.strftime('%Y-%m-%d'),
-            'adults': '2',
-            'children': '1'
+            'check_out': check_out.strftime('%Y-%m-%d')
         })
         
         self.assertEqual(response.status_code, 302)  # Should redirect with error

@@ -51,14 +51,6 @@
                     <th scope="row">Check-Out Date:</th>
                     <td>{{ booking.check_out|date:"l, jS F Y" }}</td>
                 </tr>
-                <tr>
-                    <th scope="row">Adults:</th>
-                    <td>{{ booking.adults }}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Children:</th>
-                    <td>{{ booking.children }}</td>
-                </tr>
                 <tr class="fw-bold">
                     <th scope="row">Total Nights:</th>
                     <td>{{ booking.nights }} night{{ booking.nights|pluralize }}</td>

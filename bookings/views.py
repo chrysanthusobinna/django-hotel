@@ -22,8 +22,6 @@ def booking_summary(request):
         room_category_id = request.POST.get('room_category_id')
         check_in_str = request.POST.get('check_in')
         check_out_str = request.POST.get('check_out')
-        adults = request.POST.get('adults')
-        children = request.POST.get('children')
 
         # Check if room category exists and has available rooms
         try:
@@ -55,7 +53,6 @@ def booking_summary(request):
             messages.error(request, "Check-in date cannot be in the past.")
             return redirect('rooms:room_detail', pk=room_category_id)
 
-
         nights = (check_out - check_in).days
         total_price = nights * room_category.price
 
@@ -68,8 +65,6 @@ def booking_summary(request):
                 'room_category_id': room_category_id,
                 'check_in': check_in_str,
                 'check_out': check_out_str,
-                'adults': adults,
-                'children': children,
                 'nights': nights,
                 'total_price': float(total_price),
             }

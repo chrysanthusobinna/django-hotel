@@ -108,30 +108,23 @@
             {% csrf_token %}
             <input type="hidden" name="room_category_id" value="{{ room_category.id }}">
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>Check-In Date</label>
+            <div class="row mb-3">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <label for="check_in" class="form-label">Check-In Date</label>
                     <input type="date" class="form-control" name="check_in" id="check_in" required>
                 </div>
-                <div class="form-group col-md-6">
-                    <label>Check-Out Date</label>
+                <div class="col-md-6">
+                    <label for="check_out" class="form-label">Check-Out Date</label>
                     <input type="date" class="form-control" name="check_out" id="check_out" required>
                 </div>
             </div>
             
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>Number of Adults</label>
-                    <input type="number" class="form-control" name="adults" min="1" value="1" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label>Number of Children</label>
-                    <input type="number" class="form-control" name="children" min="0" value="0">
-                </div>
+            <div class="d-grid d-md-block text-center">
+                <button type="submit" class="btn btn-outline-primary px-5">Check Availability</button>
             </div>
-            <button type="submit" class="btn btn-primary btn-block mt-3">Confirm Booking</button>
         </form>
     </div>
     {% endif %}
 </div>
 {% endblock %}
+
