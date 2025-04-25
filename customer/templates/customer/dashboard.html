@@ -26,14 +26,17 @@
                                 <th>Check-Out</th>
                                 <th>Room Category</th>
                                 <th>Status</th>
-                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for booking in bookings %}
                             <tr>
                                 <td style="display: none;">{{ booking.id }}</td>
-                                <td>{{ booking.booking_number }}</td>
+                                <td>
+                                    <a href="{% url 'customer:booking_detail' booking.booking_number %}" class="text-decoration-none">
+                                        {{ booking.booking_number }}
+                                    </a>
+                                </td>
                                 <td>{{ booking.check_in }}</td>
                                 <td>{{ booking.check_out }}</td>
                                 <td>{{ booking.room_category.name }}</td>
@@ -45,11 +48,6 @@
                                     {% else %}
                                         <span class="badge bg-warning">Pending</span>
                                     {% endif %}
-                                </td>
-                                <td>
-                                    <a href="{% url 'customer:booking_detail' booking.booking_number %}" class="btn btn-sm btn-primary">
-                                        View
-                                    </a>
                                 </td>
                             </tr>
                             {% endfor %}
