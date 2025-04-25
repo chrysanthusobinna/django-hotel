@@ -1,39 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block extra_styles %}
-<style>
-    .category-card {
-        margin-bottom: 2rem;
-    }
-    
-    .image-card {
-        height: 100%;
-    }
-    
-    .image-card img {
-        height: 200px;
-        object-fit: cover;
-    }
-    
-    .upload-container {
-        background-color: rgba(0, 0, 0, 0.03);
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 0.25rem;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    @media (max-width: 768px) {
-        .image-card img {
-            height: 150px;
-        }
-    }
-</style>
-{% endblock %}
-
 {% block content %}
-<div class="container mt-5">
+<div class="container mt-5 admin-edit-room-category">
     <!-- Edit Category Card -->
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -143,12 +112,11 @@
                                 </div>
                             </div>
                         </div>
-                    {% empty %}
+                        {% empty %}
                         <div class="col-12 text-center">
                             <p class="text-muted">No additional images added yet.</p>
                         </div>
-                    {% endfor %}
-                    
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="card-footer">
@@ -193,5 +161,4 @@
         });
     });
 </script>
-
 {% endblock %} 

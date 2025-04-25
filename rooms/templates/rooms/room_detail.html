@@ -5,13 +5,17 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 {% endblock %}
 
- 
 {% block extra_scripts %}
-
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <script>
     $(document).ready(function () {
+        // Initialize carousel
+        var roomCarousel = new bootstrap.Carousel(document.getElementById('roomCarousel'), {
+            interval: 4000,
+            wrap: true
+        });
+
         // Get today's date in YYYY-MM-DD format
         const today = new Date().toISOString().split('T')[0];
 
@@ -39,14 +43,12 @@
 {% block meta_description %}Explore {{ room_category.name }} with top amenities and comfort. Book now at {{ SITE_NAME }}.{% endblock %}
 {% block meta_keywords %}{{ room_category.name }}, hotel room, accommodation, book now{% endblock %}
 
-
-
 {% block content %}
 <div class="container my-5 room-detail">
     <div class="row">
         <!-- Carousel Column -->
         <div class="col-md-6">
-            <div id="roomCarousel" class="carousel slide mb-4" data-ride="carousel">
+            <div id="roomCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
                 <div class="carousel-inner rounded">
                     <div class="carousel-item active">
                         {% if room_category.image %}
@@ -61,12 +63,14 @@
                     {% endfor %}
                 </div>
                 
-                <a class="carousel-control-prev" href="#roomCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#roomCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
+                <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
 

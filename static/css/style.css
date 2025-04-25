@@ -223,3 +223,221 @@ main.container {
 .booking-info-table th, .booking-info-table td {
     vertical-align: middle;
 }
+
+/* Booking Summary Styles */
+.booking-summary-card {
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+}
+
+.booking-summary-table th {
+    width: 200px;
+    text-align: left;
+}
+
+.booking-summary-table td {
+    text-align: left;
+}
+
+.booking-summary-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+/* Profile Page Styles */
+.profile-page .table th {
+    width: 25%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Profile Page Mobile Styles */
+    .profile-page .table th {
+        min-width: 120px;
+    }
+    .profile-page .table td {
+        word-break: break-word;
+    }
+    .profile-page .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Room Category Detail Styles */
+.room-category-detail .main-image {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.room-category-detail .additional-images img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Admin Dashboard Styles */
+.admin-dashboard .dashboard-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out;
+}
+
+.admin-dashboard .dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+.admin-dashboard .dashboard-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-dashboard .dashboard-card .card-text {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.admin-dashboard .dashboard-card .btn {
+    margin-top: auto;
+}
+
+/* Booking Detail Styles */
+.booking-detail .timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.booking-detail .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #dee2e6;
+}
+
+.booking-detail .timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.booking-detail .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    border: 2px solid #fff;
+}
+
+/* Admin Booking Detail Styles */
+.admin-booking-detail .booking-detail-card {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-booking-detail .booking-detail-card .card-body {
+    flex: 1;
+}
+
+.admin-booking-detail .booking-detail-card .card-header {
+    padding: 1rem;
+}
+
+.admin-booking-detail .booking-detail-card .table {
+    margin-bottom: 0;
+}
+
+.admin-booking-detail .booking-detail-card .table th {
+    width: 30%;
+    background-color: #f8f9fa;
+}
+
+.admin-booking-detail .booking-image {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.admin-booking-detail .status-badge {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.admin-booking-detail .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.admin-booking-detail .timeline-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-booking-detail .timeline-info .btn {
+    white-space: nowrap;
+}
+
+/* Admin Edit Room Category Styles */
+.admin-edit-room-category .category-card {
+    margin-bottom: 2rem;
+}
+
+.admin-edit-room-category .image-card {
+    height: 100%;
+}
+
+.admin-edit-room-category .image-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.admin-edit-room-category .upload-container {
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .admin-edit-room-category .image-card img {
+        height: 150px;
+    }
+}
+
+/* Admin Room Category Detail Styles */
+.admin-room-category-detail .category-details-card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-room-category-detail .additional-images-card,
+.admin-room-category-detail .rooms-list-card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-room-category-detail .main-image-container {
+    max-height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-room-category-detail .main-image-container img {
+    max-height: 100%;
+    width: auto;
+}
+
+.admin-room-category-detail .category-price {
+    font-size: 1.2rem;
+    color: #333;
+}

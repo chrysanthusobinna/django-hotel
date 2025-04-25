@@ -118,7 +118,7 @@
     </div>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-5 admin-room-category-detail">
     <div class="row">
         <div class="col-md-8 mx-auto">
 
@@ -253,33 +253,7 @@
     </div> <!-- row -->
 </div> <!-- container -->
 
-<style>
-    .category-details-card {
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .additional-images-card, .rooms-list-card {
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .main-image-container {
-        max-height: 300px;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .main-image-container img {
-        max-height: 100%;
-        width: auto;
-    }
-
-    .category-price {
-        font-size: 1.2rem;
-        color: #333;
-    }
-</style>
+{% endblock %}
 
 {% block extra_scripts %}
 <script>
@@ -322,6 +296,4 @@
         });
     });
 </script>
-{% endblock %}
-
 {% endblock %}

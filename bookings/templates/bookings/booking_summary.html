@@ -3,29 +3,6 @@
 {% load humanize %}
 
 {% block content %}
-<style>
-    .booking-summary-card {
-        border-radius: 12px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-        background-color: #fff;
-    }
-
-    .booking-summary-table th {
-        width: 200px;
-        text-align: left;
-    }
-
-    .booking-summary-table td {
-        text-align: left;
-    }
-
-    .booking-summary-btn {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
-    }
-</style>
-
 <div class="container my-5">
     <h2 class="mb-4 text-center">Booking Summary</h2>
 
@@ -68,7 +45,6 @@
                 <i class="fas fa-credit-card"></i> Pay with Stripe
             </button>
         </form>
-        
     </div>
 </div>
 {% endblock %}
