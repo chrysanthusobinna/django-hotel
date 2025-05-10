@@ -3,6 +3,7 @@ from django.conf import settings
 from .models import RoomCategory
 from profiles.models import UserProfile
 
+
 def room_list(request):
     room_categories = RoomCategory.objects.all()
     return render(request, 'rooms/room_list.html', {
@@ -21,7 +22,12 @@ def room_detail(request, pk):
     if can_book:
         try:
             profile = user.profile
-            if not all([profile.address, profile.city, profile.post_code, profile.country]):
+            if not all([
+                profile.address,
+                profile.city,
+                profile.post_code,
+                profile.country
+            ]):
                 incomplete_profile = True
         except UserProfile.DoesNotExist:
             incomplete_profile = True
