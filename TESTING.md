@@ -176,28 +176,19 @@ I have implemented comprehensive defensive programming measures throughout my ho
 
 ## User Story Testing
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Testing user stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **features** should already align with the **user stories**,
-so this should as simple as creating a table with the user story, matching with the re-used screenshot
-from the respective feature.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
 | User Story | Screenshot |
 | --- | --- |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature01.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature02.png) |
-| As a new site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature03.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature04.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature05.png) |
-| As a returning site user, I would like to ____________, so that I can ____________. | ![screenshot](documentation/features/feature06.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature07.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature08.png) |
-| As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/features/feature09.png) |
-| repeat for all remaining user stories | x |
+| As a new site user, I would like to browse available room categories, so that I can view different room options and their amenities. | ![Room Categories](documentation/features/room-categories.png) |
+| As a new site user, I would like to create an account, so that I can make bookings and manage my reservations. | ![Account Creation](documentation/features/account-creation.png) |
+| As a new site user, I would like to view room availability for specific dates, so that I can plan my stay. | ![Room Availability](documentation/features/room-availability.png) |
+| As a new site user, I would like to see room prices and total cost for my stay, so that I can budget accordingly. | ![Room Pricing](documentation/features/room-pricing.png) |
+| As a new site user, I would like to receive booking confirmation emails, so that I have proof of my reservation. | ![Booking Confirmation](documentation/features/booking-confirmation.png) |
+| As a returning site user, I would like to log in to my account, so that I can access my booking history. | ![User Login](documentation/features/user-login.png) |
+| As a returning site user, I would like to view my upcoming bookings, so that I can plan my stay. | ![Booking History](documentation/features/booking-history.png) |
+| As a returning site user, I would like to cancel my booking if needed, so that I can manage my travel plans. | ![Booking Cancellation](documentation/features/booking-cancellation.png) |
+| As a returning site user, I would like to update my profile information, so that my details are current. | ![Profile Update](documentation/features/profile-update.png) |
+| As a site administrator, I should be able to manage room categories and availability, so that I can control the hotel's inventory. | ![Admin Room Management](documentation/features/admin-room-management.png) |
+| As a site administrator, I should be able to view and manage all bookings, so that I can track occupancy and revenue. | ![Admin Booking Management](documentation/features/admin-booking-management.png) |
 
 ## Automated Testing
 

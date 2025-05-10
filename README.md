@@ -75,9 +75,6 @@ The typography system is designed to:
 
 - As a site administrator, I should be able to manage room categories and availability, so that I can control the hotel's inventory.
 - As a site administrator, I should be able to view and manage all bookings, so that I can track occupancy and revenue.
-- As a site administrator, I should be able to process payments and refunds, so that I can handle financial transactions.
-- As a site administrator, I should be able to send notifications to guests, so that I can communicate important information.
-- As a site administrator, I should be able to generate reports on bookings and revenue, so that I can analyze business performance.
 
 ## Wireframes
 
