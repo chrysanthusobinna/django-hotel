@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 
-# Create your models here.
 
 class Subscriber(models.Model):
     email = models.EmailField(unique=True)
