@@ -28,10 +28,16 @@ def booking_summary(request):
             room_category = RoomCategory.objects.get(id=room_category_id)
             available_rooms = room_category.rooms.filter(is_available=True)
             if not available_rooms.exists():
-                messages.error(request, "No rooms available in this category.")
+                messages.error(
+                    request,
+                    "No rooms available in this category."
+                )
                 return redirect('rooms:room_detail', pk=room_category_id)
         except RoomCategory.DoesNotExist:
-            messages.error(request, "Invalid room category selected.")
+            messages.error(
+                request,
+                "Invalid room category selected."
+            )
             return redirect('rooms:room_list')
 
         try:
@@ -42,22 +48,33 @@ def booking_summary(request):
             return redirect('rooms:room_detail', pk=room_category_id)
 
         if check_in >= check_out:
-            messages.error(request, "Check-out date must be after check-in.")
+            messages.error(
+                request,
+                "Check-out date must be after check-in."
+            )
             return redirect('rooms:room_detail', pk=room_category_id)
 
         if check_in == check_out:
-            messages.error(request, "Check-in and check-out cannot be on the same day.")
+            messages.error(
+                request,
+                "Check-in and check-out cannot be on the same day."
+            )
             return redirect('rooms:room_detail', pk=room_category_id)
 
         if check_in < date.today():
-            messages.error(request, "Check-in date cannot be in the past.")
+            messages.error(
+                request,
+                "Check-in date cannot be in the past."
+            )
             return redirect('rooms:room_detail', pk=room_category_id)
 
         nights = (check_out - check_in).days
         total_price = nights * room_category.price
 
         # Check room availability
-        is_available = check_room_availability(room_category_id, check_in, check_out)
+        is_available = check_room_availability(
+            room_category_id, check_in, check_out
+        )
 
         if is_available:
             # Save booking data in session
@@ -72,25 +89,39 @@ def booking_summary(request):
             return redirect('bookings:booking_summary')
 
         else:
-            messages.error(request, "No available rooms in this category for the selected date range.")
+            messages.error(
+                request,
+                "No available rooms in this category for the "
+                "selected date range."
+            )
             return redirect('rooms:room_detail', pk=room_category_id)
-
 
     # GET request – render booking summary
     booking = request.session.get('booking')
     if not booking:
         return redirect('mainsite:home')
 
-    room_category = get_object_or_404(RoomCategory, id=booking['room_category_id'])
+    room_category = get_object_or_404(
+        RoomCategory,
+        id=booking['room_category_id']
+    )
 
     # Convert date strings to date objects for display
-    booking['check_in'] = datetime.strptime(booking['check_in'], "%Y-%m-%d").date()
-    booking['check_out'] = datetime.strptime(booking['check_out'], "%Y-%m-%d").date()
+    booking['check_in'] = datetime.strptime(
+        booking['check_in'], "%Y-%m-%d"
+    ).date()
+    booking['check_out'] = datetime.strptime(
+        booking['check_out'], "%Y-%m-%d"
+    ).date()
 
-    return render(request, 'bookings/booking_summary.html', {
-        'room_category': room_category,
-        'booking': booking,
-    })
+    return render(
+        request,
+        'bookings/booking_summary.html',
+        {
+            'room_category': room_category,
+            'booking': booking,
+        }
+    )
 
 
 @login_required
@@ -130,16 +161,22 @@ def create_checkout_session(request):
                 'price_data': {
                     'currency': settings.CURRENCY_CODE.lower(),
                     'product_data': {
-                        'name': f"Room Booking - {room_category.name}",
+                        'name': (
+                            f"Room Booking - {room_category.name}"
+                        ),
                     },
-                    'unit_amount': int(float(total_price) * 100),  # in pence
+                    'unit_amount': int(float(total_price) * 100),
                 },
                 'quantity': 1,
             }],
             mode='payment',
             customer_email=request.user.email,
-            success_url=request.build_absolute_uri(reverse('bookings:payment_success')),
-            cancel_url=request.build_absolute_uri(reverse('bookings:payment_cancelled')),
+            success_url=request.build_absolute_uri(
+                reverse('bookings:payment_success')
+            ),
+            cancel_url=request.build_absolute_uri(
+                reverse('bookings:payment_cancelled')
+            ),
         )
         return redirect(session.url)
     except Exception as e:
@@ -153,7 +190,10 @@ def payment_success(request):
         return redirect('mainsite:home')
 
     try:
-        booking = Booking.objects.get(id=booking_data['booking_id'], user=request.user)
+        booking = Booking.objects.get(
+            id=booking_data['booking_id'],
+            user=request.user
+        )
     except Booking.DoesNotExist:
         return redirect('mainsite:home')
 
@@ -162,7 +202,9 @@ def payment_success(request):
         booking.save()
 
         # Send confirmation email
-        subject = f"Booking Confirmation - #{booking.booking_number}"
+        subject = (
+            f"Booking Confirmation - #{booking.booking_number}"
+        )
         message = (
             f"Hi {request.user.first_name},\n\n"
             f"Thank you for your booking!\n\n"
@@ -171,7 +213,8 @@ def payment_success(request):
             f"Room Category: {booking.room_category.name}\n"
             f"Check-in: {booking.check_in}\n"
             f"Check-out: {booking.check_out}\n"
-            f"Total Paid: {settings.CURRENCY_SYMBOL}{booking.total_price}\n\n"
+            f"Total Paid: {settings.CURRENCY_SYMBOL}"
+            f"{booking.total_price}\n\n"
             f"We look forward to your stay!"
         )
         send_mail(
@@ -183,18 +226,29 @@ def payment_success(request):
         )
 
     try:
-        room_category = RoomCategory.objects.get(id=booking_data['room_category_id'])
+        room_category = RoomCategory.objects.get(
+            id=booking_data['room_category_id']
+        )
     except RoomCategory.DoesNotExist:
         return redirect('mainsite:home')
 
-    return render(request, 'bookings/payment_success.html', {
-        'booking': booking,
-        'room_category': room_category,
-    })
+    return render(
+        request,
+        'bookings/payment_success.html',
+        {
+            'booking': booking,
+            'room_category': room_category,
+        }
+    )
 
 
 def payment_cancelled(request):
-    messages.warning(request, 'Payment was cancelled. You can try again.')
-    return render(request, 'bookings/payment_cancelled.html', {
-        'message': 'Payment was cancelled. You can try again.'
-    })
+    messages.warning(
+        request,
+        'Payment was cancelled. You can try again.'
+    )
+    return render(
+        request,
+        'bookings/payment_cancelled.html',
+        {'message': 'Payment was cancelled. You can try again.'}
+    )
