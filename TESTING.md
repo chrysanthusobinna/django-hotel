@@ -114,9 +114,7 @@ I have used the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validat
 #### Custom Admin App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/forms.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 

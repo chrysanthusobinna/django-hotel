@@ -1,6 +1,7 @@
 from django import forms
 from rooms.models import RoomCategory, RoomCategoryImage
 
+
 class RoomCategoryForm(forms.ModelForm):
     class Meta:
         model = RoomCategory
@@ -16,10 +17,13 @@ class RoomCategoryForm(forms.ModelForm):
             raise forms.ValidationError("Price cannot be negative.")
         return price
 
+
 class RoomCategoryImageForm(forms.ModelForm):
     class Meta:
         model = RoomCategoryImage
         fields = ['image', 'caption']
         widgets = {
-            'caption': forms.TextInput(attrs={'placeholder': 'Enter image caption (optional)'}),
-        } 
+            'caption': forms.TextInput(
+                attrs={'placeholder': 'Enter image caption (optional)'}
+            ),
+        }
