@@ -131,16 +131,28 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     # {
-    #     'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    #     'NAME': (
+    #         'django.contrib.auth.password_validation.'
+    #         'UserAttributeSimilarityValidator'
+    #     ),
     # },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'MinimumLengthValidator'
+        ),
     },
     # {
-    #     'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    #     'NAME': (
+    #         'django.contrib.auth.password_validation.'
+    #         'CommonPasswordValidator'
+    #     ),
     # },
     # {
-    #     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    #     'NAME': (
+    #         'django.contrib.auth.password_validation.'
+    #         'NumericPasswordValidator'
+    #     ),
     # },
 ]
 
@@ -175,7 +187,7 @@ STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
 STRIPE_SUCCESS_URL = 'http://127.0.0.1:8000/bookings/payment-success/'
 STRIPE_CANCEL_URL = 'http://127.0.0.1:8000/bookings/payment-cancelled/'
 
-#SMTP
+# SMTP
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))

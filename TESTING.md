@@ -78,7 +78,6 @@ I have used the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validat
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
 | context_processors.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/context_processors.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| custom_storages.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/custom_storages.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/settings.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 

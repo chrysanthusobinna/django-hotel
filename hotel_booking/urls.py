@@ -9,6 +9,8 @@ urlpatterns = [
     path('', include('profiles.urls')),
     path('booking/', include('bookings.urls')),
     path('customer/', include('customer.urls')),
-    path('custom-admin/', include('custom_admin.urls', namespace='custom_admin')),
+    path(
+        'custom-admin/', include('custom_admin.urls', namespace='custom_admin')
+        ),
     path('newsletter/', include('newsletter.urls', namespace='newsletter')),
 ]
