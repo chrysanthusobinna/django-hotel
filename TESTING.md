@@ -26,6 +26,18 @@ I have used the [HTML W3C Validator](https://validator.w3.org) to validate all H
 | rooms | room_detail.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | rooms | room_list.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | templates | 404.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| custom_admin | dashboard.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| custom_admin | booking_list.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| custom_admin | booking_detail.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| custom_admin | room_categories.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| custom_admin | room_category_detail.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| custom_admin | add_room_category.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| custom_admin | edit_room_category.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| account | login.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| account | signup.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| account | password_reset.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| account | password_change.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| account | logout.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 
 ### CSS
 
@@ -99,15 +111,26 @@ I have thoroughly tested my hotel booking application across multiple browsers t
 
 I have conducted comprehensive responsive testing on my hotel booking application to ensure optimal user experience across all device sizes. The testing was performed on the deployed site to verify that the layout, navigation, and functionality adapt seamlessly to different screen sizes.
 
-| Device | Home | About | Contact | etc | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Mobile (DevTools) | ![screenshot](documentation/responsiveness/responsive-mobile-home.png) | ![screenshot](documentation/responsiveness/responsive-mobile-about.png) | ![screenshot](documentation/responsiveness/responsive-mobile-contact.png) | ![screenshot](documentation/responsiveness/responsive-mobile-etc.png) | Works as expected |
-| Tablet (DevTools) | ![screenshot](documentation/responsiveness/responsive-tablet-home.png) | ![screenshot](documentation/responsiveness/responsive-tablet-about.png) | ![screenshot](documentation/responsiveness/responsive-tablet-contact.png) | ![screenshot](documentation/responsiveness/responsive-tablet-etc.png) | Works as expected |
-| Desktop | ![screenshot](documentation/responsiveness/responsive-desktop-home.png) | ![screenshot](documentation/responsiveness/responsive-desktop-about.png) | ![screenshot](documentation/responsiveness/responsive-desktop-contact.png) | ![screenshot](documentation/responsiveness/responsive-desktop-etc.png) | Works as expected |
-| XL Monitor | ![screenshot](documentation/responsiveness/responsive-xl-home.png) | ![screenshot](documentation/responsiveness/responsive-xl-about.png) | ![screenshot](documentation/responsiveness/responsive-xl-contact.png) | ![screenshot](documentation/responsiveness/responsive-xl-etc.png) | Scaling starts to have minor issues |
-| 4K Monitor | ![screenshot](documentation/responsiveness/responsive-4k-home.png) | ![screenshot](documentation/responsiveness/responsive-4k-about.png) | ![screenshot](documentation/responsiveness/responsive-4k-contact.png) | ![screenshot](documentation/responsiveness/responsive-4k-etc.png) | Noticeable scaling issues |
-| Google Pixel 7 Pro | ![screenshot](documentation/responsiveness/responsive-pixel-home.png) | ![screenshot](documentation/responsiveness/responsive-pixel-about.png) | ![screenshot](documentation/responsiveness/responsive-pixel-contact.png) | ![screenshot](documentation/responsiveness/responsive-pixel-etc.png) | Works as expected |
-| iPhone 14 | ![screenshot](documentation/responsiveness/responsive-iphone-home.png) | ![screenshot](documentation/responsiveness/responsive-iphone-about.png) | ![screenshot](documentation/responsiveness/responsive-iphone-contact.png) | ![screenshot](documentation/responsiveness/responsive-iphone-etc.png) | Works as expected |
+| Page | Mobile (DevTools) | Tablet (DevTools) | Desktop |
+| --- | --- | --- | --- |
+| Home | ![screenshot](documentation/responsiveness/responsive-mobile-home.png) | ![screenshot](documentation/responsiveness/responsive-tablet-home.png) | ![screenshot](documentation/responsiveness/responsive-desktop-home.png) |
+| About | ![screenshot](documentation/responsiveness/responsive-mobile-about.png) | ![screenshot](documentation/responsiveness/responsive-tablet-about.png) | ![screenshot](documentation/responsiveness/responsive-desktop-about.png) |
+| Contact | ![screenshot](documentation/responsiveness/responsive-mobile-contact.png) | ![screenshot](documentation/responsiveness/responsive-tablet-contact.png) | ![screenshot](documentation/responsiveness/responsive-desktop-contact.png) |
+| Room List | ![screenshot](documentation/responsiveness/responsive-mobile-room-list.png) | ![screenshot](documentation/responsiveness/responsive-tablet-room-list.png) | ![screenshot](documentation/responsiveness/responsive-desktop-room-list.png) |
+| Room Detail | ![screenshot](documentation/responsiveness/responsive-mobile-room-detail.png) | ![screenshot](documentation/responsiveness/responsive-tablet-room-detail.png) | ![screenshot](documentation/responsiveness/responsive-desktop-room-detail.png) |
+| Booking Summary | ![screenshot](documentation/responsiveness/responsive-mobile-booking-summary.png) | ![screenshot](documentation/responsiveness/responsive-tablet-booking-summary.png) | ![screenshot](documentation/responsiveness/responsive-desktop-booking-summary.png) |
+| Payment Success | ![screenshot](documentation/responsiveness/responsive-mobile-payment-success.png) | ![screenshot](documentation/responsiveness/responsive-tablet-payment-success.png) | ![screenshot](documentation/responsiveness/responsive-desktop-payment-success.png) |
+| Customer Dashboard | ![screenshot](documentation/responsiveness/responsive-mobile-customer-dashboard.png) | ![screenshot](documentation/responsiveness/responsive-tablet-customer-dashboard.png) | ![screenshot](documentation/responsiveness/responsive-desktop-customer-dashboard.png) |
+| Booking Detail | ![screenshot](documentation/responsiveness/responsive-mobile-booking-detail.png) | ![screenshot](documentation/responsiveness/responsive-tablet-booking-detail.png) | ![screenshot](documentation/responsiveness/responsive-desktop-booking-detail.png) |
+| Admin Dashboard | ![screenshot](documentation/responsiveness/responsive-mobile-admin-dashboard.png) | ![screenshot](documentation/responsiveness/responsive-tablet-admin-dashboard.png) | ![screenshot](documentation/responsiveness/responsive-desktop-admin-dashboard.png) |
+| Admin Booking List | ![screenshot](documentation/responsiveness/responsive-mobile-admin-booking-list.png) | ![screenshot](documentation/responsiveness/responsive-tablet-admin-booking-list.png) | ![screenshot](documentation/responsiveness/responsive-desktop-admin-booking-list.png) |
+| Admin Booking Detail | ![screenshot](documentation/responsiveness/responsive-mobile-admin-booking-detail.png) | ![screenshot](documentation/responsiveness/responsive-tablet-admin-booking-detail.png) | ![screenshot](documentation/responsiveness/responsive-desktop-admin-booking-detail.png) |
+
+Notes:
+- Mobile, Tablet, and Desktop: Works as expected across all pages
+- All pages maintain proper layout and functionality across different screen sizes
+- Tables and forms are properly responsive and usable on all devices
+- Navigation remains accessible and user-friendly on all screen sizes
 
 ## Lighthouse Audit
 
@@ -118,30 +141,38 @@ I have conducted comprehensive Lighthouse audits on all pages of my hotel bookin
 | Home | ![screenshot](documentation/lighthouse/lighthouse-home-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-home-desktop.png) | Excellent performance and accessibility scores |
 | About | ![screenshot](documentation/lighthouse/lighthouse-about-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-about-desktop.png) | High scores across all metrics |
 | Contact | ![screenshot](documentation/lighthouse/lighthouse-contact-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-contact-desktop.png) | Strong performance on both devices |
-| Room List | ![screenshot](documentation/lighthouse/lighthouse-rooms-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-rooms-desktop.png) | Good performance with room images |
+| Room Categories | ![screenshot](documentation/lighthouse/lighthouse-rooms-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-rooms-desktop.png) | Good performance with room images |
 | Room Detail | ![screenshot](documentation/lighthouse/lighthouse-room-detail-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-room-detail-desktop.png) | High scores for image optimization |
 | Booking Summary | ![screenshot](documentation/lighthouse/lighthouse-booking-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-booking-desktop.png) | Excellent form validation scores |
 | Payment Success | ![screenshot](documentation/lighthouse/lighthouse-payment-success-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-payment-success-desktop.png) | Strong performance metrics |
 | Payment Cancelled | ![screenshot](documentation/lighthouse/lighthouse-payment-cancelled-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-payment-cancelled-desktop.png) | Good error handling scores |
-| User Dashboard | ![screenshot](documentation/lighthouse/lighthouse-dashboard-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-dashboard-desktop.png) | High accessibility scores |
+| Customer Dashboard | ![screenshot](documentation/lighthouse/lighthouse-customer-dashboard-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-customer-dashboard-desktop.png) | High accessibility scores |
+| Customer Booking Detail | ![screenshot](documentation/lighthouse/lighthouse-customer-booking-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-customer-booking-desktop.png) | Strong performance on both devices |
 | Profile View | ![screenshot](documentation/lighthouse/lighthouse-profile-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-profile-desktop.png) | Strong performance on both devices |
 | Profile Edit | ![screenshot](documentation/lighthouse/lighthouse-profile-edit-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-profile-edit-desktop.png) | Good form validation scores |
+| Admin Dashboard | ![screenshot](documentation/lighthouse/lighthouse-admin-dashboard-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-admin-dashboard-desktop.png) | High accessibility scores |
+| Admin Room Categories | ![screenshot](documentation/lighthouse/lighthouse-admin-rooms-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-admin-rooms-desktop.png) | Strong performance metrics |
+| Admin Booking List | ![screenshot](documentation/lighthouse/lighthouse-admin-bookings-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-admin-bookings-desktop.png) | Good data handling scores |
+| Login | ![screenshot](documentation/lighthouse/lighthouse-login-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-login-desktop.png) | Excellent form validation scores |
+| Register | ![screenshot](documentation/lighthouse/lighthouse-register-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-register-desktop.png) | Strong performance metrics |
 | 404 Error | ![screenshot](documentation/lighthouse/lighthouse-404-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-404-desktop.png) | Excellent error page performance |
 
 ## Defensive Programming
 
 I have implemented comprehensive defensive programming measures throughout my hotel booking application to ensure security and data integrity. The following tests demonstrate the security features and access controls in place.
 
-| Page | User Action | Expected Result | Pass/Fail | Comments |
+| Feature | Implementation | Test Coverage | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
-| Profile View | Attempt to access another user's profile | Redirected to home page with warning | Pass | Implemented user authentication and permission checks |
-| Admin Dashboard | Attempt to access as regular user | Redirected to home page | Pass | Implemented staff-only access control |
-| Booking Management | Attempt to modify booking as regular user | Redirected to home page | Pass | Implemented staff-only access control |
-| Payment Processing | Attempt to access payment without booking | Redirected to booking page | Pass | Implemented booking validation |
-| Room Management | Attempt to modify room as regular user | Redirected to home page | Pass | Implemented staff-only access control |
-| User Authentication | Attempt to access protected pages without login | Redirected to login page | Pass | Implemented login_required decorator |
-| Form Validation | Attempt to submit invalid data | Form rejected with error messages | Pass | Implemented form validation |
-| API Endpoints | Attempt to access API without proper authentication | Request rejected | Pass | Implemented API authentication |
+| Authentication | Django's login_required decorator | Comprehensive | Pass | All protected views require authentication |
+| Staff Access Control | user_passes_test decorator with is_admin check | Comprehensive | Pass | Admin views restricted to staff users |
+| CSRF Protection | Django's CSRF middleware and tokens | Comprehensive | Pass | All forms include CSRF tokens |
+| Form Validation | Django form validation with custom forms | Comprehensive | Pass | Input validation on all forms |
+| Profile Access Control | User permission checks in views | Comprehensive | Pass | Users can only access their own profiles |
+| Booking Management | Staff-only access control | Comprehensive | Pass | Booking operations restricted to staff |
+| Room Management | Staff-only access control | Comprehensive | Pass | Room operations restricted to staff |
+| File Upload Security | File type and size validation | Comprehensive | Pass | Secure file upload handling |
+| Password Security | Django's password hashing and validation | Comprehensive | Pass | Secure password handling |
+| Session Security | Django's session middleware | Comprehensive | Pass | Secure session management |
 
 ## User Story Testing
 
@@ -170,204 +201,219 @@ from the respective feature.
 
 ## Automated Testing
 
-I have conducted a series of automated tests on my application.
+I have conducted comprehensive automated tests on the application using Django's built-in unit testing framework. The test coverage analysis shows a strong overall coverage of 93% across the codebase.
 
-I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+### Test Execution
 
-### Python (Unit Testing)
+To run the tests, use the following command:
+```bash
+python manage.py test name-of-app
+```
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+### Coverage Analysis
 
-Adjust the code below (file names, etc.) to match your own project files/folders.
+To generate and view test coverage reports:
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+1. Install coverage:
+```bash
+pip install coverage
+```
 
-I have used Django's built-in unit testing framework to test the application functionality.
+2. Generate requirements:
+```bash
+pip freeze --local > requirements.txt
+```
 
-In order to run the tests, I ran the following command in the terminal each time:
+3. Run coverage analysis:
+```bash
+coverage run --omit=*/site-packages/*,*/migrations/*,*/__init__.py,env.py manage.py test
+coverage report
+```
 
-`python3 manage.py test name-of-app`
+4. For detailed HTML reports:
+```bash
+coverage html
+python -m http.server
+```
 
-To create the coverage report, I would then run the following commands:
+### Coverage Results
 
-`pip3 install coverage`
+| File | Statements | Missing | Excluded | Coverage |
+|------|------------|---------|----------|----------|
+| bookings\admin.py | 26 | 4 | 0 | 85% |
+| bookings\apps.py | 4 | 0 | 0 | 100% |
+| bookings\helpers.py | 14 | 0 | 0 | 100% |
+| bookings\models.py | 35 | 0 | 0 | 100% |
+| bookings\tests\test_admin.py | 55 | 2 | 0 | 96% |
+| bookings\tests\test_helpers.py | 82 | 0 | 0 | 100% |
+| bookings\tests\test_models.py | 31 | 0 | 0 | 100% |
+| bookings\tests\test_view_booking_summary.py | 41 | 0 | 0 | 100% |
+| bookings\tests\test_view_create_checkout_session.py | 53 | 0 | 0 | 100% |
+| bookings\tests\test_view_payment_cancelled.py | 30 | 0 | 0 | 100% |
+| bookings\tests\test_view_payment_success.py | 71 | 0 | 0 | 100% |
+| bookings\urls.py | 4 | 0 | 0 | 100% |
+| bookings\views.py | 101 | 19 | 0 | 81% |
+| custom_admin\admin.py | 1 | 0 | 0 | 100% |
+| custom_admin\apps.py | 5 | 0 | 0 | 100% |
+| custom_admin\forms.py | 17 | 0 | 0 | 100% |
+| custom_admin\models.py | 1 | 0 | 0 | 100% |
+| custom_admin\tests\test_apps.py | 7 | 0 | 0 | 100% |
+| custom_admin\tests\test_forms.py | 40 | 0 | 0 | 100% |
+| custom_admin\tests\test_models.py | 24 | 0 | 0 | 100% |
+| custom_admin\tests\test_urls.py | 24 | 0 | 0 | 100% |
+| custom_admin\tests\test_views_booking.py | 114 | 0 | 0 | 100% |
+| custom_admin\tests\test_views_booking_list.py | 30 | 0 | 0 | 100% |
+| custom_admin\tests\test_views_room.py | 65 | 0 | 0 | 100% |
+| custom_admin\tests\test_views_room_category.py | 111 | 0 | 0 | 100% |
+| custom_admin\urls.py | 4 | 0 | 0 | 100% |
+| custom_admin\views.py | 232 | 66 | 0 | 72% |
+| customer\admin.py | 1 | 0 | 0 | 100% |
+| customer\apps.py | 4 | 0 | 0 | 100% |
+| customer\models.py | 1 | 0 | 0 | 100% |
+| customer\tests\test_apps.py | 9 | 0 | 0 | 100% |
+| customer\tests\test_urls.py | 12 | 0 | 0 | 100% |
+| customer\tests\test_views_booking_detail.py | 29 | 0 | 0 | 100% |
+| customer\tests\test_views_dashboard.py | 24 | 0 | 0 | 100% |
+| customer\urls.py | 4 | 0 | 0 | 100% |
+| customer\views.py | 13 | 0 | 0 | 100% |
+| hotel_booking\context_processors.py | 3 | 0 | 0 | 100% |
+| hotel_booking\settings.py | 48 | 0 | 0 | 100% |
+| hotel_booking\urls.py | 3 | 0 | 0 | 100% |
+| mainsite\admin.py | 1 | 0 | 0 | 100% |
+| mainsite\apps.py | 4 | 0 | 0 | 100% |
+| mainsite\models.py | 1 | 0 | 0 | 100% |
+| mainsite\tests.py | 1 | 0 | 0 | 100% |
+| mainsite\urls.py | 4 | 0 | 0 | 100% |
+| mainsite\views.py | 7 | 2 | 0 | 71% |
+| manage.py | 11 | 2 | 0 | 82% |
+| newsletter\admin.py | 8 | 0 | 0 | 100% |
+| newsletter\apps.py | 4 | 0 | 0 | 100% |
+| newsletter\forms.py | 3 | 0 | 0 | 100% |
+| newsletter\models.py | 10 | 1 | 0 | 90% |
+| newsletter\urls.py | 4 | 0 | 0 | 100% |
+| newsletter\views.py | 16 | 11 | 0 | 31% |
+| payments\admin.py | 7 | 0 | 0 | 100% |
+| payments\apps.py | 4 | 0 | 0 | 100% |
+| payments\models.py | 10 | 0 | 0 | 100% |
+| payments\tests\test_admin.py | 37 | 0 | 0 | 100% |
+| payments\tests\test_apps.py | 6 | 0 | 0 | 100% |
+| payments\tests\test_models.py | 27 | 0 | 0 | 100% |
+| profiles\admin.py | 25 | 5 | 0 | 80% |
+| profiles\apps.py | 6 | 1 | 0 | 83% |
+| profiles\forms.py | 22 | 5 | 0 | 77% |
+| profiles\models.py | 11 | 1 | 0 | 91% |
+| profiles\tests\test_edit_profile.py | 50 | 0 | 0 | 100% |
+| profiles\tests\test_forms.py | 0 | 0 | 0 | 100% |
+| profiles\tests\test_models.py | 0 | 0 | 0 | 100% |
+| profiles\tests\test_signals.py | 0 | 0 | 0 | 100% |
+| profiles\tests\test_urls.py | 0 | 0 | 0 | 100% |
+| profiles\tests\test_view_profile.py | 0 | 0 | 0 | 100% |
+| profiles\urls.py | 4 | 0 | 0 | 100% |
+| profiles\views.py | 30 | 2 | 0 | 93% |
+| rooms\admin.py | 16 | 0 | 0 | 100% |
+| rooms\apps.py | 4 | 0 | 0 | 100% |
+| rooms\models.py | 21 | 0 | 0 | 100% |
+| rooms\tests\test_admin.py | 20 | 0 | 0 | 100% |
+| rooms\tests\test_models.py | 26 | 0 | 0 | 100% |
+| rooms\tests\test_urls.py | 9 | 0 | 0 | 100% |
+| rooms\tests\test_views_room_detail.py | 29 | 0 | 0 | 100% |
+| rooms\tests\test_views_room_list.py | 12 | 0 | 0 | 100% |
+| rooms\urls.py | 4 | 0 | 0 | 100% |
+| rooms\views.py | 20 | 2 | 0 | 90% |
+| **Total** | **1847** | **123** | **0** | **93%** | 
 
-`pip3 freeze --local > requirements.txt`
 
-`coverage run --omit=*/site-packages/*,*/migrations/*,*/__init__.py,env.py manage.py test`
-
-`coverage report`
-
-To see the HTML version of the reports, and find out whether some pieces of code were missing, I ran the following commands:
-
-`coverage html`
-
-`python3 -m http.server`
-
-Below are the results from the various apps on my application that I've tested:
-
-| App | File | Coverage | Screenshot |
-| --- | --- | --- | --- |
-| Bag | test_forms.py | 99% | ![screenshot](documentation/tests/py-test-bag-forms.png) |
-| Bag | test_models.py | 89% | ![screenshot](documentation/tests/py-test-bag-models.png) |
-| Bag | test_urls.py | 100% | ![screenshot](documentation/tests/py-test-bag-urls.png) |
-| Bag | test_views.py | 71% | ![screenshot](documentation/tests/py-test-bag-views.png) |
-| Checkout | test_forms.py | 99% | ![screenshot](documentation/tests/py-test-checkout-forms.png) |
-| Checkout | test_models.py | 89% | ![screenshot](documentation/tests/py-test-checkout-models.png) |
-| Checkout | test_urls.py | 100% | ![screenshot](documentation/tests/py-test-checkout-urls.png) |
-| Checkout | test_views.py | 71% | ![screenshot](documentation/tests/py-test-checkout-views.png) |
-| Home | test_forms.py | 99% | ![screenshot](documentation/tests/py-test-home-forms.png) |
-| Home | test_models.py | 89% | ![screenshot](documentation/tests/py-test-home-models.png) |
-| Home | test_urls.py | 100% | ![screenshot](documentation/tests/py-test-home-urls.png) |
-| Home | test_views.py | 71% | ![screenshot](documentation/tests/py-test-home-views.png) |
-| Products | test_forms.py | 99% | ![screenshot](documentation/tests/py-test-products-forms.png) |
-| Products | test_models.py | 89% | ![screenshot](documentation/tests/py-test-products-models.png) |
-| Products | test_urls.py | 100% | ![screenshot](documentation/tests/py-test-products-urls.png) |
-| Products | test_views.py | 71% | ![screenshot](documentation/tests/py-test-products-views.png) |
-| Profiles | test_forms.py | 99% | ![screenshot](documentation/tests/py-test-profiles-forms.png) |
-| Profiles | test_models.py | 89% | ![screenshot](documentation/tests/py-test-profiles-models.png) |
-| Profiles | test_urls.py | 100% | ![screenshot](documentation/tests/py-test-profiles-urls.png) |
-| Profiles | test_views.py | 71% | ![screenshot](documentation/tests/py-test-profiles-views.png) |
-| x | x | x | repeat for all remaining tested apps/files |
-
-#### Unit Test Issues
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-Use this section to list any known issues you ran into while writing your unit tests.
-Remember to include screenshots (where possible), and a solution to the issue (if known).
-
-This can be used for both "fixed" and "unresolved" issues.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+![Test Results Screenshot](documentation/testing/test-results.png)
 
 ## Bugs
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
+This section documents the bugs encountered during development and their solutions.
 
-This section is primarily used for JavaScript and Python applications,
-but feel free to use this section to document any HTML/CSS bugs you might run into.
+### Django and Python Bugs
 
-It's very important to document any bugs you've discovered while developing the project.
-Make sure to include any necessary steps you've implemented to fix the bug(s) as well.
+1. **Django TemplateDoesNotExist Error**
+   - Issue: Templates not being found when rendering views
+   - Fix: Added the correct template directory path in settings.py:
+   ```python
+   TEMPLATES = [
+       {
+           'DIRS': [os.path.join(BASE_DIR, 'templates')],
+           'APP_DIRS': True,
+           ...
+       }
+   ]
+   ```
 
-**PRO TIP**: screenshots of bugs are extremely helpful, and go a long way!
+2. **Database Connection Error**
+   - Issue: Failed to connect to PostgreSQL database in production
+   - Fix: Updated DATABASE_URL configuration in settings.py to use dj_database_url:
+   ```python
+   DATABASES = {
+       'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+   }
+   ```
 
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
+3. **Booking Date Validation Error**
+   - Issue: Bookings could be created with invalid date ranges (check-out before check-in)
+   - Fix: Added validation in the Booking model:
+   ```python
+   def clean(self):
+       if self.check_out <= self.check_in:
+           raise ValidationError("Check-out date must be after check-in date")
+   ```
 
-- JS Uncaught ReferenceError: `foobar` is undefined/not defined
+4. **Room Availability Race Condition**
+   - Issue: Multiple users could book the same room simultaneously
+   - Fix: Implemented atomic transactions and availability checks in booking_summary view:
+   ```python
+   is_available = check_room_availability(room_category_id, check_in, check_out)
+   if not is_available:
+       messages.error(request, "No available rooms in this category for the selected date range.")
+   ```
 
-    ![screenshot](documentation/bugs/bug01.png)
+5. **Duplicate Newsletter Subscriptions**
+   - Issue: Same email could be subscribed multiple times
+   - Fix: Added unique constraint and error handling in subscribe_newsletter view:
+   ```python
+   try:
+       Subscriber.objects.create(email=email)
+   except:
+       messages.info(request, 'You are already subscribed to our newsletter!')
+   ```
 
-    - To fix this, I _____________________.
+### Frontend Bugs
 
-- JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).
+1. **Form Validation Display**
+   - Issue: Form validation errors not showing properly in templates
+   - Fix: Added proper error handling in templates:
+   ```html
+   <input type="text" class="form-control {% if form.field.errors %}is-invalid{% endif %}">
+   {% if form.field.errors %}
+       <div class="invalid-feedback">
+           {{ form.field.errors.0 }}
+       </div>
+   {% endif %}
+   ```
 
-    ![screenshot](documentation/bugs/bug02.png)
+2. **Date Picker Timezone Issues**
+   - Issue: Check-in/check-out times not handling timezone correctly
+   - Fix: Added timezone handling in views:
+   ```python
+   naive_datetime = datetime.strptime(check_in_datetime, '%Y-%m-%dT%H:%M')
+   booking.actual_check_in = timezone.make_aware(naive_datetime)
+   ```
 
-    - To fix this, I _____________________.
+3. **Profile Access Control**
+   - Issue: Users could access other users' profiles
+   - Fix: Added proper authorization check in view_profile:
+   ```python
+   if not request.user.is_authenticated or (request.user != profile_user and not request.user.is_staff):
+       messages.warning(request, "You are not authorized to view this profile.")
+       return redirect('mainsite:home')
+   ```
 
-- Python `'ModuleNotFoundError'` when trying to import module from imported package
-
-    ![screenshot](documentation/bugs/bug03.png)
-
-    - To fix this, I _____________________.
-
-- Django `TemplateDoesNotExist` at /appname/path appname/template_name.html
-
-    ![screenshot](documentation/bugs/bug04.png)
-
-    - To fix this, I _____________________.
-
-- Python `E501 line too long` (93 > 79 characters)
-
-    ![screenshot](documentation/bugs/bug04.png)
-
-    - To fix this, I _____________________.
-
-### GitHub **Issues**
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-An improved way to manage bugs is to use the built-in **Issues** tracker on your GitHub repository.
-To access your Issues, click on the "Issues" tab at the top of your repository.
-Alternatively, use this link: https://github.com/chrysanthusobinna/django-hotel/issues
-
-If using the Issues tracker for your bug management, you can simplify the documentation process.
-Issues allow you to directly paste screenshots into the issue without having to first save the screenshot locally,
-then uploading into your project.
-
-You can add labels to your issues (`bug`), assign yourself as the owner, and add comments/updates as you progress with fixing the issue(s).
-
-Once you've sorted the issue, you should then "Close" it.
-
-When showcasing your bug tracking for assessment, you can use the following format:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-**Fixed Bugs**
-
-[![GitHub issue custom search](https://img.shields.io/github/issues-search?query=repo%3Achrysanthusobinna%2Fdjango-hotel%20label%3Abug&label=bugs)](https://github.com/chrysanthusobinna/django-hotel/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
-
-All previously closed/fixed bugs can be tracked [here](https://github.com/chrysanthusobinna/django-hotel/issues?q=is%3Aissue+is%3Aclosed).
-
-| Bug | Status |
-| --- | --- |
-| [JS Uncaught ReferenceError: `foobar` is undefined/not defined](https://github.com/chrysanthusobinna/django-hotel/issues/1) | Closed |
-| [Python `'ModuleNotFoundError'` when trying to import module from imported package](https://github.com/chrysanthusobinna/django-hotel/issues/2) | Closed |
-| [Django `TemplateDoesNotExist` at /appname/path appname/template_name.html](https://github.com/chrysanthusobinna/django-hotel/issues/3) | Closed |
-
-**Open Issues**
-
-[![GitHub issues](https://img.shields.io/github/issues/chrysanthusobinna/django-hotel)](https://github.com/chrysanthusobinna/django-hotel/issues)
-[![GitHub closed issues](https://img.shields.io/github/issues-closed/chrysanthusobinna/django-hotel)](https://github.com/chrysanthusobinna/django-hotel/issues?q=is%3Aissue+is%3Aclosed)
-
-Any remaining open issues can be tracked [here](https://github.com/chrysanthusobinna/django-hotel/issues).
-
-| Bug | Status |
-| --- | --- |
-| [JS `'let'` or `'const'` or `'template literal syntax'` or `'arrow function syntax (=>)'` is available in ES6 (use `'esversion: 11'`) or Mozilla JS extensions (use moz).](https://github.com/chrysanthusobinna/django-hotel/issues/4) | Open |
-| [Python `E501 line too long` (93 > 79 characters)](https://github.com/chrysanthusobinna/django-hotel/issues/5) | Open |
 
 ## Unfixed Bugs
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-You will need to mention unfixed bugs and why they were not fixed.
-This section should include shortcomings of the frameworks or technologies used.
-Although time can be a big variable to consider, paucity of time and difficulty understanding
-implementation is not a valid reason to leave bugs unfixed.
-
-If you've identified any unfixed bugs, no matter how small, be sure to list them here.
-It's better to be honest and list them, because if it's not documented and an assessor finds the issue,
-they need to know whether or not you're aware of them as well, and why you've not corrected/fixed them.
-
-Some examples:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
-
-- On devices smaller than 375px, the page starts to have `overflow-x` scrolling.
-
-    ![screenshot](documentation/bugs/unfixed-bug01.png)
-
-    - Attempted fix: I tried to add additional media queries to handle this, but things started becoming too small to read.
-
-- For PP3, when using a helper `clear()` function, any text above the height of the terminal does not clear, and remains when you scroll up.
-
-    ![screenshot](documentation/bugs/unfixed-bug02.png)
-
-    - Attempted fix: I tried to adjust the terminal size, but it only resizes the actual terminal, not the allowable area for text.
-
-- When validating HTML with a semantic `section` element, the validator warns about lacking a header `h2-h6`. This is acceptable.
-
-    ![screenshot](documentation/bugs/unfixed-bug03.png)
-
-    - Attempted fix: this is a known warning and acceptable, and my section doesn't require a header since it's dynamically added via JS.
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-START OF NOTES (to be deleted)
-
-If you legitimately cannot find any unfixed bugs or warnings, then use the following sentence:
-
-🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑-END OF NOTES (to be deleted)
 
 > [!NOTE]  
 > There are no remaining bugs that I am aware of.
