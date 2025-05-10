@@ -3,20 +3,21 @@ from django.contrib.auth.models import User
 from allauth.account.forms import SignupForm
 from .models import UserProfile
 
+
 class CustomSignupForm(SignupForm):
     first_name = forms.CharField(
-        max_length=30, 
+        max_length=30,
         label='First Name',
         widget=forms.TextInput(attrs={'placeholder': 'First name'})
     )
     middle_name = forms.CharField(
-        max_length=30, 
-        label='Middle Name', 
+        max_length=30,
+        label='Middle Name',
         required=False,
         widget=forms.TextInput(attrs={'placeholder': 'Middle name (optional)'})
     )
     last_name = forms.CharField(
-        max_length=30, 
+        max_length=30,
         label='Last Name',
         widget=forms.TextInput(attrs={'placeholder': 'Last name'})
     )
@@ -28,10 +29,12 @@ class CustomSignupForm(SignupForm):
         user.save()
         return user
 
+
 class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email']
+
 
 class UserProfileForm(forms.ModelForm):
     class Meta:

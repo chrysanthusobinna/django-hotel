@@ -92,7 +92,6 @@ I have used the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validat
 | --- | --- | --- | --- |
 | admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/payments/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 | models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/payments/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/payments/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
 
 #### Profiles App
 | File | CI URL | Screenshot | Notes |
