@@ -40,8 +40,8 @@
                 <div class="modal-body">
                     <input type="hidden" name="category" value="{{ category.id }}">
                     <div class="mb-3">
-                        <label for="roomName" class="form-label">Room Name</label>
-                        <input type="text" class="form-control" id="roomName" name="name" required>
+                        <label for="roomNamex" class="form-label">Room Name</label>
+                        <input type="text" class="form-control" id="roomNamex" name="name" required>
                     </div>
                     <div class="mb-3">
                         <div class="form-check">
@@ -104,7 +104,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to delete the room "<strong><span id="roomName"></span></strong>"?</p>
+                <p>Are you sure you want to delete the room "<strong><span id="roomNameDelete"></span></strong>"?</p>
                 <p class="text-danger">⚠️ This action cannot be undone.</p>
             </div>
             <div class="modal-footer">
@@ -291,7 +291,7 @@
             var deleteUrl = button.data('action');
 
             var modal = $(this);
-            modal.find('#roomName').text(roomName);
+            modal.find('#roomNameDelete').text(roomName);
             modal.find('#deleteRoomForm').attr('action', deleteUrl);
         });
     });

@@ -18,8 +18,6 @@ os.environ.setdefault(
     "CLOUDINARY_URL", "cloudinary://api_key:api_secret@cloud_name"
 )
 
-os.environ["USE_CLOUDINARY"] = "True"
-
 # SITE DETAILS
 os.environ["SITE_NAME"] = "Your Hotel Name"
 os.environ["SITE_EMAIL"] = "info@yourhotel.com"

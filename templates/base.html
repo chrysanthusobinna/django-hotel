@@ -145,9 +145,9 @@
         <section id="alerts">
             {% for msg in messages %}
                 <!-- all django message tags mirror bootstrap, except error/danger -->
-                <aside class="alert {% if msg.tags == 'error' %}alert-danger{% else %}alert-{{ msg.tags }}{% endif %} rounded-0 text-center" role="alert">
+                <div class="alert {% if msg.tags == 'error' %}alert-danger{% else %}alert-{{ msg.tags }}{% endif %} rounded-0 text-center" role="alert">
                     <h3>{{ msg }}</h3>
-                </aside>
+                </div>
             {% endfor %}
         </section>
         {% endif %}
@@ -171,7 +171,7 @@
                     <i class="fab fa-instagram"></i>
                 </a>
                 <!-- WhatsApp -->
-                <a href="https://wa.me/{{ SITE_PHONE }}" target="_blank" rel="noopener noreferrer nofollow" aria-label="WhatsApp" class="btn btn-outline-light rounded-circle">
+                <a href="https://wa.me/{{ WHATSAPP_PHONE }}" target="_blank" rel="noopener noreferrer nofollow" aria-label="WhatsApp" class="btn btn-outline-light rounded-circle">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>

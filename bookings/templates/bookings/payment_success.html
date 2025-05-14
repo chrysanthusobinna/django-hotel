@@ -12,9 +12,11 @@
     <div class="row align-items-start mt-4">
         <div class="col-md-5">
             {% if room_category.image %}
-                <img src="{{ room_category.image.url }}" class="img-fluid rounded shadow-sm w-100" alt="{{ room_category.name }}">
+            <img src="{{ room_category.image.url }}" class="img-fluid rounded shadow-sm w-100"
+                alt="{{ room_category.name }}">
             {% else %}
-                <img src="{% static 'images/placeholder-room.jpg' %}" class="img-fluid rounded shadow-sm w-100" alt="Room image">
+            <img src="{% static 'images/placeholder-room.jpg' %}" class="img-fluid rounded shadow-sm w-100"
+                alt="Room image">
             {% endif %}
         </div>
 
@@ -25,22 +27,30 @@
                     <li class="list-group-item"><strong>Booking Number:</strong> {{ booking.booking_number }}</li>
                     <li class="list-group-item"><strong>Room Category:</strong> {{ room_category.name }}</li>
                     <li class="list-group-item"><strong>Check-in:</strong> {{ booking.check_in|date:"l, jS F Y" }}</li>
-                    <li class="list-group-item"><strong>Check-out:</strong> {{ booking.check_out|date:"l, jS F Y" }}</li>
-                    <li class="list-group-item"><strong>Total Price:</strong> {{ CURRENCY_SYMBOL }}{{ booking.total_price|floatformat:2 }}</li>
+                    <li class="list-group-item"><strong>Check-out:</strong> {{ booking.check_out|date:"l, jS F Y" }}
+                    </li>
+                    <li class="list-group-item"><strong>Total Price:</strong> {{ CURRENCY_SYMBOL }}{{
+                        booking.total_price|floatformat:2 }}</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="text-center mt-5 contact-box">
-        <p class="lead fw-medium">📞 For inquiries or assistance, please call <strong>{{ SITE_PHONE }}</strong> or email us at <strong>{{ SITE_EMAIL }}</strong>.</p>
+        <p class="lead fw-medium">📞 For inquiries or assistance, please call <strong>{{ SITE_PHONE }}</strong> or email
+            us at <strong>{{ SITE_EMAIL }}</strong>.</p>
         <a href="{% url 'mainsite:home' %}" class="btn btn-primary mt-3">Back to Home</a>
     </div>
 
     <div class="map-container mt-5" style="height: 400px;">
         <iframe class="map w-100 h-100 rounded shadow-sm"
             src="https://maps.google.com/maps?q={{ SITE_ADDRESS|urlencode }}&output=embed"
-            frameborder="0" allowfullscreen></iframe>
+            style="border: 0;" 
+            allowfullscreen 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
+
 </div>
 {% endblock %}

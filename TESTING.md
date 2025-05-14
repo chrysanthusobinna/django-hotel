@@ -13,31 +13,27 @@ I have used the [HTML W3C Validator](https://validator.w3.org) to validate all H
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| bookings | booking_summary.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| bookings | payment_cancelled.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| bookings | payment_success.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| customer | booking_detail.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| customer | dashboard.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| mainsite | about.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| mainsite | contact.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| mainsite | home.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| profiles | edit_profile.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| profiles | view_profile.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| rooms | room_detail.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| rooms | room_list.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| templates | 404.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| custom_admin | dashboard.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| custom_admin | booking_list.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| custom_admin | booking_detail.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| custom_admin | room_categories.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| custom_admin | room_category_detail.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| custom_admin | add_room_category.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| custom_admin | edit_room_category.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| account | login.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| account | signup.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| account | password_reset.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| account | password_change.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| account | logout.html | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| bookings | templates/bookings/booking_summary.html | ![screenshot](documentation/html-validation-booking-summary.png) | |
+| bookings | templates/bookings/payment_cancelled.html | ![screenshot](documentation/html-validation-payment-cancelled.png) | |
+| bookings | templates/bookings/payment_success.html | ![screenshot](documentation/html-validation-payment-success.png) | |
+| customer | templates/customer/booking_detail.html | ![screenshot](documentation/html-validation-customer-booking-detail.png) | |
+| customer | templates/customer/dashboard.html | ![screenshot](documentation/html-validation-customer-dashboard.png) | |
+| mainsite | templates/mainsite/about.html | ![screenshot](documentation/html-validation-about.png) | |
+| mainsite | templates/mainsite/contact.html | ![screenshot](documentation/html-validation-contact.png) | |
+| mainsite | templates/mainsite/home.html | ![screenshot](documentation/html-validation-home.png) | |
+| profiles | templates/profiles/edit_profile.html | ![screenshot](documentation/html-validation-edit-profile.png) | |
+| profiles | templates/profiles/view_profile.html | ![screenshot](documentation/html-validation-view-profile.png) | |
+| rooms | templates/rooms/room_detail.html | ![screenshot](documentation/html-validation-room-detail.png) | |
+| rooms | templates/rooms/room_list.html | ![screenshot](documentation/html-validation-room-list.png) | |
+| templates | templates/404.html | ![screenshot](documentation/html-validation-404.png) | |
+| custom_admin | templates/custom_admin/dashboard.html | ![screenshot](documentation/html-validation-admin-dashboard.png) | |
+| custom_admin | templates/custom_admin/booking_list.html | ![screenshot](documentation/html-validation-admin-booking-list.png) | |
+| custom_admin | templates/custom_admin/booking_detail.html | ![screenshot](documentation/html-validation-admin-booking-detail.png) | |
+| custom_admin | templates/custom_admin/room_categories.html | ![screenshot](documentation/html-validation-admin-room-categories.png) | |
+| custom_admin | templates/custom_admin/room_category_detail.html | ![screenshot](documentation/html-validation-admin-room-category-detail.png) | |
+| custom_admin | templates/custom_admin/add_room_category.html | ![screenshot](documentation/html-validation-admin-add-room-category.png) | |
+| custom_admin | templates/custom_admin/edit_room_category.html | ![screenshot](documentation/html-validation-admin-edit-room-category.png) | |
+
 
 ### CSS
 
