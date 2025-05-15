@@ -3,7 +3,6 @@ from django.contrib import messages
 from .forms import SubscriptionForm
 from .models import Subscriber
 
-# Create your views here.
 
 def subscribe_newsletter(request):
     if request.method == 'POST':
@@ -12,9 +11,15 @@ def subscribe_newsletter(request):
             email = form.cleaned_data['email']
             try:
                 Subscriber.objects.create(email=email)
-                messages.success(request, 'Thank you for subscribing to our newsletter!')
-            except:
-                messages.info(request, 'You are already subscribed to our newsletter!')
+                messages.success(
+                    request,
+                    'Thank you for subscribing to our newsletter!'
+                )
+            except Exception:
+                messages.info(
+                    request,
+                    'You are already subscribed to our newsletter!'
+                )
         else:
             messages.error(request, 'Invalid email address.')
     return redirect('mainsite:home')

@@ -41,7 +41,7 @@ I have used the [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to v
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| static | style.css | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| static | style.css | ![screenshot](documentation/path-to-screenshot.png) | |
 
 ### JavaScript
 
@@ -49,7 +49,7 @@ I have used the [JShint Validator](https://jshint.com) to validate my JavaScript
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| static | script.js | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| static | script.js | ![screenshot](documentation/path-to-screenshot.png) | |
 
 ### Python
 
@@ -58,75 +58,76 @@ I have used the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validat
 #### Bookings App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| helpers.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/helpers.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/admin.py) | ![screenshot](documentation/admin_py_pep8_check.png) | |
+| helpers.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/helpers.py) | ![screenshot](documentation/helpers_py_pep8_check.png) | |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/models.py) | ![screenshot](documentation/models_py_pep8_check.png) | |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/urls.py) | ![screenshot](documentation/urls_py_pep8_check.png) | |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/views.py) | ![screenshot](documentation/views_py_pep8_check.png) | |
 
 #### Customer App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/customer/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/customer/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/customer/urls.py) | ![screenshot](documentation/customer_urls_py_pep8_check.png) | |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/customer/views.py) | ![screenshot](documentation/customer_views_py_pep8_check.png) | |
+
 
 #### Hotel Booking (Project Settings)
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| context_processors.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/context_processors.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/settings.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| context_processors.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/context_processors.py) | ![screenshot](documentation/context_processors_py_pep8_check.png) | |
+| settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/settings.py) | ![screenshot](documentation/settings_py_pep8_check.png) | |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/urls.py) | ![screenshot](documentation/urls_py_pep8_check.png) | |
 
 #### Mainsite App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/mainsite/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/mainsite/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/mainsite/urls.py) | ![screenshot](documentation/mainsite_urls_py_pep8_check.png) | |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/mainsite/views.py) | ![screenshot](documentation/mainsite_views_py_pep8_check.png) | |
 
 #### Payments App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/payments/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/payments/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/payments/admin.py) | ![screenshot](documentation/payments_admin_py_pep8_check.png) | |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/payments/models.py) | ![screenshot](documentation/payments_models_py_pep8_check.png) | |
+
 
 #### Profiles App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/forms.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| signals.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/signals.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/admin.py) | ![screenshot](documentation/profiles_admin_py_pep8_check.png) | |
+| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/forms.py) | ![screenshot](documentation/profiles_forms_py_pep8_check.png) | |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/models.py) | ![screenshot](documentation/profiles_models_py_pep8_check.png) | |
+| signals.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/signals.py) | ![screenshot](documentation/profiles_signals_py_pep8_check.png) | |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/urls.py) | ![screenshot](documentation/profiles_urls_py_pep8_check.png) | |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/views.py) | ![screenshot](documentation/profiles_views_py_pep8_check.png) | |
+
 
 #### Rooms App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/admin.py) | ![screenshot](documentation/rooms_admin_py_pep8_check.png) | |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/models.py) | ![screenshot](documentation/rooms_models_py_pep8_check.png) | |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/urls.py) | ![screenshot](documentation/rooms_urls_py_pep8_check.png) | |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/views.py) | ![screenshot](documentation/rooms_views_py_pep8_check.png) | |
 
 #### Custom Admin App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/forms.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/forms.py) | ![screenshot](documentation/custom_admin_forms_py_pep8_check.png) | |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/urls.py) | ![screenshot](documentation/custom_admin_urls_py_pep8_check.png) | |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/views.py) | ![screenshot](documentation/custom_admin_views_py_pep8_check.png) | |
+
 
 #### Newsletter App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/admin.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/forms.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/models.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/urls.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/views.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/admin.py) | ![screenshot](documentation/newsletter_admin_py_pep8_check.png) | |
+| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/forms.py) | ![screenshot](documentation/newsletter_forms_py_pep8_check.png) | |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/models.py) | ![screenshot](documentation/newsletter_models_py_pep8_check.png) | |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/urls.py) | ![screenshot](documentation/newsletter_urls_py_pep8_check.png) | |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/views.py) | ![screenshot](documentation/newsletter_views_py_pep8_check.png) | |
 
-#### Root Level Files
-| File | CI URL | Screenshot | Notes |
-| --- | --- | --- | --- |
-| manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/manage.py) | ![screenshot](documentation/validation/path-to-screenshot.png) | |
+
 
 ## Browser Compatibility
 
