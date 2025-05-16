@@ -197,26 +197,25 @@ Notes:
 
 I have conducted comprehensive Lighthouse audits on all pages of my hotel booking application to ensure optimal performance, accessibility, and user experience. The audits were performed on the deployed site to get accurate metrics for both mobile and desktop views.
 
-| Page | Mobile | Desktop | Notes |
-| --- | --- | --- | --- |
-| Home | ![screenshot](documentation/lighthouse-home-mobile.png) | ![screenshot](documentation/lighthouse-home-desktop.png) | Excellent performance and accessibility scores |
-| About | ![screenshot](documentation/lighthouse-about-mobile.png) | ![screenshot](documentation/lighthouse-about-desktop.png) | High scores across all metrics |
-| Contact | ![screenshot](documentation/lighthouse-contact-mobile.png) | ![screenshot](documentation/lighthouse-contact-desktop.png) | Strong performance on both devices |
-| Room Categories | ![screenshot](documentation/lighthouse-rooms-mobile.png) | ![screenshot](documentation/lighthouse-rooms-desktop.png) | Good performance with room images |
-| Room Detail | ![screenshot](documentation/lighthouse-room-detail-mobile.png) | ![screenshot](documentation/lighthouse-room-detail-desktop.png) | High scores for image optimization |
-| Booking Summary | ![screenshot](documentation/lighthouse-booking-mobile.png) | ![screenshot](documentation/lighthouse-booking-desktop.png) | Excellent form validation scores |
-| Payment Success | ![screenshot](documentation/lighthouse-payment-success-mobile.png) | ![screenshot](documentation/lighthouse-payment-success-desktop.png) | Strong performance metrics |
-| Payment Cancelled | ![screenshot](documentation/lighthouse-payment-cancelled-mobile.png) | ![screenshot](documentation/lighthouse-payment-cancelled-desktop.png) | Good error handling scores |
-| Customer Dashboard | ![screenshot](documentation/lighthouse-customer-dashboard-mobile.png) | ![screenshot](documentation/lighthouse-customer-dashboard-desktop.png) | High accessibility scores |
-| Customer Booking Detail | ![screenshot](documentation/lighthouse-customer-booking-mobile.png) | ![screenshot](documentation/lighthouse-customer-booking-desktop.png) | Strong performance on both devices |
-| Profile View | ![screenshot](documentation/lighthouse-profile-mobile.png) | ![screenshot](documentation/lighthouse-profile-desktop.png) | Strong performance on both devices |
-| Profile Edit | ![screenshot](documentation/lighthouse-profile-edit-mobile.png) | ![screenshot](documentation/lighthouse-profile-edit-desktop.png) | Good form validation scores |
-| Admin Dashboard | ![screenshot](documentation/lighthouse-admin-dashboard-mobile.png) | ![screenshot](documentation/lighthouse-admin-dashboard-desktop.png) | High accessibility scores |
-| Admin Room Categories | ![screenshot](documentation/lighthouse-admin-rooms-mobile.png) | ![screenshot](documentation/lighthouse-admin-rooms-desktop.png) | Strong performance metrics |
-| Admin Booking List | ![screenshot](documentation/lighthouse-admin-bookings-mobile.png) | ![screenshot](documentation/lighthouse-admin-bookings-desktop.png) | Good data handling scores |
-| Login | ![screenshot](documentation/lighthouse-login-mobile.png) | ![screenshot](documentation/lighthouse-login-desktop.png) | Excellent form validation scores |
-| Register | ![screenshot](documentation/lighthouse-register-mobile.png) | ![screenshot](documentation/lighthouse-register-desktop.png) | Strong performance metrics |
-| 404 Error | ![screenshot](documentation/lighthouse-404-mobile.png) | ![screenshot](documentation/lighthouse-404-desktop.png) | Excellent error page performance |
+| Page | Result | Notes |
+| --- | --- | --- |
+| Home | ![screenshot](documentation/lighthouse-home.png) | Performance 68, Accessibility 98, Best Practices 82, SEO 100 – clean, accessible, and SEO-friendly hotel website. |
+| About | ![screenshot](documentation/lighthouse-about.png) | Performance 75, Accessibility 98, Best Practices 100, SEO 100 – optimized, user-friendly, and fully standards-compliant. |
+| Contact | ![screenshot](documentation/lighthouse-contact.png) | Performance 74, Accessibility 98, Best Practices 100, SEO 100 – responsive, accessible, and well-optimized for user interaction. |
+| Room Categories | ![screenshot](documentation/lighthouse-rooms.png) | Performance 73, Accessibility 98, Best Practices 82, SEO 100 – well-structured and SEO-optimized with strong accessibility support.|
+| Room Detail | ![screenshot](documentation/lighthouse-room-detail.png) | Performance 76, Accessibility 93, Best Practices 82, SEO 100 – fast-loading, SEO-friendly, and well-structured for user engagement. |
+| Booking Summary | ![screenshot](documentation/lighthouse-booking.png) | Performance 96, Accessibility 98, Best Practices 100, SEO 100 – fast, accessible, and fully optimized for a smooth booking experience. |
+| Payment Success | ![screenshot](documentation/lighthouse-payment-success.png) | Performance 73, Accessibility 93, Best Practices 61, SEO 100 – functional and SEO-optimized with room for best practice improvements. |
+| Payment Cancelled | ![screenshot](documentation/lighthouse-payment-cancelled.png) | Performance 96, Accessibility 100, Best Practices 100, SEO 100 – fast, fully accessible, and flawlessly optimized. |
+| Customer Dashboard | ![screenshot](documentation/lighthouse-customer-dashboard.png) | Performance 83, Accessibility 96, Best Practices 100, SEO 100 – efficient, accessible, and optimized for managing bookings. |
+| Customer Booking Detail | ![screenshot](documentation/lighthouse-customer-booking.png) | Performance 75, Accessibility 95, Best Practices 82, SEO 100 – informative, accessible, and optimized for booking transparency. |
+| Profile View | ![screenshot](documentation/lighthouse-profile.png) | Performance 97, Accessibility 94, Best Practices 100, SEO 100 – fast, accessible, and optimized for user account management. |
+| Profile Edit | ![screenshot](documentation/lighthouse-profile-edit.png) | Performance 95, Accessibility 95, Best Practices 100, SEO 100 – smooth, secure, and optimized for user profile updates. |
+| Admin Dashboard | ![screenshot](documentation/lighthouse-admin-dashboard.png) |  Performance 97, Accessibility 97, Best Practices 100, SEO 100 – fast, accessible, and fully optimized for admin operations. |
+| Admin Room Categories | ![screenshot](documentation/lighthouse-admin-rooms.png) | Performance 97, Accessibility 94, Best Practices 100, SEO 100 – fast, accessible, and optimized for efficient room management. |
+| Admin Booking List | ![screenshot](documentation/lighthouse-admin-bookings.png) | Performance 92, Accessibility 96, Best Practices 100, SEO 100 – efficient, accessible, and well-optimized for managing bookings. |
+| Login | ![screenshot](documentation/lighthouse-login.png) | Performance 98, Accessibility 95, Best Practices 100, SEO 100 – fast, secure, and fully optimized for user access. |
+| Register | ![screenshot](documentation/lighthouse-register.png) | Performance 99, Accessibility 100, Best Practices 100, SEO 100 – lightning-fast, fully accessible, and perfectly optimized for user registration.|
 
 ## Defensive Programming
 

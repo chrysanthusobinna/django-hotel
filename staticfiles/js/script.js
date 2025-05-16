@@ -1,5 +1,3 @@
-$('.carousel').carousel({ interval: 4000 });
-
 
  // toggle to close nav
     $(document).ready(function () {
