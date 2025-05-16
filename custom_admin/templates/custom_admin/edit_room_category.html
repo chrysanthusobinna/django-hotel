@@ -151,14 +151,3 @@
     </div>
 </div>
 {% endblock %}
-
-{% block extra_scripts %}
-<script>
-    $(document).ready(function() {
-        $('.delete-image-btn').click(function() {
-            var deleteUrl = $(this).data('action');
-            $('#deleteImageForm').attr('action', deleteUrl);
-        });
-    });
-</script>
-{% endblock %} 

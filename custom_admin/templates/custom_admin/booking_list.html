@@ -64,16 +64,3 @@
     </div>
 </div>
 {% endblock %}
-
-{% block extra_js %}
-<script>
-$(document).ready(function() {
-    // Initialize DataTable
-    $('#bookingsTable').DataTable({
-        responsive: true,
-        order: [[0, 'desc']],
-        pageLength: 25
-    });
-});
-</script>
-{% endblock %} 

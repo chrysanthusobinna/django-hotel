@@ -64,22 +64,9 @@
 {% endblock %}
 
 {% block extra_scripts %}
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-<!-- Bootstrap JS Bundle (if not already in base.html) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- DataTables JS with Bootstrap 5 integration -->
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $('#bookingsTable').DataTable({
-            "pageLength": 5,
-            "order": [[0, 'desc']],
-        });
-    });
-</script>
 {% endblock %}

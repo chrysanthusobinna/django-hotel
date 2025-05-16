@@ -41,7 +41,7 @@ I have used the [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to v
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| static | style.css | ![screenshot](documentation/path-to-screenshot.png) | |
+| static | style.css | ![screenshot](documentation/css.png) | |
 
 ### JavaScript
 
@@ -76,7 +76,7 @@ I have used the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validat
 | --- | --- | --- | --- |
 | context_processors.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/context_processors.py) | ![screenshot](documentation/context_processors_py_pep8_check.png) | |
 | settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/settings.py) | ![screenshot](documentation/settings_py_pep8_check.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/urls.py) | ![screenshot](documentation/urls_py_pep8_check.png) | |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/urls.py) | ![screenshot](documentation/hotel_urls_py_pep8_check.png) | |
 
 #### Mainsite App
 | File | CI URL | Screenshot | Notes |
