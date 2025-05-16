@@ -290,11 +290,12 @@ The generated ERD can be found in the documentation folder:
 #### GitHub Issues
 [GitHub Issues](https://github.com/chrysanthusobinna/django-hotel/issues) complemented our Agile workflow with a custom **User Story Template** for managing user stories and tracking milestone iterations.
 
-- [Open Issues](https://github.com/chrysanthusobinna/django-hotel/issues) [![GitHub issues](https://img.shields.io/github/issues/chrysanthusobinna/django-hotel)](https://github.com/chrysanthusobinna/django-hotel/issues)
-    ![Open Issues](documentation/gh-issues-open.png)
+- **Open Issues** [![GitHub issues](https://img.shields.io/github/issues/chrysanthusobinna/django-hotel)](https://github.com/chrysanthusobinna/django-hotel/issues)  
+  ![Open Issues](documentation/gh-issues-open.png)
 
-- [Closed Issues](https://github.com/chrysanthusobinna/django-hotel/issues?q=is%3Aissue+is%3Aclosed) [![GitHub closed issues](https://img.shields.io/github/issues-closed/chrysanthusobinna/django-hotel)](https://github.com/chrysanthusobinna/django-hotel/issues?q=is%3Aissue+is%3Aclosed)
-    ![Closed Issues](documentation/gh-issues-closed.png)
+- **Closed Issues** [![GitHub closed issues](https://img.shields.io/github/issues-closed/chrysanthusobinna/django-hotel)](https://github.com/chrysanthusobinna/django-hotel/issues?q=is%3Aissue+is%3Aclosed)  
+  ![Closed Issues](documentation/gh-issues-closed.png)
+
 
 ### Prioritization Methodology
 
