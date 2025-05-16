@@ -13,26 +13,26 @@ I have used the [HTML W3C Validator](https://validator.w3.org) to validate all H
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| bookings | templates/bookings/booking_summary.html | ![screenshot](documentation/html-validation-booking-summary.png) | |
-| bookings | templates/bookings/payment_cancelled.html | ![screenshot](documentation/html-validation-payment-cancelled.png) | |
-| bookings | templates/bookings/payment_success.html | ![screenshot](documentation/html-validation-payment-success.png) | |
-| customer | templates/customer/booking_detail.html | ![screenshot](documentation/html-validation-customer-booking-detail.png) | |
-| customer | templates/customer/dashboard.html | ![screenshot](documentation/html-validation-customer-dashboard.png) | |
-| mainsite | templates/mainsite/about.html | ![screenshot](documentation/html-validation-about.png) | |
-| mainsite | templates/mainsite/contact.html | ![screenshot](documentation/html-validation-contact.png) | |
-| mainsite | templates/mainsite/home.html | ![screenshot](documentation/html-validation-home.png) | |
-| profiles | templates/profiles/edit_profile.html | ![screenshot](documentation/html-validation-edit-profile.png) | |
-| profiles | templates/profiles/view_profile.html | ![screenshot](documentation/html-validation-view-profile.png) | |
-| rooms | templates/rooms/room_detail.html | ![screenshot](documentation/html-validation-room-detail.png) | |
-| rooms | templates/rooms/room_list.html | ![screenshot](documentation/html-validation-room-list.png) | |
-| templates | templates/404.html | ![screenshot](documentation/html-validation-404.png) | |
-| custom_admin | templates/custom_admin/dashboard.html | ![screenshot](documentation/html-validation-admin-dashboard.png) | |
-| custom_admin | templates/custom_admin/booking_list.html | ![screenshot](documentation/html-validation-admin-booking-list.png) | |
-| custom_admin | templates/custom_admin/booking_detail.html | ![screenshot](documentation/html-validation-admin-booking-detail.png) | |
-| custom_admin | templates/custom_admin/room_categories.html | ![screenshot](documentation/html-validation-admin-room-categories.png) | |
-| custom_admin | templates/custom_admin/room_category_detail.html | ![screenshot](documentation/html-validation-admin-room-category-detail.png) | |
-| custom_admin | templates/custom_admin/add_room_category.html | ![screenshot](documentation/html-validation-admin-add-room-category.png) | |
-| custom_admin | templates/custom_admin/edit_room_category.html | ![screenshot](documentation/html-validation-admin-edit-room-category.png) | |
+| bookings | templates/bookings/booking_summary.html | ![screenshot](documentation/html-validation-booking-summary.png) | No Errors |
+| bookings | templates/bookings/payment_cancelled.html | ![screenshot](documentation/html-validation-payment-cancelled.png) | No Errors |
+| bookings | templates/bookings/payment_success.html | ![screenshot](documentation/html-validation-payment-success.png) | No Errors |
+| customer | templates/customer/booking_detail.html | ![screenshot](documentation/html-validation-customer-booking-detail.png) | No Errors |
+| customer | templates/customer/dashboard.html | ![screenshot](documentation/html-validation-customer-dashboard.png) | No Errors |
+| mainsite | templates/mainsite/about.html | ![screenshot](documentation/html-validation-about.png) | No Errors |
+| mainsite | templates/mainsite/contact.html | ![screenshot](documentation/html-validation-contact.png) | No Errors |
+| mainsite | templates/mainsite/home.html | ![screenshot](documentation/html-validation-home.png) | No Errors |
+| profiles | templates/profiles/edit_profile.html | ![screenshot](documentation/html-validation-edit-profile.png) | No Errors |
+| profiles | templates/profiles/view_profile.html | ![screenshot](documentation/html-validation-view-profile.png) | No Errors |
+| rooms | templates/rooms/room_detail.html | ![screenshot](documentation/html-validation-room-detail.png) | No Errors |
+| rooms | templates/rooms/room_list.html | ![screenshot](documentation/html-validation-room-list.png) | No Errors |
+| templates | templates/404.html | ![screenshot](documentation/html-validation-404.png) | No Errors |
+| custom_admin | templates/custom_admin/dashboard.html | ![screenshot](documentation/html-validation-admin-dashboard.png) | No Errors |
+| custom_admin | templates/custom_admin/booking_list.html | ![screenshot](documentation/html-validation-admin-booking-list.png) | No Errors |
+| custom_admin | templates/custom_admin/booking_detail.html | ![screenshot](documentation/html-validation-admin-booking-detail.png) | No Errors |
+| custom_admin | templates/custom_admin/room_categories.html | ![screenshot](documentation/html-validation-admin-room-categories.png) | No Errors |
+| custom_admin | templates/custom_admin/room_category_detail.html | ![screenshot](documentation/html-validation-admin-room-category-detail.png) | No Errors |
+| custom_admin | templates/custom_admin/add_room_category.html | ![screenshot](documentation/html-validation-admin-add-room-category.png) | No Errors |
+| custom_admin | templates/custom_admin/edit_room_category.html | ![screenshot](documentation/html-validation-admin-edit-room-category.png) | No Errors |
 
 
 ### CSS
@@ -41,7 +41,7 @@ I have used the [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to v
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| static | style.css | ![screenshot](documentation/css.png) | |
+| static | style.css | ![screenshot](documentation/css.png) | No errors found |
 
 ### JavaScript
 
@@ -49,7 +49,7 @@ I have used the [JShint Validator](https://jshint.com) to validate my JavaScript
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| static | script.js | ![screenshot](documentation/jshint.png) | |
+| static | script.js | ![screenshot](documentation/jshint.png) | No errors found |
 
 ### Python
 
@@ -58,74 +58,74 @@ I have used the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validat
 #### Bookings App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/admin.py) | ![screenshot](documentation/admin_py_pep8_check.png) | |
-| helpers.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/helpers.py) | ![screenshot](documentation/helpers_py_pep8_check.png) | |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/models.py) | ![screenshot](documentation/models_py_pep8_check.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/urls.py) | ![screenshot](documentation/urls_py_pep8_check.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/views.py) | ![screenshot](documentation/views_py_pep8_check.png) | |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/admin.py) | ![screenshot](documentation/admin_py_pep8_check.png) | All clear, no errors found |
+| helpers.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/helpers.py) | ![screenshot](documentation/helpers_py_pep8_check.png) | All clear, no errors found |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/models.py) | ![screenshot](documentation/models_py_pep8_check.png) | All clear, no errors found |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/urls.py) | ![screenshot](documentation/urls_py_pep8_check.png) | All clear, no errors found |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/bookings/views.py) | ![screenshot](documentation/views_py_pep8_check.png) | All clear, no errors found |
 
 #### Customer App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/customer/urls.py) | ![screenshot](documentation/customer_urls_py_pep8_check.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/customer/views.py) | ![screenshot](documentation/customer_views_py_pep8_check.png) | |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/customer/urls.py) | ![screenshot](documentation/customer_urls_py_pep8_check.png) | All clear, no errors found |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/customer/views.py) | ![screenshot](documentation/customer_views_py_pep8_check.png) | All clear, no errors found |
 
 
 #### Hotel Booking (Project Settings)
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| context_processors.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/context_processors.py) | ![screenshot](documentation/context_processors_py_pep8_check.png) | |
-| settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/settings.py) | ![screenshot](documentation/settings_py_pep8_check.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/urls.py) | ![screenshot](documentation/hotel_urls_py_pep8_check.png) | |
+| context_processors.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/context_processors.py) | ![screenshot](documentation/context_processors_py_pep8_check.png) | All clear, no errors found |
+| settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/settings.py) | ![screenshot](documentation/settings_py_pep8_check.png) | All clear, no errors found |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/hotel_booking/urls.py) | ![screenshot](documentation/hotel_urls_py_pep8_check.png) | All clear, no errors found |
 
 #### Mainsite App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/mainsite/urls.py) | ![screenshot](documentation/mainsite_urls_py_pep8_check.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/mainsite/views.py) | ![screenshot](documentation/mainsite_views_py_pep8_check.png) | |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/mainsite/urls.py) | ![screenshot](documentation/mainsite_urls_py_pep8_check.png) | All clear, no errors found |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/mainsite/views.py) | ![screenshot](documentation/mainsite_views_py_pep8_check.png) | All clear, no errors found |
 
 #### Payments App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/payments/admin.py) | ![screenshot](documentation/payments_admin_py_pep8_check.png) | |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/payments/models.py) | ![screenshot](documentation/payments_models_py_pep8_check.png) | |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/payments/admin.py) | ![screenshot](documentation/payments_admin_py_pep8_check.png) | All clear, no errors found |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/payments/models.py) | ![screenshot](documentation/payments_models_py_pep8_check.png) | All clear, no errors found |
 
 
 #### Profiles App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/admin.py) | ![screenshot](documentation/profiles_admin_py_pep8_check.png) | |
-| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/forms.py) | ![screenshot](documentation/profiles_forms_py_pep8_check.png) | |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/models.py) | ![screenshot](documentation/profiles_models_py_pep8_check.png) | |
-| signals.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/signals.py) | ![screenshot](documentation/profiles_signals_py_pep8_check.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/urls.py) | ![screenshot](documentation/profiles_urls_py_pep8_check.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/views.py) | ![screenshot](documentation/profiles_views_py_pep8_check.png) | |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/admin.py) | ![screenshot](documentation/profiles_admin_py_pep8_check.png) | All clear, no errors found |
+| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/forms.py) | ![screenshot](documentation/profiles_forms_py_pep8_check.png) | All clear, no errors found |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/models.py) | ![screenshot](documentation/profiles_models_py_pep8_check.png) | All clear, no errors found |
+| signals.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/signals.py) | ![screenshot](documentation/profiles_signals_py_pep8_check.png) | All clear, no errors found |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/urls.py) | ![screenshot](documentation/profiles_urls_py_pep8_check.png) | All clear, no errors found |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/profiles/views.py) | ![screenshot](documentation/profiles_views_py_pep8_check.png) | All clear, no errors found |
 
 
 #### Rooms App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/admin.py) | ![screenshot](documentation/rooms_admin_py_pep8_check.png) | |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/models.py) | ![screenshot](documentation/rooms_models_py_pep8_check.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/urls.py) | ![screenshot](documentation/rooms_urls_py_pep8_check.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/views.py) | ![screenshot](documentation/rooms_views_py_pep8_check.png) | |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/admin.py) | ![screenshot](documentation/rooms_admin_py_pep8_check.png) | All clear, no errors found |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/models.py) | ![screenshot](documentation/rooms_models_py_pep8_check.png) | All clear, no errors found |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/urls.py) | ![screenshot](documentation/rooms_urls_py_pep8_check.png) | All clear, no errors found |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/rooms/views.py) | ![screenshot](documentation/rooms_views_py_pep8_check.png) | All clear, no errors found |
 
 #### Custom Admin App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/forms.py) | ![screenshot](documentation/custom_admin_forms_py_pep8_check.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/urls.py) | ![screenshot](documentation/custom_admin_urls_py_pep8_check.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/views.py) | ![screenshot](documentation/custom_admin_views_py_pep8_check.png) | |
+| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/forms.py) | ![screenshot](documentation/custom_admin_forms_py_pep8_check.png) | All clear, no errors found |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/urls.py) | ![screenshot](documentation/custom_admin_urls_py_pep8_check.png) | All clear, no errors found |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/custom_admin/views.py) | ![screenshot](documentation/custom_admin_views_py_pep8_check.png) | All clear, no errors found |
 
 
 #### Newsletter App
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/admin.py) | ![screenshot](documentation/newsletter_admin_py_pep8_check.png) | |
-| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/forms.py) | ![screenshot](documentation/newsletter_forms_py_pep8_check.png) | |
-| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/models.py) | ![screenshot](documentation/newsletter_models_py_pep8_check.png) | |
-| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/urls.py) | ![screenshot](documentation/newsletter_urls_py_pep8_check.png) | |
-| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/views.py) | ![screenshot](documentation/newsletter_views_py_pep8_check.png) | |
+| admin.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/admin.py) | ![screenshot](documentation/newsletter_admin_py_pep8_check.png) | All clear, no errors found |
+| forms.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/forms.py) | ![screenshot](documentation/newsletter_forms_py_pep8_check.png) | All clear, no errors found |
+| models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/models.py) | ![screenshot](documentation/newsletter_models_py_pep8_check.png) | All clear, no errors found |
+| urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/urls.py) | ![screenshot](documentation/newsletter_urls_py_pep8_check.png) | All clear, no errors found |
+| views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/chrysanthusobinna/django-hotel/main/newsletter/views.py) | ![screenshot](documentation/newsletter_views_py_pep8_check.png) | All clear, no errors found |
 
 
 
@@ -133,11 +133,36 @@ I have used the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validat
 
 I have thoroughly tested my hotel booking application across multiple browsers to ensure a consistent user experience. The testing was performed on the deployed site to verify that all features work correctly regardless of the browser being used.
 
-| Browser | Home | About | Contact | etc | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Chrome | ![screenshot](documentation/browsers/browser-chrome-home.png) | ![screenshot](documentation/browsers/browser-chrome-about.png) | ![screenshot](documentation/browsers/browser-chrome-contact.png) | ![screenshot](documentation/browsers/browser-chrome-etc.png) | Works as expected |
-| Firefox | ![screenshot](documentation/browsers/browser-firefox-home.png) | ![screenshot](documentation/browsers/browser-firefox-about.png) | ![screenshot](documentation/browsers/browser-firefox-contact.png) | ![screenshot](documentation/browsers/browser-firefox-etc.png) | Works as expected |
-| Edge | ![screenshot](documentation/browsers/browser-edge-home.png) | ![screenshot](documentation/browsers/browser-edge-about.png) | ![screenshot](documentation/browsers/browser-chrome-edge.png) | ![screenshot](documentation/browsers/browser-edge-etc.png) | Works as expected |
+| Page | Chrome | Firefox | Edge |
+| --- | --- | --- | --- |
+| Home | ![screenshot](documentation/browser-chrome-home.png) | ![screenshot](documentation/browser-firefox-home.png) | ![screenshot](documentation/browser-edge-home.png) |
+| About | ![screenshot](documentation/browser-chrome-about.png) | ![screenshot](documentation/browser-firefox-about.png) | ![screenshot](documentation/browser-edge-about.png) |
+| Contact | ![screenshot](documentation/browser-chrome-contact.png) | ![screenshot](documentation/browser-firefox-contact.png) | ![screenshot](documentation/browser-chrome-edge.png) |
+| Room List | ![screenshot](documentation/browser-chrome-room-list.png) | ![screenshot](documentation/browser-firefox-room-list.png) | ![screenshot](documentation/browser-edge-room-list.png) |
+| Room Detail | ![screenshot](documentation/browser-chrome-room-detail.png) | ![screenshot](documentation/browser-firefox-room-detail.png) | ![screenshot](documentation/browser-edge-room-detail.png) |
+| Booking Summary | ![screenshot](documentation/browser-chrome-booking-summary.png) | ![screenshot](documentation/browser-firefox-booking-summary.png) | ![screenshot](documentation/browser-edge-booking-summary.png) |
+| Payment Success | ![screenshot](documentation/browser-chrome-payment-success.png) | ![screenshot](documentation/browser-firefox-payment-success.png) | ![screenshot](documentation/browser-edge-payment-success.png) |
+| Payment Cancelled | ![screenshot](documentation/browser-chrome-payment-cancelled.png) | ![screenshot](documentation/browser-firefox-payment-cancelled.png) | ![screenshot](documentation/browser-edge-payment-cancelled.png) |
+| Customer Dashboard | ![screenshot](documentation/browser-chrome-customer-dashboard.png) | ![screenshot](documentation/browser-firefox-customer-dashboard.png) | ![screenshot](documentation/browser-edge-customer-dashboard.png) |
+| Customer Booking Detail | ![screenshot](documentation/browser-chrome-customer-booking.png) | ![screenshot](documentation/browser-firefox-customer-booking.png) | ![screenshot](documentation/browser-edge-customer-booking.png) |
+| Profile View | ![screenshot](documentation/browser-chrome-profile.png) | ![screenshot](documentation/browser-firefox-profile.png) | ![screenshot](documentation/browser-edge-profile.png) |
+| Profile Edit | ![screenshot](documentation/browser-chrome-profile-edit.png) | ![screenshot](documentation/browser-firefox-profile-edit.png) | ![screenshot](documentation/browser-edge-profile-edit.png) |
+| Admin Dashboard | ![screenshot](documentation/browser-chrome-admin-dashboard.png) | ![screenshot](documentation/browser-firefox-admin-dashboard.png) | ![screenshot](documentation/browser-edge-admin-dashboard.png) |
+| Admin Room Categories | ![screenshot](documentation/browser-chrome-admin-rooms.png) | ![screenshot](documentation/browser-firefox-admin-rooms.png) | ![screenshot](documentation/browser-edge-admin-rooms.png) |
+| Admin Room Category Detail | ![screenshot](documentation/browser-chrome-admin-room-detail.png) | ![screenshot](documentation/browser-firefox-admin-room-detail.png) | ![screenshot](documentation/browser-edge-admin-room-detail.png) |
+| Admin Add Room Category | ![screenshot](documentation/browser-chrome-admin-add-room.png) | ![screenshot](documentation/browser-firefox-admin-add-room.png) | ![screenshot](documentation/browser-edge-admin-add-room.png) |
+| Admin Edit Room Category | ![screenshot](documentation/browser-chrome-admin-edit-room.png) | ![screenshot](documentation/browser-firefox-admin-edit-room.png) | ![screenshot](documentation/browser-edge-admin-edit-room.png) |
+| Admin Booking List | ![screenshot](documentation/browser-chrome-admin-bookings.png) | ![screenshot](documentation/browser-firefox-admin-bookings.png) | ![screenshot](documentation/browser-edge-admin-bookings.png) |
+| Admin Booking Detail | ![screenshot](documentation/browser-chrome-admin-booking-detail.png) | ![screenshot](documentation/browser-firefox-admin-booking-detail.png) | ![screenshot](documentation/browser-edge-admin-booking-detail.png) |
+| Login | ![screenshot](documentation/browser-chrome-login.png) | ![screenshot](documentation/browser-firefox-login.png) | ![screenshot](documentation/browser-edge-login.png) |
+| Register | ![screenshot](documentation/browser-chrome-register.png) | ![screenshot](documentation/browser-firefox-register.png) | ![screenshot](documentation/browser-edge-register.png) |
+
+Notes:
+- All pages work as expected across Chrome, Firefox, and Edge browsers
+- Consistent functionality and appearance maintained across all browsers
+- Forms and interactive elements function correctly in all browsers
+- Responsive design works consistently across all browsers
+- Images and media content display properly in all browsers
 
 ## Responsiveness
 
@@ -174,24 +199,24 @@ I have conducted comprehensive Lighthouse audits on all pages of my hotel bookin
 
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
-| Home | ![screenshot](documentation/lighthouse/lighthouse-home-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-home-desktop.png) | Excellent performance and accessibility scores |
-| About | ![screenshot](documentation/lighthouse/lighthouse-about-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-about-desktop.png) | High scores across all metrics |
-| Contact | ![screenshot](documentation/lighthouse/lighthouse-contact-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-contact-desktop.png) | Strong performance on both devices |
-| Room Categories | ![screenshot](documentation/lighthouse/lighthouse-rooms-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-rooms-desktop.png) | Good performance with room images |
-| Room Detail | ![screenshot](documentation/lighthouse/lighthouse-room-detail-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-room-detail-desktop.png) | High scores for image optimization |
-| Booking Summary | ![screenshot](documentation/lighthouse/lighthouse-booking-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-booking-desktop.png) | Excellent form validation scores |
-| Payment Success | ![screenshot](documentation/lighthouse/lighthouse-payment-success-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-payment-success-desktop.png) | Strong performance metrics |
-| Payment Cancelled | ![screenshot](documentation/lighthouse/lighthouse-payment-cancelled-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-payment-cancelled-desktop.png) | Good error handling scores |
-| Customer Dashboard | ![screenshot](documentation/lighthouse/lighthouse-customer-dashboard-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-customer-dashboard-desktop.png) | High accessibility scores |
-| Customer Booking Detail | ![screenshot](documentation/lighthouse/lighthouse-customer-booking-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-customer-booking-desktop.png) | Strong performance on both devices |
-| Profile View | ![screenshot](documentation/lighthouse/lighthouse-profile-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-profile-desktop.png) | Strong performance on both devices |
-| Profile Edit | ![screenshot](documentation/lighthouse/lighthouse-profile-edit-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-profile-edit-desktop.png) | Good form validation scores |
-| Admin Dashboard | ![screenshot](documentation/lighthouse/lighthouse-admin-dashboard-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-admin-dashboard-desktop.png) | High accessibility scores |
-| Admin Room Categories | ![screenshot](documentation/lighthouse/lighthouse-admin-rooms-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-admin-rooms-desktop.png) | Strong performance metrics |
-| Admin Booking List | ![screenshot](documentation/lighthouse/lighthouse-admin-bookings-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-admin-bookings-desktop.png) | Good data handling scores |
-| Login | ![screenshot](documentation/lighthouse/lighthouse-login-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-login-desktop.png) | Excellent form validation scores |
-| Register | ![screenshot](documentation/lighthouse/lighthouse-register-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-register-desktop.png) | Strong performance metrics |
-| 404 Error | ![screenshot](documentation/lighthouse/lighthouse-404-mobile.png) | ![screenshot](documentation/lighthouse/lighthouse-404-desktop.png) | Excellent error page performance |
+| Home | ![screenshot](documentation/lighthouse-home-mobile.png) | ![screenshot](documentation/lighthouse-home-desktop.png) | Excellent performance and accessibility scores |
+| About | ![screenshot](documentation/lighthouse-about-mobile.png) | ![screenshot](documentation/lighthouse-about-desktop.png) | High scores across all metrics |
+| Contact | ![screenshot](documentation/lighthouse-contact-mobile.png) | ![screenshot](documentation/lighthouse-contact-desktop.png) | Strong performance on both devices |
+| Room Categories | ![screenshot](documentation/lighthouse-rooms-mobile.png) | ![screenshot](documentation/lighthouse-rooms-desktop.png) | Good performance with room images |
+| Room Detail | ![screenshot](documentation/lighthouse-room-detail-mobile.png) | ![screenshot](documentation/lighthouse-room-detail-desktop.png) | High scores for image optimization |
+| Booking Summary | ![screenshot](documentation/lighthouse-booking-mobile.png) | ![screenshot](documentation/lighthouse-booking-desktop.png) | Excellent form validation scores |
+| Payment Success | ![screenshot](documentation/lighthouse-payment-success-mobile.png) | ![screenshot](documentation/lighthouse-payment-success-desktop.png) | Strong performance metrics |
+| Payment Cancelled | ![screenshot](documentation/lighthouse-payment-cancelled-mobile.png) | ![screenshot](documentation/lighthouse-payment-cancelled-desktop.png) | Good error handling scores |
+| Customer Dashboard | ![screenshot](documentation/lighthouse-customer-dashboard-mobile.png) | ![screenshot](documentation/lighthouse-customer-dashboard-desktop.png) | High accessibility scores |
+| Customer Booking Detail | ![screenshot](documentation/lighthouse-customer-booking-mobile.png) | ![screenshot](documentation/lighthouse-customer-booking-desktop.png) | Strong performance on both devices |
+| Profile View | ![screenshot](documentation/lighthouse-profile-mobile.png) | ![screenshot](documentation/lighthouse-profile-desktop.png) | Strong performance on both devices |
+| Profile Edit | ![screenshot](documentation/lighthouse-profile-edit-mobile.png) | ![screenshot](documentation/lighthouse-profile-edit-desktop.png) | Good form validation scores |
+| Admin Dashboard | ![screenshot](documentation/lighthouse-admin-dashboard-mobile.png) | ![screenshot](documentation/lighthouse-admin-dashboard-desktop.png) | High accessibility scores |
+| Admin Room Categories | ![screenshot](documentation/lighthouse-admin-rooms-mobile.png) | ![screenshot](documentation/lighthouse-admin-rooms-desktop.png) | Strong performance metrics |
+| Admin Booking List | ![screenshot](documentation/lighthouse-admin-bookings-mobile.png) | ![screenshot](documentation/lighthouse-admin-bookings-desktop.png) | Good data handling scores |
+| Login | ![screenshot](documentation/lighthouse-login-mobile.png) | ![screenshot](documentation/lighthouse-login-desktop.png) | Excellent form validation scores |
+| Register | ![screenshot](documentation/lighthouse-register-mobile.png) | ![screenshot](documentation/lighthouse-register-desktop.png) | Strong performance metrics |
+| 404 Error | ![screenshot](documentation/lighthouse-404-mobile.png) | ![screenshot](documentation/lighthouse-404-desktop.png) | Excellent error page performance |
 
 ## Defensive Programming
 

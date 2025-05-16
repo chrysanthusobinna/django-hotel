@@ -12,13 +12,6 @@ $(document).ready(function () {
         }
     });
 
-    // Initialize DataTable
-    $('#bookingsTable').DataTable({
-        responsive: true,
-        order: [[0, 'desc']],
-        pageLength: 25
-    });
-
     // Delete Room Category Image
     $('.delete-image-btn').click(function () {
         var deleteUrl = $(this).data('action');

@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_styles %}
+    <!-- DataTables Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+{% endblock %}
+
 {% block content %}
 <div class="container-fluid mt-4">
     <div class="card shadow">
@@ -64,3 +69,23 @@
     </div>
 </div>
 {% endblock %}
+
+
+{% block extra_scripts %}
+
+<!-- DataTables JS with Bootstrap 5 integration -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#bookingsTable').DataTable({
+            responsive: true,
+            order: [[0, 'desc']],
+            pageLength: 10
+        });
+    });
+</script>
+
+{% endblock %}
+
