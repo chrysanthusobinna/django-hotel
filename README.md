@@ -240,6 +240,74 @@ Contact
 
 Entity Relationship Diagrams (ERD) help visualize database architecture before creating models. Understanding the relationships between different tables can save time later in the project.
 
+### Models Overview
+
+The project consists of the following key models:
+
+#### RoomCategory Model
+- Purpose: Manages different categories of hotel rooms (e.g., Standard, Deluxe, Suite)
+- Fields:
+  - `name`: CharField - Name of the room category
+  - `description`: TextField - Detailed description of the room category
+  - `price`: DecimalField - Price per night
+  - `image`: CloudinaryField - Main image for the room category
+
+#### RoomCategoryImage Model
+- Purpose: Handles multiple images for each room category
+- Fields:
+  - `room_category`: ForeignKey to RoomCategory
+  - `image`: CloudinaryField - Additional images for the room category
+  - `caption`: CharField - Optional caption for the image
+
+#### Room Model
+- Purpose: Represents individual rooms in the hotel
+- Fields:
+  - `category`: ForeignKey to RoomCategory
+  - `name`: CharField - Unique identifier for the room
+  - `is_available`: BooleanField - Current availability status
+
+#### Booking Model
+- Purpose: Manages guest reservations
+- Fields:
+  - `user`: ForeignKey to User - Guest making the booking
+  - `room`: ForeignKey to Room - Specific room assigned (optional)
+  - `room_category`: ForeignKey to RoomCategory - Category of room booked
+  - `check_in`: DateField - Planned check-in date
+  - `check_out`: DateField - Planned check-out date
+  - `actual_check_in`: DateTimeField - Actual check-in time (optional)
+  - `actual_check_out`: DateTimeField - Actual check-out time (optional)
+  - `created_at`: DateTimeField - Booking creation timestamp
+  - `is_paid`: BooleanField - Payment status
+  - `is_cancelled`: BooleanField - Cancellation status
+  - `booking_number`: CharField - Unique 6-digit booking reference
+  - `total_price`: DecimalField - Total cost of the stay
+
+#### Payment Model
+- Purpose: Tracks payment transactions for bookings
+- Fields:
+  - `booking`: OneToOneField to Booking
+  - `stripe_payment_intent`: CharField - Stripe payment reference
+  - `amount`: DecimalField - Payment amount
+  - `timestamp`: DateTimeField - Payment timestamp
+  - `status`: CharField - Current payment status
+
+#### UserProfile Model
+- Purpose: Extends the default Django User model with additional information
+- Fields:
+  - `user`: OneToOneField to User
+  - `address`: CharField - Guest's address
+  - `city`: CharField - Guest's city
+  - `post_code`: CharField - Guest's postal code
+  - `country`: CharField - Guest's country
+  - `phone_number`: CharField - Guest's contact number (optional)
+
+#### Subscriber Model
+- Purpose: Manages newsletter subscriptions
+- Fields:
+  - `email`: EmailField - Subscriber's email address
+  - `date_subscribed`: DateTimeField - Subscription date
+  - `is_active`: BooleanField - Subscription status
+
 ### Auto-generating ERD with pygraphviz
 
 I used `pygraphviz` and `django-extensions` to auto-generate an ERD. Here are the steps I followed:
