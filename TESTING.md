@@ -49,7 +49,7 @@ I have used the [JShint Validator](https://jshint.com) to validate my JavaScript
 
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
-| static | script.js | ![screenshot](documentation/path-to-screenshot.png) | |
+| static | script.js | ![screenshot](documentation/jshint.png) | |
 
 ### Python
 
@@ -138,9 +138,6 @@ I have thoroughly tested my hotel booking application across multiple browsers t
 | Chrome | ![screenshot](documentation/browsers/browser-chrome-home.png) | ![screenshot](documentation/browsers/browser-chrome-about.png) | ![screenshot](documentation/browsers/browser-chrome-contact.png) | ![screenshot](documentation/browsers/browser-chrome-etc.png) | Works as expected |
 | Firefox | ![screenshot](documentation/browsers/browser-firefox-home.png) | ![screenshot](documentation/browsers/browser-firefox-about.png) | ![screenshot](documentation/browsers/browser-firefox-contact.png) | ![screenshot](documentation/browsers/browser-firefox-etc.png) | Works as expected |
 | Edge | ![screenshot](documentation/browsers/browser-edge-home.png) | ![screenshot](documentation/browsers/browser-edge-about.png) | ![screenshot](documentation/browsers/browser-chrome-edge.png) | ![screenshot](documentation/browsers/browser-edge-etc.png) | Works as expected |
-| Safari | ![screenshot](documentation/browsers/browser-safari-home.png) | ![screenshot](documentation/browsers/browser-safari-about.png) | ![screenshot](documentation/browsers/browser-safari-contact.png) | ![screenshot](documentation/browsers/browser-safari-etc.png) | Minor CSS differences |
-| Brave | ![screenshot](documentation/browsers/browser-brave-home.png) | ![screenshot](documentation/browsers/browser-brave-about.png) | ![screenshot](documentation/browsers/browser-brave-contact.png) | ![screenshot](documentation/browsers/browser-brave-etc.png) | Works as expected |
-| Opera | ![screenshot](documentation/browsers/browser-opera-home.png) | ![screenshot](documentation/browsers/browser-opera-about.png) | ![screenshot](documentation/browsers/browser-opera-contact.png) | ![screenshot](documentation/browsers/browser-opera-etc.png) | Minor differences |
 
 ## Responsiveness
 
@@ -148,18 +145,22 @@ I have conducted comprehensive responsive testing on my hotel booking applicatio
 
 | Page | Mobile (DevTools) | Tablet (DevTools) | Desktop |
 | --- | --- | --- | --- |
-| Home | ![screenshot](documentation/responsiveness/responsive-mobile-home.png) | ![screenshot](documentation/responsiveness/responsive-tablet-home.png) | ![screenshot](documentation/responsiveness/responsive-desktop-home.png) |
-| About | ![screenshot](documentation/responsiveness/responsive-mobile-about.png) | ![screenshot](documentation/responsiveness/responsive-tablet-about.png) | ![screenshot](documentation/responsiveness/responsive-desktop-about.png) |
-| Contact | ![screenshot](documentation/responsiveness/responsive-mobile-contact.png) | ![screenshot](documentation/responsiveness/responsive-tablet-contact.png) | ![screenshot](documentation/responsiveness/responsive-desktop-contact.png) |
-| Room List | ![screenshot](documentation/responsiveness/responsive-mobile-room-list.png) | ![screenshot](documentation/responsiveness/responsive-tablet-room-list.png) | ![screenshot](documentation/responsiveness/responsive-desktop-room-list.png) |
-| Room Detail | ![screenshot](documentation/responsiveness/responsive-mobile-room-detail.png) | ![screenshot](documentation/responsiveness/responsive-tablet-room-detail.png) | ![screenshot](documentation/responsiveness/responsive-desktop-room-detail.png) |
-| Booking Summary | ![screenshot](documentation/responsiveness/responsive-mobile-booking-summary.png) | ![screenshot](documentation/responsiveness/responsive-tablet-booking-summary.png) | ![screenshot](documentation/responsiveness/responsive-desktop-booking-summary.png) |
-| Payment Success | ![screenshot](documentation/responsiveness/responsive-mobile-payment-success.png) | ![screenshot](documentation/responsiveness/responsive-tablet-payment-success.png) | ![screenshot](documentation/responsiveness/responsive-desktop-payment-success.png) |
-| Customer Dashboard | ![screenshot](documentation/responsiveness/responsive-mobile-customer-dashboard.png) | ![screenshot](documentation/responsiveness/responsive-tablet-customer-dashboard.png) | ![screenshot](documentation/responsiveness/responsive-desktop-customer-dashboard.png) |
-| Booking Detail | ![screenshot](documentation/responsiveness/responsive-mobile-booking-detail.png) | ![screenshot](documentation/responsiveness/responsive-tablet-booking-detail.png) | ![screenshot](documentation/responsiveness/responsive-desktop-booking-detail.png) |
-| Admin Dashboard | ![screenshot](documentation/responsiveness/responsive-mobile-admin-dashboard.png) | ![screenshot](documentation/responsiveness/responsive-tablet-admin-dashboard.png) | ![screenshot](documentation/responsiveness/responsive-desktop-admin-dashboard.png) |
-| Admin Booking List | ![screenshot](documentation/responsiveness/responsive-mobile-admin-booking-list.png) | ![screenshot](documentation/responsiveness/responsive-tablet-admin-booking-list.png) | ![screenshot](documentation/responsiveness/responsive-desktop-admin-booking-list.png) |
-| Admin Booking Detail | ![screenshot](documentation/responsiveness/responsive-mobile-admin-booking-detail.png) | ![screenshot](documentation/responsiveness/responsive-tablet-admin-booking-detail.png) | ![screenshot](documentation/responsiveness/responsive-desktop-admin-booking-detail.png) |
+| Home | ![screenshot](documentation/responsive-mobile-home.png) | ![screenshot](documentation/responsive-tablet-home.png) | ![screenshot](documentation/responsive-desktop-home.png) |
+| About | ![screenshot](documentation/responsive-mobile-about.png) | ![screenshot](documentation/responsive-tablet-about.png) | ![screenshot](documentation/responsive-desktop-about.png) |
+| Contact | ![screenshot](documentation/responsive-mobile-contact.png) | ![screenshot](documentation/responsive-tablet-contact.png) | ![screenshot](documentation/responsive-desktop-contact.png) |
+| Room List | ![screenshot](documentation/responsive-mobile-room-list.png) | ![screenshot](documentation/responsive-tablet-room-list.png) | ![screenshot](documentation/responsive-desktop-room-list.png) |
+| Room Detail | ![screenshot](documentation/responsive-mobile-room-detail.png) | ![screenshot](documentation/responsive-tablet-room-detail.png) | ![screenshot](documentation/responsive-desktop-room-detail.png) |
+| Booking Summary | ![screenshot](documentation/responsive-mobile-booking-summary.png) | ![screenshot](documentation/responsive-tablet-booking-summary.png) | ![screenshot](documentation/responsive-desktop-booking-summary.png) |
+| Payment Success | ![screenshot](documentation/responsive-mobile-payment-success.png) | ![screenshot](documentation/responsive-tablet-payment-success.png) | ![screenshot](documentation/responsive-desktop-payment-success.png) |
+| Customer Dashboard | ![screenshot](documentation/responsive-mobile-customer-dashboard.png) | ![screenshot](documentation/responsive-tablet-customer-dashboard.png) | ![screenshot](documentation/responsive-desktop-customer-dashboard.png) |
+| Booking Detail | ![screenshot](documentation/responsive-mobile-booking-detail.png) | ![screenshot](documentation/responsive-tablet-booking-detail.png) | ![screenshot](documentation/responsive-desktop-booking-detail.png) |
+| Admin Dashboard | ![screenshot](documentation/responsive-mobile-admin-dashboard.png) | ![screenshot](documentation/responsive-tablet-admin-dashboard.png) | ![screenshot](documentation/responsive-desktop-admin-dashboard.png) |
+| Admin Booking List | ![screenshot](documentation/responsive-mobile-admin-booking-list.png) | ![screenshot](documentation/responsive-tablet-admin-booking-list.png) | ![screenshot](documentation/responsive-desktop-admin-booking-list.png) |
+| Admin Booking Detail | ![screenshot](documentation/responsive-mobile-admin-booking-detail.png) | ![screenshot](documentation/responsive-tablet-admin-booking-detail.png) | ![screenshot](documentation/responsive-desktop-admin-booking-detail.png) |
+| Admin Room Categories | ![screenshot](documentation/responsive-mobile-admin-room-categories.png) | ![screenshot](documentation/responsive-tablet-admin-room-categories.png) | ![screenshot](documentation/responsive-desktop-admin-room-categories.png) |
+| Admin Add Room Category | ![screenshot](documentation/responsive-mobile-admin-add-room-category.png) | ![screenshot](documentation/responsive-tablet-admin-add-room-category.png) | ![screenshot](documentation/responsive-desktop-admin-add-room-category.png) |
+| Admin Edit Room Category | ![screenshot](documentation/responsive-mobile-admin-edit-room-category.png) | ![screenshot](documentation/responsive-tablet-admin-edit-room-category.png) | ![screenshot](documentation/responsive-desktop-admin-edit-room-category.png) |
+
 
 Notes:
 - Mobile, Tablet, and Desktop: Works as expected across all pages
