@@ -156,12 +156,16 @@ Contact
     - Room availability status
     - Room category images and descriptions
 
+![Room Management](documentation/features-room-management.png)
+
 - **Booking Management**
     - Easy-to-use booking interface for customers
     - Real-time availability checking
     - Booking confirmation and management
     - Booking history tracking
     - Flexible booking dates and room selection
+
+![Booking Management](documentation/features-booking-management.png)
 
 - **Customer Profiles**
     - User registration and authentication
@@ -170,22 +174,17 @@ Contact
     - Saved preferences and settings
     - Secure account management
 
+![Customer Profile](documentation/features-customer-profile.png)
+
 - **Payment Processing**
     - Secure payment integration
     - Multiple payment method support
     - Booking confirmation and payment tracking
-    - Payment history and receipts
-    - Refund processing capabilities
+
+![Payment Processing](documentation/features-payment-processing.png)
+
 
 ### Future Features
-
-- **Custom Admin Dashboard**
-    - Replace Django's default admin interface with a modern, user-friendly dashboard
-    - Real-time analytics and key performance indicators
-    - Interactive data visualization
-    - Role-based access control for staff members
-    - Quick action buttons for common tasks
-    - Custom reporting tools
 
 - **Enhanced Website Pages**
     - Virtual tour of hotel facilities
