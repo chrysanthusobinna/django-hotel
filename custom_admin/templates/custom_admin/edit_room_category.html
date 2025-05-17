@@ -3,6 +3,15 @@
 
 {% block title %}{{ SITE_NAME }} - Edit Room Category{% endblock %}
 
+
+
+// Delete Room Category Image
+$('.delete-image-btn').click(function () {
+    var deleteUrl = $(this).data('action');
+    $('#deleteImageForm').attr('action', deleteUrl);
+});
+
+
 {% block content %}
 <div class="container mt-5 admin-edit-room-category">
     <!-- Edit Category Card -->
@@ -152,4 +161,17 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+
+{% block extra_scripts %}
+<script>
+$(document).ready(function() {
+    // Delete Room Category Image
+    $('.delete-image-btn').click(function () {
+        var deleteUrl = $(this).data('action');
+        $('#deleteImageForm').attr('action', deleteUrl);
+    });
+});
+</script>
 {% endblock %}

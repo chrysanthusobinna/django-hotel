@@ -8,10 +8,4 @@ $(document).ready(function () {
             $(".navbar-toggler").click();
         }
     });
-
-    // Delete Room Category Image
-    $('.delete-image-btn').click(function () {
-        var deleteUrl = $(this).data('action');
-        $('#deleteImageForm').attr('action', deleteUrl);
-    });
 });

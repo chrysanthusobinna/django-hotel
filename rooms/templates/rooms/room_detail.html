@@ -5,39 +5,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 {% endblock %}
 
-{% block extra_scripts %}
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
-<script>
-    $(document).ready(function () {
-        // Initialize carousel
-        var roomCarousel = new bootstrap.Carousel(document.getElementById('roomCarousel'), {
-            interval: 4000,
-            wrap: true
-        });
-
-        // Get today's date in YYYY-MM-DD format
-        const today = new Date().toISOString().split('T')[0];
-
-        // Set min date on page load
-        $('#check_in').attr('min', today);
-        $('#check_out').attr('min', today);
-
-        // When user selects a check-in date
-        $('#check_in').on('change', function () {
-            const checkInDate = $(this).val();
-
-            // Set checkout min to the next day
-            const minCheckout = new Date(checkInDate);
-            minCheckout.setDate(minCheckout.getDate() + 1);
-            const formattedMinCheckout = minCheckout.toISOString().split('T')[0];
-
-            $('#check_out').val('');  // Reset checkout
-            $('#check_out').attr('min', formattedMinCheckout);
-        });
-    });
-</script>
-{% endblock %}
 
 {% block title %}{{ SITE_NAME }} - {{ room_category.name }}{% endblock %}
 {% block meta_description %}Explore {{ room_category.name }} with top amenities and comfort. Book now at {{ SITE_NAME }}.{% endblock %}
@@ -132,3 +99,36 @@
 </div>
 {% endblock %}
 
+{% block extra_scripts %}
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+    $(document).ready(function () {
+        // Initialize carousel
+        var roomCarousel = new bootstrap.Carousel(document.getElementById('roomCarousel'), {
+            interval: 4000,
+            wrap: true
+        });
+
+        // Get today's date in YYYY-MM-DD format
+        const today = new Date().toISOString().split('T')[0];
+
+        // Set min date on page load
+        $('#check_in').attr('min', today);
+        $('#check_out').attr('min', today);
+
+        // When user selects a check-in date
+        $('#check_in').on('change', function () {
+            const checkInDate = $(this).val();
+
+            // Set checkout min to the next day
+            const minCheckout = new Date(checkInDate);
+            minCheckout.setDate(minCheckout.getDate() + 1);
+            const formattedMinCheckout = minCheckout.toISOString().split('T')[0];
+
+            $('#check_out').val('');  // Reset checkout
+            $('#check_out').attr('min', formattedMinCheckout);
+        });
+    });
+</script>
+{% endblock %}

@@ -45,11 +45,16 @@ I have used the [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to v
 
 ### JavaScript
 
-I have used the [JShint Validator](https://jshint.com) to validate my JavaScript files. This ensures proper JavaScript syntax and helps identify potential runtime errors in the client-side code.
+I have used the [JShint Validator](https://jshint.com) to validate all JavaScript code in my templates. This ensures proper JavaScript syntax and helps identify potential runtime errors.
 
-| Directory | File | Screenshot | Notes |
+| File | Test Results | Screenshot | Notes |
 | --- | --- | --- | --- |
-| static | script.js | ![screenshot](documentation/jshint.png) | No errors found |
+| static | script.js | ![screenshot](documentation/jshint-script.png) | No errors found |
+| rooms/templates/rooms/room_detail.html | Pass | ![screenshot](documentation/jshint-room-detail.png) | No issues found in JSHint; all variables recognized and logic is clean.|
+| custom_admin/templates/custom_admin/room_category_detail.html | Pass | ![screenshot](documentation/jshint-room-category-detail.png) | JavaScript passed JSHint analysis with no critical issues. The only warnings were related to ES6 const usage and one unused variable (roomCarousel), which was flagged because JSHint only tracks whether a variable is used after being declared. In this case, roomCarousel holds a reference to a Bootstrap carousel element (by ID), and while it's initialized for side effects, it’s not explicitly used later in the script — hence the warning.|
+| custom_admin/templates/custom_admin/booking_list.html | Pass | ![screenshot](documentation/jshint-booking-list.png) | No issues found in JSHint; DataTable initialization is valid and clean.|
+| customer/templates/customer/dashboard.html | Pass | ![screenshot](documentation/jshint-customer-dashboard.png) | No issues found in JSHint; DataTable setup with hidden ID column is valid and clean. |
+| custom_admin/templates/custom_admin/edit_room_category.html | Pass | ![screenshot](documentation/jshint-edit-room-category.png) | No issues found in JSHint; delete button logic is valid and functions as expected. |
 
 ### Python
 
