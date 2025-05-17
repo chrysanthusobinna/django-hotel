@@ -464,6 +464,34 @@ The site implements Open Graph meta tags for optimal social media sharing:
 
 The live deployed application can be found deployed on [Heroku](https://santhus-hotel-d0ffe8e23f1e.herokuapp.com).
 
+### Environment Variables
+
+The following environment variables are required to run the application:
+
+| Variable | Description | Example Value |
+| --- | --- | --- |
+| `SECRET_KEY` | Django secret key for security | "your-secret-key-here" |
+| `DATABASE_URL` | PostgreSQL database URL | "postgresql://username:password@host:port/database_name" |
+| `STRIPE_SECRET_KEY` | Stripe API secret key | "sk_test_your_stripe_secret_key" |
+| `STRIPE_PUBLIC_KEY` | Stripe API public key | "pk_test_your_stripe_public_key" |
+| `CLOUDINARY_URL` | Cloudinary URL for media storage | "cloudinary://api_key:api_secret@cloud_name" |
+| `SITE_NAME` | Name of the hotel | "Your Hotel Name" |
+| `SITE_EMAIL` | Hotel's contact email | "info@yourhotel.com" |
+| `SITE_PHONE` | Hotel's contact phone number | "+44 1234 567890" |
+| `SITE_ADDRESS` | Hotel's physical address | "Your Hotel Address" |
+| `FACEBOOK_PAGE_LINK` | Full URL to hotel's Facebook page | "https://www.facebook.com/your-hotel-page" |
+| `INSTAGRAM_PAGE_LINK` | Full URL to hotel's Instagram page | "https://www.instagram.com/your-hotel-page" |
+| `CURRENCY_SYMBOL` | Currency symbol for prices | "£" |
+| `CURRENCY_CODE` | Currency code for payments | "GBP" |
+| `EMAIL_BACKEND` | Django email backend | "django.core.mail.backends.smtp.EmailBackend" |
+| `EMAIL_HOST` | SMTP server hostname | "your-smtp-server.com" |
+| `EMAIL_PORT` | SMTP server port | "465" |
+| `EMAIL_USE_TLS` | Use TLS for email (True/False) | "False" |
+| `EMAIL_USE_SSL` | Use SSL for email (True/False) | "True" |
+| `EMAIL_HOST_USER` | SMTP username/email | "your-email@example.com" |
+| `EMAIL_HOST_PASSWORD` | SMTP password | "your-email-password" |
+| `DEFAULT_FROM_EMAIL` | Default sender email address | "your-email@example.com" |
+
 ### PostgreSQL Database
 
 This project uses a [Code Institute PostgreSQL Database](https://dbs.ci-dbs.net).
@@ -527,21 +555,7 @@ This project uses [Heroku](https://www.heroku.com) for deployment. Follow these 
    - Click "New" → "Create new app"
    - Choose a unique name and region
 
-2. Set up the following Config Vars in Heroku:
-
-| Key | Value |
-| --- | --- |
-| `CLOUDINARY_URL` | Your Cloudinary URL |
-| `DATABASE_URL` | Your PostgreSQL database URL |
-| `EMAIL_HOST` | Your email host |
-| `EMAIL_HOST_PASSWORD` | Your email password |
-| `EMAIL_HOST_USER` | Your email username |
-| `EMAIL_PORT` | 465 |
-| `EMAIL_USE_TLS` | True |
-| `SECRET_KEY` | Your Django secret key |
-| `STRIPE_PUBLIC_KEY` | Your Stripe public key |
-| `STRIPE_SECRET_KEY` | Your Stripe secret key |
-| `USE_CLOUDINARY` | True |
+2. Set up Config Vars in Heroku using all the Environment Variables listed in the table above. Each variable from the table should be added as a Config Var with its corresponding value.
 
 3. Required files for Heroku deployment:
    - `requirements.txt`
@@ -553,7 +567,6 @@ This project uses [Heroku](https://www.heroku.com) for deployment. Follow these 
    - Choose "GitHub" as deployment method
    - Connect to your repository
    - Enable automatic deploys
-
 ### Local Deployment
 
 To run this project locally:
@@ -641,3 +654,4 @@ git clone https://github.com/chrysanthusobinna/django-hotel.git
 - I would like to thank the Stripe team for their secure payment processing system that enabled online bookings.
 - I would like to thank the open-source community for their contributions to the various libraries and tools used in this project.
 - I would like to thank my family and friends for their support and encouragement throughout the development of this project.
+

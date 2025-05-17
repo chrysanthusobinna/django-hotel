@@ -2,7 +2,6 @@ import os
 
 # DJANGO SETTINGS
 os.environ["SECRET_KEY"] = "your-secret-key-here"
-os.environ["DEBUG"] = "True"
 
 # POSTGRESQL DATABASE URL
 os.environ.setdefault(
