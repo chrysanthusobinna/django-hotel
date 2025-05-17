@@ -238,17 +238,16 @@ I have implemented comprehensive defensive programming measures throughout my ho
 
 | User Story | Screenshot |
 | --- | --- |
-| As a new site user, I would like to browse available room categories, so that I can view different room options and their amenities. | ![Room Categories](documentation/features/room-categories.png) |
-| As a new site user, I would like to create an account, so that I can make bookings and manage my reservations. | ![Account Creation](documentation/features/account-creation.png) |
-| As a new site user, I would like to view room availability for specific dates, so that I can plan my stay. | ![Room Availability](documentation/features/room-availability.png) |
-| As a new site user, I would like to see room prices and total cost for my stay, so that I can budget accordingly. | ![Room Pricing](documentation/features/room-pricing.png) |
-| As a new site user, I would like to receive booking confirmation emails, so that I have proof of my reservation. | ![Booking Confirmation](documentation/features/booking-confirmation.png) |
-| As a returning site user, I would like to log in to my account, so that I can access my booking history. | ![User Login](documentation/features/user-login.png) |
-| As a returning site user, I would like to view my upcoming bookings, so that I can plan my stay. | ![Booking History](documentation/features/booking-history.png) |
-| As a returning site user, I would like to cancel my booking if needed, so that I can manage my travel plans. | ![Booking Cancellation](documentation/features/booking-cancellation.png) |
-| As a returning site user, I would like to update my profile information, so that my details are current. | ![Profile Update](documentation/features/profile-update.png) |
-| As a site administrator, I should be able to manage room categories and availability, so that I can control the hotel's inventory. | ![Admin Room Management](documentation/features/admin-room-management.png) |
-| As a site administrator, I should be able to view and manage all bookings, so that I can track occupancy and revenue. | ![Admin Booking Management](documentation/features/admin-booking-management.png) |
+| As a new site user, I would like to browse available room categories, so that I can view different room options and their amenities. | ![Room Categories](documentation/story-room-categories.png) |
+| As a new site user, I would like to create an account, so that I can make bookings and manage my reservations. | ![Account Creation](documentation/story-account-creation.png) |
+| As a new site user, I would like to view room availability for specific dates, so that I can plan my stay. | ![Room Availability](documentation/story-room-availability.png) |
+| As a new site user, I would like to see room prices and total cost for my stay, so that I can budget accordingly. | ![Room Pricing](documentation/story-room-pricing.png) |
+| As a returning site user, I would like to receive booking confirmation emails, so that I have proof of my reservation. | ![Booking Confirmation](documentation/story-booking-confirmation.png) |
+| As a returning site user, I would like to log in to my account, so that I can access my booking history. | ![User Login](documentation/story-user-login.png) |
+| As a returning site user, I would like to view my upcoming bookings, so that I can plan my stay. | ![Booking History](documentation/story-booking-history.png) |
+| As a returning site user, I would like to update my profile information, so that my details are current. | ![Profile Update](documentation/story-profile-update.png) |
+| As a site administrator, I should be able to manage room categories and availability, so that I can control the hotel's inventory. | ![Admin Room Management](documentation/story-admin-room-management.png) |
+| As a site administrator, I should be able to view and manage all bookings, so that I can track occupancy and revenue. | ![Admin Booking Management](documentation/story-admin-booking-management.png) |
 
 ## Automated Testing
 
@@ -258,7 +257,7 @@ I have conducted comprehensive automated tests on the application using Django's
 
 To run the tests, use the following command:
 ```bash
-python manage.py test name-of-app
+python manage.py test
 ```
 
 ### Coverage Analysis
@@ -374,7 +373,7 @@ python -m http.server
 | **Total** | **1847** | **123** | **0** | **93%** | 
 
 
-![Test Results Screenshot](documentation/testing/test-results.png)
+![Test Results Screenshot](documentation/test-results.png)
 
 ## Bugs
 
@@ -431,38 +430,6 @@ This section documents the bugs encountered during development and their solutio
    except:
        messages.info(request, 'You are already subscribed to our newsletter!')
    ```
-
-### Frontend Bugs
-
-1. **Form Validation Display**
-   - Issue: Form validation errors not showing properly in templates
-   - Fix: Added proper error handling in templates:
-   ```html
-   <input type="text" class="form-control {% if form.field.errors %}is-invalid{% endif %}">
-   {% if form.field.errors %}
-       <div class="invalid-feedback">
-           {{ form.field.errors.0 }}
-       </div>
-   {% endif %}
-   ```
-
-2. **Date Picker Timezone Issues**
-   - Issue: Check-in/check-out times not handling timezone correctly
-   - Fix: Added timezone handling in views:
-   ```python
-   naive_datetime = datetime.strptime(check_in_datetime, '%Y-%m-%dT%H:%M')
-   booking.actual_check_in = timezone.make_aware(naive_datetime)
-   ```
-
-3. **Profile Access Control**
-   - Issue: Users could access other users' profiles
-   - Fix: Added proper authorization check in view_profile:
-   ```python
-   if not request.user.is_authenticated or (request.user != profile_user and not request.user.is_staff):
-       messages.warning(request, "You are not authorized to view this profile.")
-       return redirect('mainsite:home')
-   ```
-
 
 ## Unfixed Bugs
 

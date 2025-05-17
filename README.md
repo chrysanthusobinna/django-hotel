@@ -62,13 +62,12 @@ The typography system is designed to:
 - As a new site user, I would like to create an account, so that I can make bookings and manage my reservations.
 - As a new site user, I would like to view room availability for specific dates, so that I can plan my stay.
 - As a new site user, I would like to see room prices and total cost for my stay, so that I can budget accordingly.
-- As a new site user, I would like to receive booking confirmation emails, so that I have proof of my reservation.
 
 ### Returning Site Users
 
+- As a returning site user, I would like to receive booking confirmation emails, so that I have proof of my reservation.
 - As a returning site user, I would like to log in to my account, so that I can access my booking history.
 - As a returning site user, I would like to view my upcoming bookings, so that I can plan my stay.
-- As a returning site user, I would like to cancel my booking if needed, so that I can manage my travel plans.
 - As a returning site user, I would like to update my profile information, so that my details are current.
 
 ### Site Admin
