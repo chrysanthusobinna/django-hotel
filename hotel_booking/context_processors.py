@@ -12,4 +12,6 @@ def site_info(request):
         "CURRENCY_SYMBOL": settings.CURRENCY_SYMBOL,
         "CURRENCY_CODE": settings.CURRENCY_CODE,
         "WHATSAPP_PHONE": WHATSAPP_PHONE,
+        "FACEBOOK_PAGE_LINK": settings.FACEBOOK_PAGE_LINK,
+        "INSTAGRAM_PAGE_LINK": settings.INSTAGRAM_PAGE_LINK,
     }

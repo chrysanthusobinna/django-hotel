@@ -24,6 +24,10 @@ os.environ["SITE_EMAIL"] = "info@yourhotel.com"
 os.environ["SITE_PHONE"] = "+44 1234 567890"
 os.environ["SITE_ADDRESS"] = "Your Hotel Address"
 
+# Social Media Links
+os.environ["FACEBOOK_PAGE_LINK"] = "https://www.facebook.com/your-hotel-page"
+os.environ["INSTAGRAM_PAGE_LINK"] = "https://www.instagram.com/your-hotel-page"
+
 # Currency Configuration
 os.environ["CURRENCY_SYMBOL"] = "£"
 os.environ["CURRENCY_CODE"] = "GBP"
