@@ -51,7 +51,7 @@ I have used the [JShint Validator](https://jshint.com) to validate all JavaScrip
 | --- | --- | --- | --- |
 | static | script.js | ![screenshot](documentation/jshint-script.png) | No errors found |
 | rooms/templates/rooms/room_detail.html | Pass | ![screenshot](documentation/jshint-room-detail.png) | No issues found in JSHint; all variables recognized and logic is clean.|
-| custom_admin/templates/custom_admin/room_category_detail.html | Pass | ![screenshot](documentation/jshint-room-category-detail.png) | JavaScript passed JSHint analysis with no critical issues. The only warnings were related to ES6 const usage and one unused variable (roomCarousel), which was flagged because JSHint only tracks whether a variable is used after being declared. In this case, roomCarousel holds a reference to a Bootstrap carousel element (by ID), and while it's initialized for side effects, it’s not explicitly used later in the script — hence the warning.|
+| custom_admin/templates/custom_admin/room_category_detail.html | Pass | ![screenshot](documentation/jshint-room-category-detail.png) | JavaScript passed JSHint analysis with no critical issues. The only warnings were related to ES6 const usage and one unused variable (roomCarousel), which was flagged because JSHint only tracks whether a variable is used after being declared. In this case, roomCarousel holds a reference to a Bootstrap carousel element (by ID), and while it's initialized for side effects, it's not explicitly used later in the script — hence the warning.|
 | custom_admin/templates/custom_admin/booking_list.html | Pass | ![screenshot](documentation/jshint-booking-list.png) | No issues found in JSHint; DataTable initialization is valid and clean.|
 | customer/templates/customer/dashboard.html | Pass | ![screenshot](documentation/jshint-customer-dashboard.png) | No issues found in JSHint; DataTable setup with hidden ID column is valid and clean. |
 | custom_admin/templates/custom_admin/edit_room_category.html | Pass | ![screenshot](documentation/jshint-edit-room-category.png) | No issues found in JSHint; delete button logic is valid and functions as expected. |
@@ -379,6 +379,19 @@ python -m http.server
 
 
 ![Test Results Screenshot](documentation/test-results.png)
+
+## Continuous Integration (CI)
+
+I have implemented Continuous Integration using GitHub Actions to automatically run tests whenever code is pushed to the main branch or when pull requests are created. This ensures that all code changes are tested.
+
+The CI pipeline is configured in `.github/workflows/django-tests.yml` and runs the following checks:
+- Sets up Python 3.10 environment
+- Installs project dependencies
+- Runs all Django tests
+
+Here's a screenshot of successful CI test runs:
+
+![CI Test Results](documentation/ci-test-results.png)
 
 ## Bugs
 
