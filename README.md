@@ -642,9 +642,19 @@ git clone https://github.com/chrysanthusobinna/django-hotel.git
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | Room Images | image | Used for room category images |
-| [Font Awesome](https://fontawesome.com) | Icons | icons | Used throughout the site for UI elements |
-| [Am I Responsive](https://ui.dev/amiresponsive) | Mockup | image | Used for responsive design preview |
+| [Pexels](https://www.pexels.com/photo/orange-lounges-near-swimming-pool-261169/) | Home Page | Image | Swimming pool area with orange lounges showcasing hotel amenities |
+| [Pexels](https://www.pexels.com/photo/brown-wooden-house-in-daytime-453201/) | Home Page | Image | Exterior view of hotel building used in banner section |
+| [Pexels](https://www.pexels.com/photo/white-bathtub-in-bathroom-1571461/) | Home Page | Image | Luxury bathroom interior highlighting hotel facilities |
+| [Pexels](https://www.pexels.com/photo/person-holding-pastry-dishes-on-white-ceramic-plates-262978/) | Home Page | Image | Restaurant service presentation showcasing dining experience |
+| [Pexels](https://www.pexels.com/photo/white-sunloungers-beside-pool-261102/) | Home Page | Image | Poolside loungers displaying outdoor relaxation area |
+| [Pexels](https://www.pexels.com/photo/palm-trees-at-night-258154/) | About Page | Image | Night view of hotel exterior with palm trees |
+| [Pexels](https://www.pexels.com/photo/woman-in-white-long-sleeve-shirt-holding-pink-and-green-floral-textile-7755659/) | Contact Page | Image | Welcoming hotel reception staff member |
+| [Pexels](https://www.pexels.com/photo/photo-of-living-room-1457842/) | Room Categories | Image | Family Suite showcase featuring spacious living area |
+| [Pexels](https://www.pexels.com/photo/upholstered-bed-near-cabinet-262048/) | Room Categories | Image | Standard Room display with comfortable furnishings |
+| [Pexels](https://www.pexels.com/photo/room-with-bed-and-wooden-floor-1743229/) | Room Categories | Image | Luxury Room presentation with premium interior design |
+| [Font Awesome](https://fontawesome.com) | Throughout Site | Icons | Various UI icons for enhanced user experience |
+| [Am I Responsive](https://ui.dev/amiresponsive) | Documentation | Image | Website mockup showing responsive design across devices |
+| [ChatGPT](https://chat.openai.com) | Meta Tags | Content | Generated Open Graph protocol meta descriptions for social media sharing |
 
 ### Acknowledgements
 
