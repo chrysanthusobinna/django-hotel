@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      DJANGO_SETTINGS_MODULE: hotel_booking.settings
+      DATABASE_URL: sqlite:///test_db.sqlite3
+      DEBUG: True
 
     steps:
       - name: Checkout code
