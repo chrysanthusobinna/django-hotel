@@ -77,74 +77,30 @@ The typography system is designed to:
 
 ## Wireframes
 
-To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+To follow best practice, wireframes were developed for mobile and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
-
-### Mobile Wireframes
-
-<details>
-<summary>Click here to see the Mobile Wireframes</summary>
-
-Home
-  - ![screenshot](documentation/wireframes/mobile-home.png)
-
-Room List
-  - ![screenshot](documentation/wireframes/mobile-room-list.png)
-
-Room Detail
-  - ![screenshot](documentation/wireframes/mobile-room-detail.png)
-
-Bookings
-  - ![screenshot](documentation/wireframes/mobile-bookings.png)
-
-Contact
-  - ![screenshot](documentation/wireframes/mobile-contact.png)
-
-</details>
-
-### Tablet Wireframes
-
-<details>
-<summary>Click here to see the Tablet Wireframes</summary>
-
-Home
-  - ![screenshot](documentation/wireframes/tablet-home.png)
-
-Room List
-  - ![screenshot](documentation/wireframes/tablet-room-list.png)
-
-Room Detail
-  - ![screenshot](documentation/wireframes/tablet-room-detail.png)
-
-Bookings
-  - ![screenshot](documentation/wireframes/tablet-bookings.png)
-
-Contact
-  - ![screenshot](documentation/wireframes/tablet-contact.png)
-
-</details>
 
 ### Desktop Wireframes
 
-<details>
-<summary>Click here to see the Desktop Wireframes</summary>
+| Page | Screenshot |
+| --- | --- |
+| Home | ![screenshot](documentation/wireframes-desktop-home.png) |
+| About | ![screenshot](documentation/wireframes-desktop-about.png) |
+| Contact | ![screenshot](documentation/wireframes-desktop-contact.png) |
+| Room Categories | ![screenshot](documentation/wireframes-desktop-room-categories.png) |
+| Register | ![screenshot](documentation/wireframes-desktop-register.png) |
+| Login | ![screenshot](documentation/wireframes-desktop-login.png) |
 
-Home
-  - ![screenshot](documentation/wireframes/desktop-home.png)
+### Mobile Wireframes
 
-Room List
-  - ![screenshot](documentation/wireframes/desktop-room-list.png)
-
-Room Detail
-  - ![screenshot](documentation/wireframes/desktop-room-detail.png)
-
-Bookings
-  - ![screenshot](documentation/wireframes/desktop-bookings.png)
-
-Contact
-  - ![screenshot](documentation/wireframes/desktop-contact.png)
-
-</details>
+| Page | Screenshot |
+| --- | --- |
+| Home | ![screenshot](documentation/wireframes-mobile-home.png) |
+| About | ![screenshot](documentation/wireframes-mobile-about.png) |
+| Contact | ![screenshot](documentation/wireframes-mobile-contact.png) |
+| Room Categories | ![screenshot](documentation/wireframes-mobile-room-categories.png) |
+| Register | ![screenshot](documentation/wireframes-mobile-register.png) |
+| Login | ![screenshot](documentation/wireframes-mobile-login.png) |
 
 ## Features
 
@@ -658,9 +614,7 @@ git clone https://github.com/chrysanthusobinna/django-hotel.git
 
 ### Acknowledgements
 
-- I would like to thank the Django community for their extensive documentation and support resources that made this project possible.
-- I would like to thank the Bootstrap team for providing an excellent framework that helped create a responsive and modern UI.
-- I would like to thank the Stripe team for their secure payment processing system that enabled online bookings.
-- I would like to thank the open-source community for their contributions to the various libraries and tools used in this project.
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
 - I would like to thank my family and friends for their support and encouragement throughout the development of this project.
 
