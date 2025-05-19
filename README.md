@@ -10,6 +10,12 @@
 
 source: [amiresponsive](https://ui.dev/amiresponsive?url=https://santhus-hotel-d0ffe8e23f1e.herokuapp.com)
 
+---
+
+## Project Overview
+
+This is a full-stack hotel booking web application developed with Django. It enables customers to explore available rooms based on categories, make bookings, and complete payments seamlessly. Each customer has access to a personal dashboard to view upcoming reservations, booking history, and manage their profile. The admin interface provides tools for managing room categories, handling bookings, and updating customer reservations. The system is designed to offer a smooth and efficient booking experience for both customers and administrators.
+
 ## UX
 
 The design of the hotel booking system focuses on creating a luxurious and user-friendly experience. The interface is clean, modern, and intuitive, making it easy for users to browse rooms, make bookings, and manage their reservations.
@@ -104,41 +110,138 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ## Features
 
-### Existing Features
+## Existing Features
 
-- **Room Management System**
-    - Comprehensive room management with different categories and availability tracking
-    - View room details, amenities, and pricing
-    - Room availability status
-    - Room category images and descriptions
+### Home Page
 
-![Room Management](documentation/features-room-management.png)
+A welcoming homepage featuring beautiful images of the hotel, engaging text to attract visitors, and a newsletter subscription form for updates and promotions.
 
-- **Booking Management**
-    - Easy-to-use booking interface for customers
-    - Real-time availability checking
-    - Booking confirmation and management
-    - Booking history tracking
-    - Flexible booking dates and room selection
+![Home Page 1](documentation/feature-home-page-1.png)
+![Home Page 2](documentation/feature-home-page-2.png)
+![Home Page 3](documentation/feature-home-page-3.png)
 
-![Booking Management](documentation/features-booking-management.png)
+---
 
-- **Customer Profiles**
-    - User registration and authentication
-    - Personal profile management
-    - Booking history access
-    - Saved preferences and settings
-    - Secure account management
+### About Page
 
-![Customer Profile](documentation/features-customer-profile.png)
+Provides more information about the hotel. Includes elegant images to help guests connect with the hotel's environment.
 
-- **Payment Processing**
-    - Secure payment integration
-    - Multiple payment method support
-    - Booking confirmation and payment tracking
+![About Page](documentation/feature-about-page.png)
 
-![Payment Processing](documentation/features-payment-processing.png)
+---
 
+### Contact Page
+
+A straightforward contact page displaying the hotel’s address, phone number, and email. Useful for inquiries or support.
+
+![Contact Page](documentation/feature-contact-page.png)
+
+---
+
+## Customer Room Booking System
+
+### Browse Room Categories
+
+Customers can explore various room categories with images, descriptions, and pricing.
+
+![Room Categories](documentation/feature-room-categories.png)
+
+---
+
+### Check Room Availability
+
+After selecting a room category, logged-in users can view detailed information and check availability by entering check-in and check-out dates.
+
+![Check Availability](documentation/feature-check-availability.png)
+
+---
+
+### Booking Summary
+
+If the selected room is available, customers are shown a booking summary that includes:
+
+* Room price per night
+* Total number of nights
+* Total cost
+* A button to proceed to payment
+
+![Booking Summary](documentation/feature-booking-summary.png)
+
+---
+
+### Payment
+
+Customers make secure payments using Stripe. After successful payment, they are redirected to a confirmation page.
+
+![Payment Form](documentation/feature-payment-form.png)
+![Payment Success](documentation/feature-payment-success.png)
+
+---
+
+## Customer Dashboard
+
+Logged-in customers can view:
+
+* Upcoming bookings
+* Booking history
+
+![Customer Bookings](documentation/feature-customer-bookings.png)
+![Booking Detail](documentation/feature-booking-detail.png)
+
+---
+
+## Customer Profile
+
+Customers can view and update their profile information.
+
+![View Profile](documentation/feature-view-profile.png)
+![Edit Profile](documentation/feature-edit-profile.png)
+
+---
+
+## Admin Dashboard
+
+The admin interface allows management of room categories, individual rooms, and customer bookings.
+
+### Manage Room Categories
+
+Admins can:
+
+* View room categories
+* Add new room categories
+* Edit existing ones
+
+![View Room Category](documentation/feature-admin-view-category.png)
+![Add Room Category](documentation/feature-admin-add-category.png)
+![Edit Room Category](documentation/feature-admin-edit-category.png)
+
+---
+
+### Manage Rooms
+
+Admins can:
+
+* Add rooms to categories
+* Edit room details
+* Delete rooms
+
+![Add Room](documentation/feature-admin-add-room.png)
+![Edit Room](documentation/feature-admin-edit-room.png)
+![Delete Room](documentation/feature-admin-delete-room.png)
+
+---
+
+### Booking Management
+
+Admins can:
+
+* View all customer bookings
+* Update booking status and details
+
+![Admin View Booking](documentation/feature-admin-view-booking.png)
+![Admin Update Booking](documentation/feature-admin-update-booking.png)
+
+---
 
 ### Future Features
 
