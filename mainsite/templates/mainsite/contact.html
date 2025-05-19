@@ -31,21 +31,21 @@
             <div class="info-box p-4 rounded shadow-sm h-100">
                 <i class="fas fa-map-marker-alt fa-3x text-primary mb-3"></i>
                 <h5 class="mb-2">Address</h5>
-                <p>{{ SITE_ADDRESS }}</p>
+                <p><a href="https://www.google.com/maps/search/?api=1&query={{ SITE_ADDRESS|urlencode }}" target="_blank" class="text-decoration-none">{{ SITE_ADDRESS }}</a></p>
             </div>
         </div>
         <div class="col-md-4 mb-4">
             <div class="info-box p-4 rounded shadow-sm h-100">
                 <i class="fas fa-phone fa-3x text-primary mb-3"></i>
                 <h5 class="mb-2">Phone</h5>
-                <p>{{ SITE_PHONE }}</p>
+                <p><a href="tel:{{ SITE_PHONE }}" class="text-decoration-none">{{ SITE_PHONE }}</a></p>
             </div>
         </div>
         <div class="col-md-4 mb-4">
             <div class="info-box p-4 rounded shadow-sm h-100">
                 <i class="fas fa-envelope fa-3x text-primary mb-3"></i>
                 <h5 class="mb-2">Email</h5>
-                <p>{{ SITE_EMAIL }}</p>
+                <p><a href="mailto:{{ SITE_EMAIL }}" class="text-decoration-none">{{ SITE_EMAIL }}</a></p>
             </div>
         </div>
     </div>

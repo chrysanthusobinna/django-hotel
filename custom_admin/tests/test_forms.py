@@ -23,16 +23,16 @@ class RoomCategoryFormTest(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_form_invalid_price(self):
-        """Test form with invalid price"""
+        """Test form validation with invalid price"""
         form_data = {
             'name': 'Test Category',
             'description': 'Test Description',
-            'price': -100.00,  # Negative price
+            'price': -1,
+            'image': self.test_image
         }
         form = RoomCategoryForm(data=form_data, files={'image': self.test_image})
         self.assertFalse(form.is_valid())
-        self.assertIn('price', form.errors)
-        self.assertEqual(form.errors['price'][0], 'Price cannot be negative.')
+        self.assertEqual(form.errors['price'][0], 'Price must be at least 1.')
 
     def test_form_missing_required_fields(self):
         """Test form with missing required fields"""

@@ -39,14 +39,14 @@ class RoomViewTest(TestCase):
         """Test that room create requires login"""
         response = self.client.get(reverse('custom_admin:add_room'))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('account_login')}?next={reverse('custom_admin:add_room')}")
+        self.assertRedirects(response, reverse('account_login'))
 
     def test_room_create_requires_staff(self):
         """Test that room create requires staff status"""
         self.client.login(username='testuser', password='testpass123')
         response = self.client.get(reverse('custom_admin:add_room'))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('mainsite:home')}?next={reverse('custom_admin:add_room')}")
+        self.assertRedirects(response, reverse('mainsite:home'))
 
     def test_room_create_accessible_by_staff(self):
         """Test that room create is accessible by staff"""
@@ -70,14 +70,14 @@ class RoomViewTest(TestCase):
         """Test that room update requires login"""
         response = self.client.get(reverse('custom_admin:edit_room', args=[self.room.id]))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('account_login')}?next={reverse('custom_admin:edit_room', args=[self.room.id])}")
+        self.assertRedirects(response, reverse('account_login'))
 
     def test_room_update_requires_staff(self):
         """Test that room update requires staff status"""
         self.client.login(username='testuser', password='testpass123')
         response = self.client.get(reverse('custom_admin:edit_room', args=[self.room.id]))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('mainsite:home')}?next={reverse('custom_admin:edit_room', args=[self.room.id])}")
+        self.assertRedirects(response, reverse('mainsite:home'))
 
     def test_room_update_accessible_by_staff(self):
         """Test that room update is accessible by staff"""
@@ -102,14 +102,14 @@ class RoomViewTest(TestCase):
         """Test that room delete requires login"""
         response = self.client.post(reverse('custom_admin:delete_room', args=[self.room.id]))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('account_login')}?next={reverse('custom_admin:delete_room', args=[self.room.id])}")
+        self.assertRedirects(response, reverse('account_login'))
 
     def test_room_delete_requires_staff(self):
         """Test that room delete requires staff status"""
         self.client.login(username='testuser', password='testpass123')
         response = self.client.post(reverse('custom_admin:delete_room', args=[self.room.id]))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('mainsite:home')}?next={reverse('custom_admin:delete_room', args=[self.room.id])}")
+        self.assertRedirects(response, reverse('mainsite:home'))
 
     def test_room_delete_accessible_by_staff(self):
         """Test that room delete is accessible by staff"""

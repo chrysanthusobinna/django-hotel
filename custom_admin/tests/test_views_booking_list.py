@@ -61,22 +61,14 @@ class BookingListViewTest(TestCase):
         """Test that booking list requires login"""
         response = self.client.get(reverse('custom_admin:booking_list'))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('account_login')}?next={reverse('custom_admin:booking_list')}")
+        self.assertRedirects(response, reverse('account_login'))
 
     def test_booking_list_requires_staff(self):
         """Test that booking list requires staff status"""
-        # First, log in as a non-staff user
         self.client.login(username='testuser', password='testpass123')
-        
-        # Try to access the booking list
         response = self.client.get(reverse('custom_admin:booking_list'))
-        
-        # The user should be redirected to the home page
         self.assertEqual(response.status_code, 302)
-        # Check that the redirect URL starts with the home page URL
-        self.assertTrue(response.url.startswith(reverse('mainsite:home')))
-        # Check that the next parameter is present
-        self.assertIn('next=', response.url)
+        self.assertRedirects(response, reverse('mainsite:home'))
 
     def test_booking_list_accessible_by_staff(self):
         """Test that booking list is accessible by staff"""

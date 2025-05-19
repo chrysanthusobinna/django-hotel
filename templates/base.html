@@ -40,6 +40,9 @@
     <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">
     <meta property="og:image" content="{% block og_image %}{% static 'images/santhus-hotel.png' %}{% endblock %}">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
     <!-- Favicon and Styles -->
     <link rel="icon" href="{% static 'favicon/favicon.ico' %}">
     
@@ -89,7 +92,7 @@
                         {% if user.is_authenticated %}
                             {% if not user.is_superuser %}
                                 <li class="nav-item">
-                                    <a class="nav-link text-white {% if request.path == customer_dashboard_url %}active{% endif %}" href="{{ customer_dashboard_url }}">My Dashboard</a>
+                                    <a class="nav-link text-white {% if request.resolver_match.namespace == 'customer' %}active{% endif %}" href="{{ customer_dashboard_url }}">My Dashboard</a>
                                 </li>
                             {% else %}
                                 <li class="nav-item">
@@ -98,16 +101,10 @@
                             {% endif %}
 
                             <li class="nav-item">
-                                <a class="nav-link text-white
-                                    {% if request.path == profile_url or request.path == edit_profile_url or request.path == change_password_url %}
-                                        active
-                                    {% endif %}" 
-                                href="{{ profile_url }}">
-                                    My Profile
-                                </a>
+                                <a class="nav-link text-white  {% if request.resolver_match.namespace == 'profiles' %}active{% endif %}" href="{{ profile_url }}">My Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ logout_url }}">Logout</a>
+                                <a class="nav-link text-white {% if request.path == '/accounts/logout/' %}active{% endif %}" href="{{ logout_url }}">Logout</a>
                             </li>
                         {% else %}
                             <li class="nav-item">

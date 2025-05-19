@@ -52,17 +52,14 @@ class BookingViewTest(TestCase):
         """Test that booking list requires login"""
         response = self.client.get(reverse('custom_admin:booking_list'))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('account_login')}?next={reverse('custom_admin:booking_list')}")
+        self.assertRedirects(response, reverse('account_login'))
 
     def test_booking_list_requires_staff(self):
         """Test that booking list requires staff status"""
         self.client.login(username='testuser', password='testpass123')
         response = self.client.get(reverse('custom_admin:booking_list'))
         self.assertEqual(response.status_code, 302)
-        # Check that the redirect URL starts with the home page URL
-        self.assertTrue(response.url.startswith(reverse('mainsite:home')))
-        # Check that the next parameter is present
-        self.assertIn('next=', response.url)
+        self.assertRedirects(response, reverse('mainsite:home'))
 
     def test_booking_list_accessible_by_staff(self):
         """Test that booking list is accessible by staff"""
@@ -77,17 +74,14 @@ class BookingViewTest(TestCase):
         """Test that booking detail requires login"""
         response = self.client.get(reverse('custom_admin:booking_detail', args=[self.booking.id]))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('account_login')}?next={reverse('custom_admin:booking_detail', args=[self.booking.id])}")
+        self.assertRedirects(response, reverse('account_login'))
 
     def test_booking_detail_requires_staff(self):
         """Test that booking detail requires staff status"""
         self.client.login(username='testuser', password='testpass123')
         response = self.client.get(reverse('custom_admin:booking_detail', args=[self.booking.id]))
         self.assertEqual(response.status_code, 302)
-        # Check that the redirect URL starts with the home page URL
-        self.assertTrue(response.url.startswith(reverse('mainsite:home')))
-        # Check that the next parameter is present
-        self.assertIn('next=', response.url)
+        self.assertRedirects(response, reverse('mainsite:home'))
 
     def test_booking_detail_accessible_by_staff(self):
         """Test that booking detail is accessible by staff"""
@@ -106,7 +100,7 @@ class BookingViewTest(TestCase):
             'check_in_datetime': timezone.now().strftime('%Y-%m-%dT%H:%M')
         })
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('account_login')}?next={reverse('custom_admin:update_checkin')}")
+        self.assertRedirects(response, reverse('account_login'))
 
     def test_booking_update_requires_staff(self):
         """Test that booking update requires staff status"""
@@ -116,10 +110,7 @@ class BookingViewTest(TestCase):
             'check_in_datetime': timezone.now().strftime('%Y-%m-%dT%H:%M')
         })
         self.assertEqual(response.status_code, 302)
-        # Check that the redirect URL starts with the home page URL
-        self.assertTrue(response.url.startswith(reverse('mainsite:home')))
-        # Check that the next parameter is present
-        self.assertIn('next=', response.url)
+        self.assertRedirects(response, reverse('mainsite:home'))
 
     def test_booking_update_valid_data(self):
         """Test updating a booking with valid data"""
@@ -139,7 +130,7 @@ class BookingViewTest(TestCase):
             'booking_id': self.booking.id
         })
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('account_login')}?next={reverse('custom_admin:delete_booking')}")
+        self.assertRedirects(response, reverse('account_login'))
 
     def test_booking_delete_requires_staff(self):
         """Test that booking delete requires staff status"""
@@ -148,10 +139,7 @@ class BookingViewTest(TestCase):
             'booking_id': self.booking.id
         })
         self.assertEqual(response.status_code, 302)
-        # Check that the redirect URL starts with the home page URL
-        self.assertTrue(response.url.startswith(reverse('mainsite:home')))
-        # Check that the next parameter is present
-        self.assertIn('next=', response.url)
+        self.assertRedirects(response, reverse('mainsite:home'))
 
     def test_booking_delete_valid_data(self):
         """Test deleting a booking with valid data"""
@@ -168,7 +156,7 @@ class BookingViewTest(TestCase):
             'booking_id': self.booking.id
         })
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('account_login')}?next={reverse('custom_admin:cancel_booking')}")
+        self.assertRedirects(response, reverse('account_login'))
 
     def test_booking_cancel_requires_staff(self):
         """Test that booking cancel requires staff status"""
@@ -177,10 +165,7 @@ class BookingViewTest(TestCase):
             'booking_id': self.booking.id
         })
         self.assertEqual(response.status_code, 302)
-        # Check that the redirect URL starts with the home page URL
-        self.assertTrue(response.url.startswith(reverse('mainsite:home')))
-        # Check that the next parameter is present
-        self.assertIn('next=', response.url)
+        self.assertRedirects(response, reverse('mainsite:home'))
 
     def test_booking_cancel_valid_data(self):
         """Test cancelling a booking with valid data"""
@@ -199,7 +184,7 @@ class BookingViewTest(TestCase):
             'room_id': self.room.id
         })
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f"{reverse('account_login')}?next={reverse('custom_admin:assign_room')}")
+        self.assertRedirects(response, reverse('account_login'))
 
     def test_room_assign_requires_staff(self):
         """Test that room assign requires staff status"""
@@ -209,10 +194,7 @@ class BookingViewTest(TestCase):
             'room_id': self.room.id
         })
         self.assertEqual(response.status_code, 302)
-        # Check that the redirect URL starts with the home page URL
-        self.assertTrue(response.url.startswith(reverse('mainsite:home')))
-        # Check that the next parameter is present
-        self.assertIn('next=', response.url)
+        self.assertRedirects(response, reverse('mainsite:home'))
 
     def test_room_assign_valid_data(self):
         """Test assigning a room with valid data"""

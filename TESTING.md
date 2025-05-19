@@ -226,18 +226,15 @@ I have conducted comprehensive Lighthouse audits on all pages of my hotel bookin
 
 I have implemented comprehensive defensive programming measures throughout my hotel booking application to ensure security and data integrity. The following tests demonstrate the security features and access controls in place.
 
-| Feature | Implementation | Test Coverage | Pass/Fail | Comments |
-| --- | --- | --- | --- | --- |
-| Authentication | Django's login_required decorator | Comprehensive | Pass | All protected views require authentication |
-| Staff Access Control | user_passes_test decorator with is_admin check | Comprehensive | Pass | Admin views restricted to staff users |
-| CSRF Protection | Django's CSRF middleware and tokens | Comprehensive | Pass | All forms include CSRF tokens |
-| Form Validation | Django form validation with custom forms | Comprehensive | Pass | Input validation on all forms |
-| Profile Access Control | User permission checks in views | Comprehensive | Pass | Users can only access their own profiles |
-| Booking Management | Staff-only access control | Comprehensive | Pass | Booking operations restricted to staff |
-| Room Management | Staff-only access control | Comprehensive | Pass | Room operations restricted to staff |
-| File Upload Security | File type and size validation | Comprehensive | Pass | Secure file upload handling |
-| Password Security | Django's password hashing and validation | Comprehensive | Pass | Secure password handling |
-| Session Security | Django's session middleware | Comprehensive | Pass | Secure session management |
+| Test Case | Description | Screenshot |
+| --- | --- | --- |
+| Empty Form Submission | Users cannot submit a form with empty required fields. Form validation prevents submission and displays appropriate error messages. | ![Empty Form](documentation/defensive-empty-form.png) |
+| Invalid Email Format | Email fields are validated to ensure proper format. Invalid email addresses are rejected with clear error messages. | ![Invalid Email](documentation/defensive-invalid-email.png) |
+| Unauthorized Profile Access | Users cannot access other users' profiles. Attempts to view unauthorized profiles are redirected with warning messages. | ![Unauthorized Access](documentation/defensive-unauthorized-access.png) |
+| Valid Price Input | Room prices cannot be set to negative values or less than 1. Form validation prevents submission of invalid price data. | ![Negative Price](documentation/defensive-negative-price.png) |
+| File Upload Validation | File uploads are validated for type and size. Only allowed file types and sizes are accepted. | ![File Upload](documentation/defensive-file-upload.png) |
+| Staff Access Control | Admin features are restricted to staff users only. Non-staff users are redirected with appropriate messages. | ![Staff Access](documentation/defensive-staff-access.png) |
+| Booking Date Validation | Booking dates are validated to ensure check-out is after check-in. Invalid date ranges are rejected. | ![Date Validation](documentation/defensive-date-validation.png) |
 
 ## User Story Testing
 

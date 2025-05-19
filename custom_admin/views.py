@@ -9,22 +9,30 @@ from django.utils import timezone
 from bookings.models import Booking
 from datetime import datetime
 from django.db.models import Q
+from functools import wraps
 
 
-def is_admin(user):
-    return user.is_staff
+def admin_required(view_func):
+    @wraps(view_func)
+    def _wrapped_view(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('account_login')
+        if not request.user.is_staff:
+            messages.warning(
+                request,
+                "Access denied. Admin privileges required."
+            )
+            return redirect('mainsite:home')
+        return view_func(request, *args, **kwargs)
+    return _wrapped_view
 
-# Create your views here.
 
-
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def dashboard(request):
     return render(request, 'custom_admin/dashboard.html')
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def room_categories(request):
     categories = RoomCategory.objects.all()
     context = {
@@ -37,8 +45,7 @@ def room_categories(request):
     )
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def room_category_detail(request, category_id):
     category = get_object_or_404(RoomCategory, id=category_id)
     rooms = category.rooms.all()
@@ -48,13 +55,12 @@ def room_category_detail(request, category_id):
     })
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def edit_room_category(request, category_id):
     category = get_object_or_404(RoomCategory, id=category_id)
 
     if request.method == 'POST':
-        form = RoomCategoryForm(request.POST, request.FILES, instance=category)
+        form = RoomCategoryForm(request.POST, request.FILES, instance=category, is_edit=True)
         if form.is_valid():
             form.save()
             messages.success(request, 'Room category updated successfully!')
@@ -63,7 +69,7 @@ def edit_room_category(request, category_id):
                 category_id=category.id
             )
     else:
-        form = RoomCategoryForm(instance=category)
+        form = RoomCategoryForm(instance=category, is_edit=True)
 
     # Get all additional images for this category
     additional_images = category.images.all()
@@ -75,8 +81,7 @@ def edit_room_category(request, category_id):
     })
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def delete_room_category(request, category_id):
     if request.method == 'POST':
         category = get_object_or_404(RoomCategory, id=category_id)
@@ -85,8 +90,7 @@ def delete_room_category(request, category_id):
     return redirect('custom_admin:room_categories')
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def add_additional_image(request, category_id):
     category = get_object_or_404(RoomCategory, id=category_id)
 
@@ -114,8 +118,7 @@ def add_additional_image(request, category_id):
     return redirect('custom_admin:edit_room_category', category_id=category.id)
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def delete_additional_image(request, category_id, image_id):
     category = get_object_or_404(RoomCategory, id=category_id)
     image = get_object_or_404(
@@ -138,28 +141,23 @@ def delete_additional_image(request, category_id, image_id):
     )
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def add_room_category(request):
     if request.method == 'POST':
-        form = RoomCategoryForm(request.POST, request.FILES)
+        form = RoomCategoryForm(request.POST, request.FILES, is_edit=False)
         if form.is_valid():
             category = form.save()
             messages.success(request, 'Room category created successfully!')
-            return redirect(
-                'custom_admin:edit_room_category',
-                category_id=category.id
-            )
+            return redirect('custom_admin:edit_room_category', category_id=category.id)
     else:
-        form = RoomCategoryForm()
+        form = RoomCategoryForm(is_edit=False)
 
     return render(request, 'custom_admin/add_room_category.html', {
         'form': form
     })
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def add_room(request):
     if request.method == 'POST':
         category_id = request.POST.get('category')
@@ -194,8 +192,7 @@ def add_room(request):
     return redirect('custom_admin:room_categories')
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def edit_room(request, room_id):
     room = get_object_or_404(Room, id=room_id)
 
@@ -225,8 +222,7 @@ def edit_room(request, room_id):
     )
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def delete_room(request, room_id):
     if request.method == 'POST':
         room = get_object_or_404(Room, id=room_id)
@@ -247,8 +243,7 @@ def delete_room(request, room_id):
     )
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def booking_list(request):
     bookings = Booking.objects.all().order_by('-created_at')
     context = {
@@ -261,8 +256,7 @@ def booking_list(request):
     )
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def booking_detail(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
 
@@ -286,8 +280,7 @@ def booking_detail(request, booking_id):
     })
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def update_checkin(request):
     if request.method == 'POST':
         try:
@@ -317,8 +310,7 @@ def update_checkin(request):
     return redirect('custom_admin:booking_list')
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def update_checkout(request):
     if request.method == 'POST':
         try:
@@ -348,8 +340,7 @@ def update_checkout(request):
     return redirect('custom_admin:booking_list')
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def cancel_booking(request):
     if request.method == 'POST':
         try:
@@ -373,8 +364,7 @@ def cancel_booking(request):
     return redirect('custom_admin:booking_list')
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def delete_booking(request):
     if request.method == 'POST':
         try:
@@ -394,8 +384,7 @@ def delete_booking(request):
     return redirect('custom_admin:booking_list')
 
 
-@login_required
-@user_passes_test(is_admin, login_url='mainsite:home')
+@admin_required
 def assign_room(request):
     if request.method == 'POST':
         try:
