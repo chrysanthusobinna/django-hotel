@@ -4,9 +4,16 @@ import os
 os.environ["SECRET_KEY"] = "your-secret-key-here"
 
 # POSTGRESQL DATABASE URL
-os.environ.setdefault(
-    "DATABASE_URL", "postgresql://username:password@host:port/database_name"
-)
+# os.environ.setdefault(
+#     "DATABASE_URL", "postgresql://username:password@host:port/database_name"
+# )
+
+# for local postgresql database
+os.environ["DATABASE_NAME"] = "hotel_booking"
+os.environ["DATABASE_USER"] = "postgres"
+os.environ["DATABASE_PASSWORD"] = "root"
+os.environ["DATABASE_HOST"] = "localhost"
+os.environ["DATABASE_PORT"] = "5432"
 
 # STRIPE SETTINGS
 os.environ["STRIPE_SECRET_KEY"] = "your-stripe-secret-key"
