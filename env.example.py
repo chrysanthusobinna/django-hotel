@@ -35,7 +35,7 @@ os.environ["FACEBOOK_PAGE_LINK"] = "https://www.facebook.com/your-hotel-page"
 os.environ["INSTAGRAM_PAGE_LINK"] = "https://www.instagram.com/your-hotel-page"
 
 # Currency Configuration
-os.environ["CURRENCY_SYMBOL"] = "£"
+os.environ["CURRENCY_SYMBOL"] = "GBP"
 os.environ["CURRENCY_CODE"] = "GBP"
 
 # Email Configuration
